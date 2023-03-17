@@ -29,7 +29,7 @@ const FilterBar = () => {
 
   const [type, setType] = useState([
     { title: "movie" },
-    { title: "series" },
+    { title: "serie" },
     { title: "anime" },
     { title: "animation" },
   ]);
@@ -44,15 +44,15 @@ const FilterBar = () => {
   ]);
 
   const [country, setCountry] = useState([
-    { title: "USA", flag: "/src/assets/country-flag/USA.png" },
-    { title: "France", flag: "/src/assets/country-flag/France.png" },
-    { title: "England", flag: "/src/assets/country-flag/England.png" },
-    { title: "Germany", flag: "/src/assets/country-flag/Germany.png" },
-    { title: "Japan", flag: "/src/assets/country-flag/Japan.png" },
-    { title: "China", flag: "/src/assets/country-flag/China.png" },
-    { title: "Iran", flag: "/src/assets/country-flag/Iran.png" },
-    { title: "Korea", flag: "/src/assets/country-flag/Korea.png" },
-    { title: "New Zealand", flag: "/src/assets/country-flag/NewZealand.png" },
+    { title: "USA", flag: "/src/assets/country-flag/usa.png" },
+    { title: "France", flag: "/src/assets/country-flag/france.png" },
+    { title: "England", flag: "/src/assets/country-flag/england.png" },
+    { title: "Germany", flag: "/src/assets/country-flag/germany.png" },
+    { title: "Japan", flag: "/src/assets/country-flag/japan.png" },
+    { title: "China", flag: "/src/assets/country-flag/china.png" },
+    { title: "Iran", flag: "/src/assets/country-flag/iran.png" },
+    { title: "Korea", flag: "/src/assets/country-flag/korea.png" },
+    { title: "New Zealand", flag: "/src/assets/country-flag/new-zealand.png" },
   ]);
 
   console.log("bar");
