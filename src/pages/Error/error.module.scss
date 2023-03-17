@@ -1,0 +1,46 @@
+@use "/src/sass/helpers/" as *;
+
+.error {
+    @include col;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url("/src/assets/image/Background404.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: $clr-white;
+    position: relative;
+    text-align: center;
+
+    .code {
+        font-size: rem(240);
+        font-weight: 800;
+    }
+    .code-info {
+        position: relative;
+        top: -3em;
+
+        h3 {
+            font-size: rem(32);
+        }
+        h4 {
+            position: relative;
+            font-size: rem(20);
+            font-weight: 400;
+            top: -0.3em;
+        }
+    }
+
+    .bob {
+        position: absolute;
+        right: -2em;
+        bottom: -3.7em;
+        width: rem(100);
+
+        &:hover {
+            width: rem(800);
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@use "../../sass/helpers/" as *;
+
+.home {
+    @include row;
+    justify-content: space-between;
+    height: 100%;
+
+    .content {
+        @include scroll-bar;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        padding-inline-start: rem(24);
+        padding-inline-end: rem(14);
+
+        .quick-access {
+            @include row;
+            gap: rem(10);
+            margin-block: rem(18);
+        }
+    }
+}

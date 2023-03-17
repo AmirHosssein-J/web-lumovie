@@ -1,0 +1,88 @@
+@use "../../../sass/helpers/" as *;
+
+.download {
+    @include col-center--a;
+    justify-content: space-around;
+    margin-top: auto;
+    width: rem(216);
+    height: rem(160);
+    min-height: rem(160);
+    margin-inline: rem(24);
+    padding-inline: rem(8);
+    padding-block: rem(10);
+    border-radius: rem(24);
+    direction: ltr;
+
+    .content{
+        width: 100%;
+        @include col-center--a;
+    }
+
+
+    .movie{
+        width: 100%;
+        max-height: rem(64);
+        border-radius: rem(16);
+        overflow: hidden;
+
+        .info{
+            @include row;
+            align-items: center;
+            width: 100%;
+            
+            .poster{
+                width: rem(52);
+                height: rem(52);
+                object-fit: cover;
+            }
+            
+            .details{
+                width: 100%;
+                padding-inline: rem(8);
+                font-size: rem(12);
+
+                .title{
+                    color: $clr-text-h1;
+                    font-weight: 600;
+                }
+                
+                .detail{
+                    @include row-center--a;
+                    gap: rem(6);
+                    color: $clr-text-h6;
+                    font-weight: 400;
+                }
+            }
+        }
+        
+        .progress-bar{
+            background-color: $clr-border-secondry;
+            width: 100%;
+            height: rem(12);
+            
+            &--fill{
+                height: 100%;
+                background-color: $clr-primary;
+                transition: .2s ease-in-out all;
+            }
+        }
+    }
+
+    svg {
+        width: rem(28);
+        height: rem(28);
+    }
+
+    &-title {
+        color: $clr-text-h6;
+        margin-block-start: rem(8);
+        margin-block-end: rem(18);
+        font-weight: 500;
+        font-size: rem(12);
+    }
+
+    &-button {
+        align-self: center;
+        margin-top: auto;
+    }
+}

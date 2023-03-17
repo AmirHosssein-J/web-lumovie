@@ -1,0 +1,21 @@
+@use "/src/sass/helpers/" as *;
+
+.posters {
+    width: 100%;
+    height: rem(160);
+    margin-block: rem(18);
+
+    .poster {
+        width: 100%;
+        height: 100%;
+
+        &-img {
+            height: rem(160);
+            width: rem(360);
+            max-width: rem(360);
+            -o-object-fit: cover;
+            object-fit: cover;
+            border-radius: rem(10);
+        }
+    }
+}

@@ -1,0 +1,55 @@
+@use "/src/sass/helpers/" as *;
+
+.quick-access {
+    @include col;
+    justify-content: space-between;
+    height: rem(220);
+    border-radius: rem(26);
+    padding-block: rem(24);
+    padding-inline: rem(32);
+    position: relative;
+    overflow: hidden;
+
+    svg {
+        position: absolute;
+        isolation: isolate;
+        right: -4rem;
+        bottom: -3rem;
+    }
+
+    .title {
+        color: $clr-white;
+        font-size: rem(24);
+        font-weight: 600;
+    }
+
+    .content {
+        @include col-center;
+        gap: rem(18);
+        width: 100%;
+
+        .info {
+            color: $clr-text-p;
+            font-size: rem(14);
+            font-weight: 400;
+            text-align: center;
+        }
+    }
+}
+
+.section {
+    @include col;
+    gap: rem(16);
+
+    &-title {
+        color: $clr-text-h3;
+        font-size: rem(20);
+        font-weight: 600;
+    }
+
+    &-links {
+        @include row-center--a;
+        flex-wrap: wrap;
+        gap: rem(12) rem(8);
+    }
+}

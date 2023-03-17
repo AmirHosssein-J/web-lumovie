@@ -1,0 +1,61 @@
+@use "/src/sass/helpers" as *;
+
+.filter-bar {
+    @include scroll-bar;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    min-width: rem(280);
+    background-color: $clr-bg-primary;
+    border-right: 1px solid $clr-border-primary;
+
+    .header {
+        @include row-center--a;
+        justify-content: space-between;
+        padding-inline: rem(26);
+        padding-block: rem(18);
+
+        .title {
+            color: $clr-text-h3;
+            font-size: rem(24);
+            font-weight: 800;
+        }
+
+        .grids {
+            @include row;
+            gap: 0.3em;
+
+            .button {
+                &:hover,
+                &:focus-visible {
+                    //Tootlip
+                    div:nth-child(1) {
+                        display: flex;
+                        top: 3.4em;
+                        width: -webkit-fit-content;
+                        width: -moz-fit-content;
+                        width: fit-content;
+                    }
+                }
+
+                &--active svg path {
+                    stroke: $clr-primary;
+                }
+            }
+        }
+    }
+    .content {
+        @include scroll-bar;
+        overflow-y: auto;
+        // height: 100%;
+        &:focus {
+            outline: 1px solid $clr-primary;
+        }
+    }
+
+    footer {
+        margin-top: auto;
+        z-index: 2000;
+    }
+}

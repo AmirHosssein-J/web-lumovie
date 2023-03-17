@@ -1,0 +1,120 @@
+// import App from "./App";
+
+// import * as React from "react";
+// import * as ReactDOM from "react-dom/client";
+
+// import store from "./app/store";
+// import { Provider } from "react-redux";
+// import { PersistGate } from "redux-persist/integration/react";
+// import { persistStore } from "redux-persist";
+// let persistor = persistStore(store);
+
+// import { BrowserRouter } from "react-router-dom";
+
+// ReactDOM.createRoot(document.getElementById("root")).render(
+//   <React.StrictMode>
+//     <Provider store={store}>
+//       <PersistGate loading={null} persistor={persistor}>
+//         <BrowserRouter>
+//           <App />
+//         </BrowserRouter>
+//       </PersistGate>
+//     </Provider>
+//   </React.StrictMode>
+// );
+
+
+
+
+
+// import { useState } from "react";
+// import { Routes, Route } from "react-router-dom";
+// import "./App.css";
+
+// import Header from "./components/Header/Header";
+// import SideMenu from "./components/SideMenu/SideMenu";
+
+// //Pages;
+// import P_Home from "./pages/Home/P_Home";
+// import P_Movies from "./pages/P_Movies";
+// import P_Series from "./pages/P_Series";
+// import P_Anime from "./pages/P_Anime";
+// import P_Animation from "./pages/P_Animation";
+// import P_Actors from "./pages/P_Actors";
+// import P_Cinema from "./pages/P_Cinema";
+// import P_Upcomings from "./pages/P_Upcomings";
+// import P_Bookmarks from "./pages/P_Bookmarks";
+// import P_Downloads from "./pages/P_Downloads";
+// import P_Filter from "./pages/P_Filter";
+// import P_Movie from "./pages/Movie/P_Movie";
+// import P_Error from "./pages/P_Error";
+
+// import DB_Movies from "./assets/data/DB_Movies.json";
+
+// function App() {
+//   return (
+//     <>
+//       <SideMenu />
+//       <section className="content">
+//         <Header />
+//         <main className="main">
+//           <Routes>
+//             <Route path="/" element={<P_Home />} />
+//             <Route path="/movies" element={<P_Movies />} />
+//             {DB_Movies.map((movie) => {
+//               return (
+//                 <Route path={movie.path} element={<P_Movie movie={movie} />} />
+//               );
+//             })}
+//             {/* <Route
+//               path={DB_Movies[1].path}
+//               element={<P_Movie movie={DB_Movies[1]} />}
+//             /> */}
+//             <Route path="/series" element={<P_Series />} />
+//             <Route path="/anime" element={<P_Anime />} />
+//             <Route path="/animation" element={<P_Animation />} />
+//             <Route path="/actors" element={<P_Actors />} />
+//             <Route path="/cinema" element={<P_Cinema />} />
+//             <Route path="/upcomings" element={<P_Upcomings />} />
+//             <Route path="/bookmarks" element={<P_Bookmarks />} />
+//             <Route path="/downloads" element={<P_Downloads />} />
+//             <Route path="/filter" element={<P_Filter />} />
+//             <Route path="*" element={<P_Error />} />
+//           </Routes>
+//         </main>
+//       </section>
+//     </>
+//   );
+// }
+
+// export default App;
+// // const [routes, setRoutes] = useState([
+// //   { path: "/", element: <P_Home /> },
+// //   { path: "/movies", element: <P_Movies /> },
+// //   { path: "/actors", element: <P_Actors /> },
+// //   { path: "/series", element: <P_Series /> },
+// //   { path: "/anime", element: <P_Anime /> },
+// //   { path: "/animation/*", element: <P_Animation /> },
+// //   { path: "/actors", element: <P_Actors /> },
+// //   { path: "/cinema", element: <P_Cinema /> },
+// //   { path: "/upcomings", element: <P_Upcomings /> },
+// //   { path: "/bookmarks", element: <P_Bookmarks /> },
+// //   { path: "/downloads", element: <P_Downloads /> },
+// //   { path: "/filter", element: <P_Filter /> },
+// //   { path: "movies/movie", element: <P_Movie /> },
+// //   { path: "*", element: <P_Error /> },
+// // ]);
+// {
+//   /* <Route path="movies" element={<P_Movies />}>
+//               <Route path=":movieId" element={<P_Movie />} />
+//             </Route> */
+// }
+// {
+//   /* {routes.map((route, index) => {
+//               return (
+//                 <Route key={index} path={route.path} element={route.element} />
+//               );
+//             })} */
+// }
+
+// import "./App.css";

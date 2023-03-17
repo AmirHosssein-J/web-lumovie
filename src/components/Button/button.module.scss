@@ -1,0 +1,97 @@
+@use "/src/sass/helpers/" as *;
+
+.button {
+    @include row-center;
+    background-color: $clr-bg-primary;
+    transition: 0.1s all cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    position: relative;
+
+    &:focus-visible {
+        outline: 1px solid $clr-primary;
+    }
+
+    .alert {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: rem(1) rem(6);
+        border-radius: rem(100);
+        font-size: rem(10);
+        font-weight: 700;
+        background-color: $clr-primary;
+        z-index: 200;
+    }
+
+    //Primary Storke Buttons like Icon Filters
+    &--border {
+        @include border;
+    }
+
+    //a Placeholder of Icons
+    &--iconbox {
+        @include row-center;
+    }
+
+    //Main Call To Action Button
+    &--cta {
+        padding-block: rem(12);
+        padding-inline: rem(24);
+        color: $clr-bg-primary;
+        font-weight: 700;
+        font-size: rem(14);
+        background-color: $clr-primary;
+        border-radius: rem(100);
+
+        &:hover {
+            box-shadow: 0 0 1rem -0.125rem $clr-primary;
+        }
+    }
+
+    //Links Like See More
+    &--link {
+        @include row-center;
+        padding-block: rem(4);
+        gap: rem(8);
+        color: $clr-link;
+        font-size: rem(14);
+        font-weight: 400;
+
+        &:hover {
+            //icon
+            svg path {
+                stroke: $clr-link--active;
+            }
+
+            //text
+            color: $clr-link--active;
+        }
+
+        &--underline {
+            color: $clr-white;
+            font-size: rem(15);
+            border-bottom: 1px solid $clr-white;
+
+            &:hover {
+                color: $clr-primary;
+                border-bottom: 1px solid $clr-primary;
+            }
+        }
+    }
+
+    //Button Like Actors And Secondry Actions
+    &--stroke {
+        padding-block: rem(10);
+        padding-inline: rem(16);
+        color: $clr-text-h6;
+        font-size: rem(14);
+        font-weight: 500;
+        background-color: $clr-bg-transparent;
+        border: 1px solid $clr-border-secondry;
+        border-radius: rem(100);
+
+        &:hover {
+            background-color: $clr-bg-trinary;
+        }
+    }
+}

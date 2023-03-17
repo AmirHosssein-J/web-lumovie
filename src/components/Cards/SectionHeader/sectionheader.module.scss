@@ -1,0 +1,35 @@
+@use "../../../sass/helpers/" as *;
+
+.section-header {
+    @include mq("tablet") {
+        flex-direction: column;
+        background-attachment: red;
+    }
+    @include row-center--a;
+    justify-content: space-between;
+    width: 100%;
+
+    .details {
+        @include row-center;
+        gap: rem(32);
+
+        .title {
+            color: $clr-text-h3;
+            font-size: rem(24);
+            font-weight: 600;
+        }
+    }
+
+    .arrows {
+        @include row-center;
+        gap: 1em;
+
+        .arrow-prev {
+            rotate: 90deg;
+        }
+
+        .arrow-next {
+            rotate: -90deg;
+        }
+    }
+}

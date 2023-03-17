@@ -1,0 +1,39 @@
+@use "/src/sass/helpers" as *;
+
+.side-menu {
+    @include col;
+    @include scroll-bar;
+    position: relative;
+    min-width: rem(264);
+    height: 100%;
+    padding-block: 1.3rem;
+    border-right: 1px solid $clr-border-primary;
+    background-color: $clr-bg-primary;
+    box-shadow: 0.5rem 0 1.25rem $clr-bg-primary;
+    transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1) all;
+    z-index: 1001;
+
+    &--closed {
+        min-width: rem(66);
+    }
+
+    //Menu Toggle Button
+    .menu-toggle {
+        position: absolute;
+        right: -1em;
+        top: 1.6em;
+
+        //Icon
+        svg {
+            rotate: 90deg;
+            transition: 0.2s 0.2s ease-in all;
+        }
+
+        //Menu When Is Closed
+        &--closed {
+            svg {
+                rotate: -90deg;
+            }
+        }
+    }
+}

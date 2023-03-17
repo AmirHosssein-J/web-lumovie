@@ -1,0 +1,41 @@
+@use "/src/sass/helpers/" as *;
+
+.cinema {
+    @include quick-access-card;
+
+    &--placeholder {
+        max-width: rem(400);
+
+        .content {
+            @include col-center;
+            gap: rem(12);
+            padding-block: 2em;
+            z-index: 2;
+
+            .head {
+                @include col-center;
+                gap: 1em;
+                margin-block: 0.5em;
+            }
+
+            .icon {
+                width: rem(24);
+                height: rem(24);
+                path {
+                    stroke: $clr-white;
+                }
+            }
+
+            h5 {
+                color: $clr-text-p;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .icon-placeholder {
+        position: absolute;
+        bottom: -2em;
+        left: -5em;
+    }
+}

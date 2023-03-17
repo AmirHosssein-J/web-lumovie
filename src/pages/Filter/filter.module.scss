@@ -1,0 +1,21 @@
+@use "/src/sass/helpers" as *;
+
+.filter {
+    @include row;
+    height: 100%;
+
+    .content {
+        @include scroll-bar;
+        overflow-y: scroll;
+        padding: 1em;
+        height: 100%;
+        width: 100%;
+
+        .movies {
+            @include row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+    }
+}

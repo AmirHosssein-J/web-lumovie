@@ -1,0 +1,7 @@
+/// index.scss for gathering folder entire files
+//to 1 page and then use it in other pages like main.scss we use it like this
+
+//@use 'helpers' as *;
+
+@forward "reset";
+@forward "global";

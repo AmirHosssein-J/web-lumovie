@@ -1,0 +1,59 @@
+@use "../../../sass/helpers/" as *;
+
+.container {
+    @include row-center;
+    max-width: rem(180);
+    min-width: rem(200);
+    height: 100%;
+    border-radius: 100%;
+
+    &:hover .profile {
+        .arrow-button {
+            rotate: 180deg;
+        }
+        .dropdown {
+            display: flex;
+        }
+    }
+
+    .profile {
+        @include row-center--a;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+        max-height: rem(60);
+        padding-inline: rem(12);
+        padding-block: rem(10);
+        border-radius: rem(100);
+        cursor: pointer;
+
+        .dropdown {
+            display: none;
+            top: 4.2em;
+            transition: 0.2s ease-in all;
+        }
+
+        .user {
+            @include row-center;
+            gap: rem(8);
+
+            &-pic {
+                width: rem(42);
+                height: rem(42);
+                border-radius: rem(100);
+                border: 1px solid $clr-border-primary;
+            }
+
+            &-name {
+                max-width: rem(90);
+                color: $clr-text-h5;
+                font-size: rem(14);
+                font-weight: 600;
+                line-height: 1;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}

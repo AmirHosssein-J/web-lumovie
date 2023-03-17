@@ -1,0 +1,686 @@
+{
+  "id": 0,
+  "title": "",
+  "genres": [
+    { "id": 0, "name": "", "page": "/genre/" },
+    { "id": 1, "name": "", "page": "/genre/" }
+  ],
+  "releasedDate": "2022",
+  "runTime": "h m",
+  "rated": "R",
+  "imdbScore": 0,
+  "path": "",
+  "type": "movie",
+  "poster": "/src/assets/poster/Poster_.jpg",
+  "widePoster": "/src/assets/poster/SC_.jpg",
+  "isBookmarked": false,
+  "directors": [{ "id": 0, "name": "", "page": "/director/" }],
+  "actors": [
+    {
+      "id": 0,
+      "name": "",
+      "characterName": "",
+      "page": "/actor/"
+    },
+    {
+      "id": 1,
+      "name": "",
+      "characterName": "",
+      "page": "/actor/"
+    },
+    {
+      "id": 2,
+      "name": "",
+      "characterName": "",
+      "page": "/actor/"
+    }
+  ],
+  "countries": [
+    {
+      "id": 0,
+      "name": "USA",
+      "page": "/country/USA",
+      "flag": "/src/assets/country-flag/USA.png"
+    }
+  ],
+  "story": ""
+}
+"new-movies": [
+    {
+      "id": 0,
+      "title": "The Menu",
+      "genres": [
+        { "id": 0, "name": "Horror", "page": "genre/horror" },
+        { "id": 1, "name": "Comedy", "page": "genre/comedy" }
+      ],
+      "releasedDate": "2022",
+      "runTime": "1h 47m",
+      "rated": "R",
+      "imdbScore": 7.3,
+      "path": "the-menu-2022",
+      "type": "movie",
+      "poster": "/src/assets/poster/Poster_TheMenu.jpg",
+      "widePoster": "/src/assets/poster/SC_TheMenu.jpg",
+      "isBookmarked": false,
+      "directors": [
+        { "id": 0, "name": "Mark Mylod", "page": "director/mark-mylod" }
+      ],
+      "actors": [
+        {
+          "id": 0,
+          "name": "Ralph Fiennes",
+          "characterName": "Chef Slowik",
+          "page": "/actor/ralph-fiennes"
+        },
+        {
+          "id": 1,
+          "name": "Anya Taylor-Joy",
+          "characterName": "Margot",
+          "page": "/actor/anya-taylor-joy"
+        },
+        {
+          "id": 2,
+          "name": "Nicholas Hoult",
+          "characterName": "Tyler",
+          "page": "/actor/nicholas-hoult"
+        }
+      ],
+      "countries": [
+        {
+          "id": 0,
+          "name": "USA",
+          "page": "country/USA",
+          "flag": "/src/assets/country-flag/USA.png"
+        }
+      ],
+      "story": "A young couple travels to a remote island to eat at an exclusive restaurant where the chef has prepared a lavish menu, with some shocking surprises."
+    },
+    {
+      "id": 1,
+      "title": "The Pale Blue Eye",
+      "genres": [
+        { "id": 0, "name": "Mystery", "genrePage": "genre/mystery" },
+        { "id": 1, "name": "Thriller", "genrePage": "genre/thriller" }
+      ],
+      "releasedDate": "2022",
+      "runTime": "2h 8m",
+      "rated": "R",
+      "imdbScore": 6.7,
+      "path": "the-pale-blue-eye-2022",
+      "type": "movie",
+      "poster": "/src/assets/poster/Poster_ThePaleBlueEye.jpg",
+      "widePoster": "/src/assets/poster/SC_ThePaleBlueEye.jpg",
+      "isBookmarked": false,
+      "directors": [
+        { "id": 0, "name": "Scott Cooper", "page": "director/scott-cooper" }
+      ],
+      "actors": [
+        {
+          "id": 0,
+          "name": "Christian Bale",
+          "characterName": "Augustus Landor",
+          "actorPage": "/actor/christian-bale"
+        },
+        {
+          "id": 1,
+          "name": "Gillian Anderson",
+          "characterName": "Mrs. Julia Marquis",
+          "actorPage": "/actor/gillian-anderson"
+        },
+        {
+          "id": 2,
+          "name": "Harvey Melling",
+          "characterName": "Edgar Allan Poe",
+          "actorPage": "/actor/harvey-melling"
+        }
+      ],
+
+      "countries": [
+        {
+          "id": 0,
+          "name": "USA",
+          "page": "country/USA",
+          "flag": "/src/assets/country-flag/USA.png"
+        }
+      ],
+      "story": "Veteran detective Augustus Landor investigates a series of grisly murders with the help of a young cadet who will eventually go on to become the world-famous author Edgar Allan Poe."
+    },
+    {
+      "id": 2,
+      "title": "Whina",
+      "genres": [{ "id": 0, "name": "Drama", "genrePage": "genre/drama" }],
+      "releasedDate": "2022",
+      "runTime": "1h 52m",
+      "rated": "PG",
+      "imdbScore": 7.7,
+      "path": "whina-2022",
+      "type": "movie",
+      "poster": "/src/assets/poster/Poster_Whina.jpg",
+      "widePoster": "/src/assets/poster/SC_Whina.jpg",
+      "isBookmarked": false,
+      "directors": [
+        {
+          "id": 0,
+          "name": "James Napier Robertson",
+          "page": "director/james-napier-robertson"
+        },
+        {
+          "id": 1,
+          "name": "Paula Whetu Jones",
+          "page": "director/paula-whetu-jones"
+        }
+      ],
+      "actors": [
+        {
+          "id": 0,
+          "name": "Rena Owen",
+          "characterName": "Older Whina Cooper",
+          "actorPage": "/actor/rena-owen"
+        },
+        {
+          "id": 1,
+          "name": "James Rolleston",
+          "characterName": "Gabriel",
+          "actorPage": "/actor/james-rolleston"
+        },
+        {
+          "id": 2,
+          "name": "Miriama McDowell",
+          "characterName": "Younger Whina Cooper",
+          "actorPage": "/actor/miriama-mcDowell"
+        }
+      ],
+      "countries": [
+        {
+          "id": 0,
+          "name": "NewZealand",
+          "page": "country/NewZealand",
+          "flag": "/src/assets/country-flag/NewZealand.png"
+        }
+      ],
+      "story": "A biopic of the trailblazing Maori leader, Dame Whina Cooper, whose extraordinary life saw her break gender boundaries, champion the rights of Maori, and fight for the land - all the while staying true to her heart and her beliefs."
+    },
+    {
+      "id": 3,
+      "title": "The Banshees of Inisherin",
+      "genres": [
+        { "id": 0, "name": "Comedy", "genrePage": "genre/comedy" },
+        { "id": 1, "name": "Drama", "genrePage": "genre/drama" }
+      ],
+      "releasedDate": "2022",
+      "runTime": "1h 54m",
+      "rated": "R",
+      "imdbScore": 7.8,
+      "path": "the-banshees-of-inisherin-2022",
+      "type": "movie",
+      "poster": "/src/assets/poster/The Banshees of Inisherin.png",
+      "widePoster": "/src/assets/poster/SC_TheBansheesofInisherin.jpg",
+      "isBookmarked": false,
+      "directors": [
+        {
+          "id": 0,
+          "name": "Martin McDonagh",
+          "page": "director/martin-mcconagh"
+        }
+      ],
+      "actors": [
+        {
+          "id": 0,
+          "name": "Colin Farrell",
+          "characterName": "Pádraic Súilleabháin",
+          "actorPage": "/actor/colin-farrell"
+        },
+        {
+          "id": 1,
+          "name": "Brendan Gleeson",
+          "characterName": "Colm Doherty",
+          "actorPage": "/actor/brendan-gleeson"
+        },
+        {
+          "id": 2,
+          "name": "Kerry Condon",
+          "characterName": "Siobhán Súilleabháin",
+          "actorPage": "/actor/kerry-condon"
+        }
+      ],
+      "countries": [
+        {
+          "id": 0,
+          "name": "UK",
+          "page": "country/UK",
+          "flag": "/src/assets/country-flag/UK.jpg"
+        }
+      ],
+      "story": "Two lifelong friends find themselves at an impasse when one abruptly ends their relationship, with alarming consequences for both of them."
+    },
+    {
+      "id": 4,
+      "title": "Luckiest Girl Alive",
+      "genres": [
+        { "id": 0, "name": "Mystery", "genrePage": "genre/mystery" },
+        { "id": 1, "name": "Drama", "genrePage": "genre/drama" }
+      ],
+      "releasedDate": "2022",
+      "runTime": "1h 55m",
+      "rated": "R",
+      "imdbScore": 6.4,
+      "path": "luckiest-girl-alive-2022",
+      "type": "movie",
+      "poster": "/src/assets/poster/Luckiest Girl Alive.png",
+      "widePoster": "/src/assets/poster/SC_TheLuckiestGirlAlive.jpg",
+      "isBookmarked": false,
+      "directors": [
+        { "id": 0, "name": "Mike Barker", "page": "director/mike-barker" }
+      ],
+      "actors": [
+        {
+          "id": 0,
+          "name": "Mila Kunis",
+          "characterName": "Ani Fanelli",
+          "actorPage": "/actor/mila-kunis"
+        },
+        {
+          "id": 1,
+          "name": "Chiara Aurelia",
+          "characterName": "Young Ani",
+          "actorPage": "/actor/chiara-aurelia"
+        },
+        {
+          "id": 2,
+          "name": "Finn Witrrock",
+          "characterName": "Luke Harrison",
+          "actorPage": "/actor/finn-witrrock"
+        }
+      ],
+      "countries": [
+        {
+          "id": 0,
+          "name": "USA",
+          "page": "country/USA",
+          "flag": "/src/assets/country-flag/USA.png"
+        }
+      ],
+      "story": "A writer's perfectly crafted New York City life starts to unravel when a true-crime documentary forces her to confront her harrowing high school history and question the choices she made as a teenager."
+    },
+    {
+      "id": 5,
+      "title": "Black Adam",
+      "genres": [
+        { "id": 0, "name": "Action", "genrePage": "genre/action" },
+        { "id": 1, "name": "Fantasy", "genrePage": "genre/fantasy" }
+      ],
+      "releasedDate": "2022",
+      "runTime": "2h 5m",
+      "rated": "FSK 12",
+      "imdbScore": 6.4,
+      "path": "black-adam-2022",
+      "type": "movie",
+      "poster": "/src/assets/poster/Black Adam.png",
+      "widePoster": "/src/assets/poster/SC_BlackAdam.jpg",
+      "isBookmarked": false,
+      "directors": [
+        {
+          "id": 0,
+          "name": "Jaume Collet-Serra",
+          "page": "director/jaume-collet-serra"
+        }
+      ],
+      "actors": [
+        {
+          "id": 0,
+          "name": "Dwayne Johnson",
+          "characterName": "Black Adam",
+          "actorPage": "/actor/dwayne-johnson"
+        },
+        {
+          "id": 1,
+          "name": "Sarah Shahi",
+          "characterName": "Isis",
+          "actorPage": "/actor/sarah-shahi"
+        },
+        {
+          "id": 2,
+          "name": "Pierce Bronsnan",
+          "characterName": "Doctor Fate",
+          "actorPage": "/actor/pierce-bronsnan"
+        }
+      ],
+      "countries": [
+        {
+          "id": 0,
+          "name": "USA",
+          "page": "country/USA",
+          "flag": "/src/assets/country-flag/USA.png"
+        }
+      ],
+      "story": "After being bestowed with godly powers and imprisoned for it, Black Adam is liberated from his earthly binds to unleash his fury on the modern world."
+    },
+    {
+      "id": 6,
+      "title": "Bullet Train",
+      "genres": [
+        { "id": 0, "name": "Action", "genrePage": "genre/action" },
+        { "id": 1, "name": "Thriller", "genrePage": "genre/thriller" }
+      ],
+      "releasedDate": "2022",
+      "runTime": "2h 6m",
+      "rated": "FSK 16",
+      "imdbScore": 7.3,
+      "path": "bullet-train-2022",
+      "type": "movie",
+      "poster": "/src/assets/poster/Bullet Train.png",
+      "widePoster": "/src/assets/poster/SC_TheBulletTrain.jpg",
+      "isBookmarked": false,
+      "directors": [
+        { "id": 0, "name": "David Leitch", "page": "director/david-leitch" }
+      ],
+      "actors": [
+        {
+          "id": 0,
+          "name": "Brad Pitt",
+          "characterName": "Ladybug",
+          "actorPage": "/actor/brad-pitt"
+        },
+        {
+          "id": 1,
+          "name": "Aaron Taylor-Johnson",
+          "characterName": "Tangerine",
+          "actorPage": "/actor/aaron-taylor-johnson"
+        },
+        {
+          "id": 2,
+          "name": "Joey King",
+          "characterName": "The Prince",
+          "actorPage": "/actor/joey-king"
+        }
+      ],
+      "countries": [
+        {
+          "id": 0,
+          "name": "USA",
+          "page": "country/USA",
+          "flag": "/src/assets/country-flag/USA.png"
+        }
+      ],
+      "story": "Ladybug is an unlucky assassin who's determined to do his job peacefully after one too many gigs has gone off the rails. Fate, however, may have other plans as his latest mission puts him on a collision course with lethal adversaries from around the globe -- all with connected yet conflicting objectives -- on the world's fastest train."
+    },
+    {
+      "id": 7,
+      "title": "The Gray Man",
+      "genres": [
+        { "id": 0, "name": "Action", "genrePage": "genre/action" },
+        { "id": 1, "name": "Thriller", "genrePage": "genre/thriller" }
+      ],
+      "releasedDate": "2022",
+      "runTime": "2h 2m",
+      "rated": "R",
+      "imdbScore": 6.5,
+      "path": "the-gray-man-2022",
+      "type": "movie",
+      "poster": "/src/assets/poster/Poster_TheGrayMan.jpg",
+      "widePoster": "/src/assets/poster/SC_TheGrayMan.jpg",
+      "isBookmarked": false,
+      "directors": [
+        { "id": 0, "name": "Joe Russo", "page": "director/joe-russo" },
+        { "id": 0, "name": "Anthony Russo", "page": "director/anthony-russo" }
+      ],
+      "actors": [
+        {
+          "id": 0,
+          "name": "Ryan Gosling",
+          "characterName": "Siz",
+          "actorPage": "/actor/ryan-gosling"
+        },
+        {
+          "id": 1,
+          "name": "Ana de Armas",
+          "characterName": "Dani Miranda",
+          "actorPage": "/actor/ana-de-armas"
+        },
+        {
+          "id": 2,
+          "name": "Chris Evans",
+          "characterName": "Lioyd Hansen",
+          "actorPage": "/actor/chris-evans"
+        }
+      ],
+      "countries": [
+        {
+          "id": 0,
+          "name": "USA",
+          "page": "country/USA",
+          "flag": "/src/assets/country-flag/USA.png"
+        }
+      ],
+      "story": "When the CIA's top asset -- his identity known to no one -- uncovers agency secrets, he triggers a global hunt by assassins set loose by his ex-colleague."
+    },
+    {
+      "id": 8,
+      "title": "The Green Knight",
+      "genres": [
+        { "id": 0, "name": "Adventure", "genrePage": "genre/adventure" },
+        { "id": 1, "name": "Drama", "genrePage": "genre/drama" }
+      ],
+      "releasedDate": "2022",
+      "runTime": "2h 5m",
+      "rated": "R",
+      "imdbScore": 6.6,
+      "path": "the-green-knight-2022",
+      "type": "movie",
+      "poster": "/src/assets/poster/Poster_TheGreenKnight.jpg",
+      "widePoster": "/src/assets/poster/SC_TheGreenKnight.jpg",
+      "isBookmarked": false,
+      "directors": [
+        { "id": 0, "name": "David Lowery", "page": "director/david-lowery" }
+      ],
+      "actors": [
+        {
+          "id": 0,
+          "name": "Dev Patel",
+          "characterName": "Gawain",
+          "actorPage": "/actor/dev-Patel"
+        },
+        {
+          "id": 1,
+          "name": "Alicia Vikander",
+          "characterName": "Essel",
+          "actorPage": "/actor/alicia-vikander"
+        },
+        {
+          "id": 2,
+          "name": "Barry Keoghan",
+          "characterName": "Scavenger",
+          "actorPage": "/actor/barry-keoghan"
+        }
+      ],
+      "countries": [
+        {
+          "id": 0,
+          "name": "USA",
+          "page": "country/USA",
+          "flag": "/src/assets/country-flag/USA.png"
+        }
+      ],
+      "story": "When the CIA's top asset -- his identity known to no one -- uncovers agency secrets, he triggers a global hunt by assassins set loose by his ex-colleague."
+    },
+    {
+      "id": 9,
+      "title": "Glass Onion: A Knives Out Mystery",
+      "releasedDate": "2022",
+      "genres": [
+        { "id": 0, "name": "Mystery", "genrePage": "genre/mystery" },
+        { "id": 1, "name": "Crime", "genrePage": "genre/crime" }
+      ],
+      "runTime": "2h 19m",
+      "rated": "PG-13",
+      "imdbScore": 7.2,
+      "path": "glass-onion-a-knives-out-mystery-2022",
+      "type": "movie",
+      "poster": "/src/assets/poster/Poster_GlassOnionAKnivesOutMystery.jpg",
+      "widePoster": "/src/assets/poster/SC_GlassOnionAKnivesOutMystery.jpg",
+      "isBookmarked": false,
+      "directors": [
+        { "id": 0, "name": "Rian Johnson", "page": "director/rian-johnson" }
+      ],
+      "actors": [
+        {
+          "id": 0,
+          "name": "Daniel Craig",
+          "characterName": "Detective Benoit Blanc",
+          "actorPage": "/actor/daniel-craig"
+        },
+        {
+          "id": 1,
+          "name": "Edward Norton",
+          "characterName": "Miles Bron",
+          "actorPage": "/actor/edward-norton"
+        },
+        {
+          "id": 2,
+          "name": "Madelyn Cline",
+          "characterName": "Whiskey",
+          "actorPage": "/actor/madelyn-cline"
+        }
+      ],
+      "countries": [
+        {
+          "id": 0,
+          "name": "USA",
+          "page": "country/USA",
+          "flag": "/src/assets/country-flag/USA.png"
+        }
+      ],
+      "story": "Tech billionaire Miles Bron invites his friends for a getaway on his private Greek island. When someone turns up dead, Detective Benoit Blanc is put on the case."
+    }
+  ],
+  "new-series": [
+    [
+      {
+        "id": 0,
+        "title": "House of the Dragon",
+        "szn": "1",
+        "ep": "4",
+        "href": "/series/house-of-the-dragon-2022",
+        "poster": "/src/assets/poster/HouseOfTheDragon.png",
+        "whatsNew": "New Episode"
+      },
+      {
+        "id": 1,
+        "title": "1899",
+        "szn": "1",
+        "ep": null,
+        "href": "/series/1899-2022",
+        "poster": "/src/assets/poster/1899.png",
+        "whatsNew": "All Episodes"
+      },
+      {
+        "id": 2,
+        "title": "West World",
+        "szn": "3",
+        "ep": "7",
+        "href": "/series/west-world-2016",
+        "poster": "/src/assets/poster/WestWorld.png",
+        "whatsNew": "New Episode"
+      },
+      {
+        "id": 3,
+        "title": "Better Call Saul",
+        "szn": "5",
+        "ep": "2",
+        "href": "/series/better-call-saul-2015",
+        "poster": "/src/assets/poster/BetterCallSaul.png",
+        "whatsNew": "New Episode"
+      },
+      {
+        "id": 4,
+        "title": "Wednesday",
+        "szn": "1",
+        "ep": null,
+        "href": "/series/wednesday-2022",
+        "poster": "/src/assets/poster/Wednesday.png",
+        "whatsNew": "All Episodes"
+      },
+      {
+        "id": 5,
+        "title": "The Last of Us",
+        "szn": "1",
+        "ep": "3",
+        "href": "/series/the-last-of-us-2022",
+        "poster": "/src/assets/poster/TLOU.png",
+        "whatsNew": "New Episode"
+      }
+    ]
+  ],
+  "upcomings": [
+    [
+      {
+        "id": 0,
+        "title": "John Wick: Chapter 4",
+        "releaseDate": "March 24, 2023",
+        "genres": [
+          { "id": 0, "name": "Action", "genrePage": "genre/action" },
+          { "id": 1, "name": "Neo-noir", "genrePage": "genre/neo-noir" }
+        ],
+        "time": null,
+        "poster": "/src/assets/poster/John Wick_ Chapter 4.png",
+        "isTrailer": true
+      },
+      {
+        "id": 1,
+        "title": "Spider-Man: Across the Spider-Verse",
+        "releaseDate": "June 2, 2023",
+        "genres": [
+          { "id": 0, "name": "Action", "genrePage": "genre/action" },
+          { "id": 1, "name": "Adventure", "genrePage": "genre/adventure" }
+        ],
+        "time": "1h 55m",
+        "poster": "/src/assets/poster/Spider-Man_ Across the Spider-Verse.png",
+        "isTrailer": true
+      },
+      {
+        "id": 2,
+        "title": "The Nun 2",
+        "releaseDate": "September 8, 2023",
+        "genres": [{ "id": 0, "name": "Horror", "genrePage": "genre/horror" }],
+        "time": null,
+        "poster": "/src/assets/poster/The Nun 2.png",
+        "isTrailer": true
+      },
+      {
+        "id": 3,
+        "title": "Dune: Part Two",
+        "releaseDate": "November 3, 2023",
+        "genres": [
+          { "id": 0, "name": "Sci-fi", "genrePage": "genre/sci-fi" },
+          { "id": 1, "name": "Adventure", "genrePage": "genre/adventure" }
+        ],
+        "time": null,
+        "poster": "/src/assets/poster/Dune_ Part Two.png",
+        "isTrailer": true
+      },
+      {
+        "id": 4,
+        "title": "Fast X",
+        "releaseDate": "May 19, 2023",
+        "genres": [
+          { "id": 0, "name": "Action", "genrePage": "genre/action" },
+          { "id": 1, "name": "Adventure", "genrePage": "genre/adventure" }
+        ],
+        "time": null,
+        "poster": "/src/assets/poster/Fast X.png",
+        "isTrailer": false
+      },
+      {
+        "id": 5,
+        "title": "Mission:Impossible – Dead Reckoning Part 1",
+        "releaseDate": "July 14, 2023",
+        "genres": [
+          { "id": 0, "name": "Action", "genrePage": "genre/action" },
+          { "id": 1, "name": "Adventure", "genrePage": "genre/adventure" }
+        ],
+        "time": null,
+        "poster": "/src/assets/poster/Mission_ Impossible – Dead Reckoning Part One.png",
+        "isTrailer": true
+      }
+    ]
+  ],

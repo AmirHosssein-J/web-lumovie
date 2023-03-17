@@ -1,0 +1,12 @@
+@use "../../sass/helpers/" as *;
+
+.wrapper {
+    background-color: $clr-bg-primary;
+    border: 1px solid $clr-border-primary;
+}
+
+.container,
+.wrapper {
+    width: 100%;
+    transition: 0.1s all cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}

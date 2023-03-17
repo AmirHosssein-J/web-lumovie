@@ -1,0 +1,32 @@
+//Global styles in all pages
+//like when you have max-width of 1200px for all of your pages
+@use "../helpers" as *;
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: $clr-bg-primary;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    scroll-behavior: smooth;
+}
+
+#root {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.content {
+    @include col;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    .main {
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+    }
+}

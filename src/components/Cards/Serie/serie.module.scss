@@ -1,0 +1,56 @@
+@use "/src/sass/helpers/" as *;
+
+.series {
+    @include col;
+    width: rem(320);
+    height: 100%;
+    margin-block: rem(8);
+    max-height: rem(186);
+    border-radius: rem(14);
+    overflow: hidden;
+
+    .poster {
+        @include row;
+        width: 100%;
+        max-height: rem(110);
+
+        .img {
+            width: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+            border-radius: rem(10) rem(10) 0 0;
+        }
+    }
+
+    .info {
+        width: 100%;
+        max-height: rem(74);
+        padding-block: rem(14);
+        padding-inline: rem(18);
+        .title {
+            color: $clr-text-h4;
+            font-size: rem(16);
+            font-weight: 600;
+
+            &:hover {
+                color: $clr-primary;
+            }
+        }
+        .details {
+            @include row-center--a;
+            justify-content: space-between;
+            width: 100%;
+
+            .ep {
+                color: $clr-text-h6;
+                font-size: rem(14);
+                font-weight: 400;
+            }
+            .whats-new {
+                color: $clr-primary;
+                font-size: rem(14);
+                font-weight: 700;
+            }
+        }
+    }
+}

@@ -1,0 +1,5 @@
+@use "/src/sass/helpers/" as *;
+
+.upcomings {
+    @include quick-access-card;
+}

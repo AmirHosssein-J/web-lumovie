@@ -1,0 +1,36 @@
+@use "/src/sass/helpers" as *;
+
+.header {
+    @include row-center--a;
+    justify-content: space-between;
+    width: 100%;
+    min-height: rem(84);
+    padding-inline: rem(42);
+    background-color: $clr-bg-primary;
+    border-bottom: 1px solid $clr-border-primary;
+    z-index: 1000;
+
+    .buttons {
+        @include row-center;
+        gap: rem(8);
+        position: relative;
+        z-index: 100;
+
+        .button:hover,
+        .button:focus-visible {
+            //Tootlip
+            div:nth-child(1) {
+                display: flex;
+                top: 3.8em;
+                width: -webkit-fit-content;
+                width: -moz-fit-content;
+                width: fit-content;
+            }
+
+            //Icon
+            svg path {
+                stroke: $clr-icon;
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+@use "/src/sass/helpers" as *;
+
+.imdb,
+.genres,
+.releaseDate,
+.time,
+.rated {
+    color: $clr-link;
+    font-size: rem(13);
+    font-weight: 400;
+
+    &:hover {
+        color: $clr-link--active;
+    }
+}
+
+a[href]:focus-visible {
+    outline: 1px solid $clr-primary;
+}
+
+.title {
+    min-height: rem(68);
+    color: $clr-text-h3 !important;
+    font-size: rem(16);
+    font-weight: 700;
+    line-height: 1.1;
+
+    &:hover {
+        color: $clr-primary;
+    }
+}
+
+.genres {
+    @include row;
+    flex-wrap: wrap;
+    gap: 0.3em;
+}
+
+.imdb {
+    @include row;
+    gap: rem(6);
+
+    &-score {
+        color: $clr-white;
+        font-size: rem(12);
+        font-weight: 800;
+    }
+}
+
+.rated {
+    padding-block: rem(1);
+    padding-inline: rem(4);
+    color: $clr-link;
+    border: 1px solid $clr-link;
+}

@@ -1,0 +1,28 @@
+@use "../../../sass/helpers/" as *;
+
+.tooltip {
+    display: none;
+    position: absolute;
+    max-width: fit-content;
+    padding-block: rem(4);
+    padding-inline: rem(6);
+    border-radius: rem(6);
+    top: 3.8em;
+
+    &-text {
+        @include row-center;
+        position: relative;
+        color: $clr-text-h6;
+        font-weight: 400;
+        font-size: rem(14);
+
+        &::after {
+            content: "";
+            position: absolute;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid $clr-primary;
+            top: -0.8em;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+@use "../../../sass/helpers/" as *;
+
+.list {
+    @include col;
+    align-items: flex-start;
+    height: fit-content;
+    width: 100%;
+    position: absolute;
+    padding: rem(10);
+    right: 0;
+    gap: rem(4);
+    border-radius: rem(20);
+    z-index: 100;
+
+    &-link {
+        @include row-center--a;
+        width: 100%;
+        padding-block: rem(6);
+        padding-inline: rem(8);
+        gap: rem(10);
+        color: $clr-nav;
+        font-size: rem(15);
+        font-weight: 500;
+        border-radius: rem(8);
+        transition: 50ms ease-in all;
+
+        &:focus-visible {
+            outline: 1px solid $clr-primary;
+        }
+
+        &:last-child {
+            margin-top: 1em;
+        }
+
+        svg {
+            width: rem(24);
+            height: rem(24);
+        }
+
+        &:hover {
+            color: $clr-nav--active;
+
+            svg path {
+                stroke: $clr-primary;
+            }
+        }
+    }
+}

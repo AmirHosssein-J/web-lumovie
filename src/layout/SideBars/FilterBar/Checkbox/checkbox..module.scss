@@ -1,0 +1,54 @@
+@use "/src/sass/helpers/" as *;
+
+.checkbox {
+    @include row-center--a;
+    gap: rem(8);
+
+    label {
+        @include row-center--a;
+        justify-content: space-between;
+        width: 100%;
+        color: $clr-text-h5;
+        font-weight: 300;
+        font-size: rem(13);
+        text-transform: capitalize;
+        cursor: pointer;
+
+        img {
+            width: rem(18);
+            margin-right: 0.5em;
+        }
+    }
+
+    input[type="checkbox"] {
+        @include row-center;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        min-width: rem(20);
+        height: rem(20);
+        background-color: $clr-bg-primary;
+        border: rem(1) solid $clr-border-secondry;
+        border-radius: rem(6);
+        cursor: pointer;
+        transition: 120ms border ease-in-out;
+
+        &::before {
+            content: "";
+            width: rem(10);
+            height: rem(10);
+            border-radius: 1em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em $clr-primary;
+        }
+
+        &:hover,
+        &:focus-visible {
+            border: rem(1) solid $clr-primary;
+        }
+        &:checked::before {
+            transform: scale(1);
+        }
+    }
+}

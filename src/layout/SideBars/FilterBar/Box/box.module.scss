@@ -1,0 +1,57 @@
+@use "/src/sass/helpers" as *;
+
+.box {
+    @include scroll-bar;
+    width: 100%;
+    max-height: rem(64);
+    padding-inline: rem(18);
+    padding-block: rem(16);
+    transition: 0.2s ease-in-out all;
+    border-bottom: 1px solid $clr-border-primary;
+    overflow-y: hidden;
+
+    &--open {
+        max-height: rem(352);
+
+        .arrow {
+            rotate: (180deg);
+        }
+    }
+
+    .header {
+        @include row-center--a;
+        justify-content: space-between;
+        width: 100%;
+
+        .title {
+            font-size: rem(16);
+            font-weight: 700;
+            color: $clr-text-h5;
+        }
+    }
+
+    .content {
+        @include col;
+        margin-top: rem(16);
+        color: white;
+        gap: 1em;
+
+        .options {
+            @include scroll-bar;
+            @include col;
+            gap: rem(12);
+            min-height: 100%;
+            max-height: rem(200);
+            overflow-y: auto;
+
+            &::-webkit-scrollbar-track,
+            &::-webkit-scrollbar-thumb {
+                border-radius: 5em;
+            }
+
+            &:focus {
+                outline: 1px solid $clr-primary;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@use all folders to main.scss
+
+in folders create _index.scss and @forward all files
+into _index.scss
+
+//Example 
+    components folder
+      _colors.scss
+      _global.scss
+      _index.scss
+           @forward 'colors';
+           @forward 'global';
+
+ main.scss
+   @use 'components';
+
+
+
+//use same folder file example
+
+ _colors.scss
+   $main : #111;
+
+ _global.scss
+   @use 'colors' as *;
+
+//or use other folder files
+ _global.scss
+    @use '../helpers' as *

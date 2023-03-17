@@ -1,0 +1,167 @@
+@use "./colors" as *;
+@use "./functions" as *;
+
+//Codes that will use several times in project
+//Goal: stop repeat yourself in codes
+
+//Flex --START--
+
+@mixin row {
+    display: flex;
+}
+
+@mixin row-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin row-center--j {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin row-center--a {
+    display: flex;
+    align-items: center;
+}
+
+@mixin col {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin col-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin col-center--j {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@mixin col-center--a {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin border {
+    border: 1px solid $clr-border-secondry;
+    &:hover {
+        border: 1px solid $clr-border--active;
+    }
+}
+
+//Flex --END--
+
+@mixin scroll-bar {
+    &::-webkit-scrollbar {
+        width: rem(8);
+    }
+    &::-webkit-scrollbar-track {
+        background: $clr-bg-primary;
+        border: 1px solid $clr-border-primary;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $clr-border-secondry;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: $clr-primary;
+    }
+}
+
+@mixin quick-access-card {
+    @include col;
+    position: relative;
+    justify-content: space-between;
+    padding-block: rem(24);
+    padding-inline: rem(26);
+    border-radius: rem(26);
+    height: rem(340);
+    overflow: hidden;
+}
+
+//Placeholders --START--
+
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+//Usages
+
+// input,
+//textarea {
+//  @include input-placeholder {
+// color: red;
+//}
+//}
+
+//Placeholders --END--
+
+//Media Queris --START--
+
+$breakpoints: (
+    "phone": 400px,
+    "phone-wide": 480px,
+    "phablet": 560px,
+    "850": 858px,
+    "tablet-small": 640px,
+    "tablet": 768px,
+    "tablet-wide": 1024px,
+    "desktop": 1248px,
+    "desktop-wide": 1440px,
+);
+@mixin mq($width, $type: max) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+// Usage
+
+//.header {
+//   padding: 2rem;
+//  font-size: 1.8rem;
+//   @include mq("tablet-wide") {
+//       padding-top: 4rem;
+//        font-size: 2.4rem;
+//    }
+//}
+
+//Media Queris --END--
+
+//Truncate TEXT OVERFLOW --START--
+
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+//Truncate TEXT OVERFLOW --END--
