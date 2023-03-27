@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { toggle } from "../../app/slice/sliceSideMenu";
+import { toggle } from "/src/app/slice/sliceSideMenu";
 
 import styles from "./sidemenu.module.scss";
 

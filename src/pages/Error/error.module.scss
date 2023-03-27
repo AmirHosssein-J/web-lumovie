@@ -44,3 +44,25 @@
         }
     }
 }
+
+.error-text {
+    @include col-center;
+    width: fit-content;
+    height: fit-content;
+    background-color: $clr-bg-primary;
+    border-radius: 0.5em;
+    margin: 1em;
+    padding: 1.5em 2em;
+
+    .title {
+        font-size: rem(20);
+        color: $clr-text-h1;
+        font-weight: 600;
+    }
+
+    .info {
+        font-size: rem(18);
+        color: $clr-primary;
+        font-weight: 400;
+    }
+}

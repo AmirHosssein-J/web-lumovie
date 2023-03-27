@@ -1,3 +1,6 @@
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+
 import { useQuery } from "react-query";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -8,6 +11,7 @@ import styles from "./new-series.module.scss";
 import Button from "/src/components/Button";
 import Serie from "/src/components/Cards/Serie";
 import SectionHeader from "/src/components/Cards/SectionHeader";
+import ErrorText from "/src/pages/Error/ErrorText";
 
 import IC_ArrowSM from "/src/assets/icon/IC_ArrowSM";
 
@@ -20,9 +24,6 @@ const NewReleaseSeries = () => {
   const { isLoading, error, data } = useQuery("newSeries", () =>
     fetch("http://localhost:3000/new-series").then((res) => res.json())
   );
-
-  if (isLoading) return "Loading...";
-  if (error) return "An error has occurred: " + error.message;
 
   return (
     <aside
@@ -48,25 +49,34 @@ const NewReleaseSeries = () => {
           dispatch(toggle(!isNewSeriesClosed));
         }}
       />
+
       <SectionHeader
         className={styles["header"]}
         seemore={"See More"}
         title={"New Release Series"}
       />
+
       <div className={styles["cards"]}>
-        {data.map((series, index) => {
-          return (
-            <Serie
-              key={index}
-              poster={series.poster}
-              title={series.title}
-              szn={series.szn}
-              ep={series.ep}
-              href={series.href}
-              whatsNew={series.whatsNew}
-            />
-          );
-        })}
+        {error && <ErrorText message={error.message} />}
+        {!data ? (
+          <SkeletonTheme baseColor="#202020" highlightColor="#444">
+            <Skeleton height={186} borderRadius={10} count={6} />
+          </SkeletonTheme>
+        ) : (
+          data.map((series, index) => {
+            return (
+              <Serie
+                key={index}
+                poster={series.poster}
+                title={series.title}
+                szn={series.szn}
+                ep={series.ep}
+                href={series.href}
+                whatsNew={series.whatsNew}
+              />
+            );
+          })
+        )}
       </div>
     </aside>
   );

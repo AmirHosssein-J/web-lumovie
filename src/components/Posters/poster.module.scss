@@ -18,4 +18,13 @@
             border-radius: rem(10);
         }
     }
+
+    @include mq("tablet") {
+        height: rem(120);
+
+        .poster-img {
+            height: rem(100);
+            width: rem(225);
+        }
+    }
 }

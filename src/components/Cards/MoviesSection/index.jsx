@@ -1,3 +1,6 @@
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+
 import { useRef } from "react";
 
 import styles from "./movie.module.scss";
@@ -17,7 +20,18 @@ const MoviesSection = ({ moviesData, title, href, compactCard }) => {
         href={href}
         swiperRef={swiperRef}
       />
-      <Movies data={moviesData} isCompact={compactCard} swiperRef={swiperRef} />
+
+      {moviesData ? (
+        <Movies
+          data={moviesData}
+          isCompact={compactCard}
+          swiperRef={swiperRef}
+        />
+      ) : (
+        <SkeletonTheme baseColor="#202020" highlightColor="#444">
+          <Skeleton height={240} borderRadius={10} />
+        </SkeletonTheme>
+      )}
     </section>
   );
 };

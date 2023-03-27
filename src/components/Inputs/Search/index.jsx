@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 
 import styles from "../input.module.scss";
 
@@ -11,7 +11,7 @@ import IC_Filter from "/src/assets/icon/IC_Filter";
 const Search = () => {
   return (
     <Wrapper className={`${styles["wrapper"]}`}>
-      <form className={`${styles["search"]}`}>
+      <Form className={`${styles["search"]}`}>
         <Button.Icon
           icon={<IC_Search />}
           width={3.25}
@@ -24,6 +24,7 @@ const Search = () => {
           type="search"
           placeholder="Search for Movies and More..."
           className={`${styles["search-input"]}`}
+          name={"q"}
         />
         <Link to={"/filter"}>
           <Button.IconBox
@@ -34,7 +35,7 @@ const Search = () => {
             rounded={100}
           ></Button.IconBox>
         </Link>
-      </form>
+      </Form>
     </Wrapper>
   );
 };

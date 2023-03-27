@@ -55,8 +55,6 @@ const FilterBar = () => {
     { title: "New Zealand", flag: "/src/assets/country-flag/new-zealand.png" },
   ]);
 
-  console.log("bar");
-
   return (
     <aside className={styles["filter-bar"]}>
       <header className={styles["header"]}>
@@ -68,7 +66,6 @@ const FilterBar = () => {
               !isMoviesCompact && `${styles["button--active"]}`
             }`}
             icon={<IC_GridOne />}
-            // className={!isMoviesCompact && `${styles["button--active"]}`}
             width={3.25}
             height={3.25}
             rounded={100}

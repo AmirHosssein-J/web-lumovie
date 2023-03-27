@@ -1,3 +1,6 @@
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+
 import { useRef } from "react";
 import { useQuery } from "react-query";
 
@@ -6,6 +9,7 @@ import styles from "./upcomings.module.scss";
 import Wrapper from "../../HOC/Wrapper";
 import SectionHeader from "../SectionHeader";
 import Movies from "../MoviesSection/Movies";
+import ErrorText from "/src/pages/Error/ErrorText";
 
 const Upcomings = () => {
   const swiperRef = useRef();
@@ -13,9 +17,6 @@ const Upcomings = () => {
   const { isLoading, error, data } = useQuery("upcomings", () =>
     fetch("http://localhost:3000/upcomings").then((res) => res.json())
   );
-
-  if (isLoading) return "Loading...";
-  if (error) return "An error has occurred: " + error.message;
 
   return (
     <Wrapper className={`${styles["upcomings"]}`}>
@@ -26,7 +27,15 @@ const Upcomings = () => {
         swiperRef={swiperRef}
       />
       <div className={styles["movies"]}>
-        <Movies data={data} swiperRef={swiperRef} />
+        {error && console.log(`Upcoming Movies ${error.message}`)}
+
+        {isLoading ? (
+          <SkeletonTheme baseColor="#202020" highlightColor="#444">
+            <Skeleton height={240} borderRadius={10} />
+          </SkeletonTheme>
+        ) : (
+          <Movies data={data} swiperRef={swiperRef} />
+        )}
       </div>
     </Wrapper>
   );

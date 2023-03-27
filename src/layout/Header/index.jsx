@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
+
+import useWindowSize from "/src/hooks/useWindowSize";
 
 import styles from "./header.module.scss";
 
@@ -35,27 +37,34 @@ const Header = () => {
     img: ProfilePic,
   });
 
+  const { width } = useWindowSize();
+
+  console.log("render");
+
   return (
     <header className={`${styles["header"]}`}>
-      <Profile name={user.name} profilePic={user.img} />
+      {width >= 991 && <Profile name={user.name} profilePic={user.img} />}
 
       <Search />
-      <div className={`${styles["buttons"]}`}>
-        {buttons.map((button, index) => {
-          return (
-            <Button.Icon
-              key={index}
-              className={`${styles["button"]}`}
-              icon={button.icon}
-              height={3.25}
-              width={3.25}
-              rounded={100}
-              tooltip={button.tooltip}
-              alert={button.alert}
-            />
-          );
-        })}
-      </div>
+
+      {width >= 991 ? (
+        <div className={`${styles["buttons"]}`}>
+          {buttons.map((button, index) => {
+            return (
+              <Button.Icon
+                key={index}
+                className={`${styles["button"]}`}
+                icon={button.icon}
+                height={3.25}
+                width={3.25}
+                rounded={100}
+                tooltip={button.tooltip}
+                alert={button.alert}
+              />
+            );
+          })}
+        </div>
+      ) : null}
     </header>
   );
 };

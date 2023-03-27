@@ -1,11 +1,7 @@
 @use "../../../sass/helpers/" as *;
 
 .section-header {
-    @include mq("tablet") {
-        flex-direction: column;
-        background-attachment: red;
-    }
-    @include row-center--a;
+    @include row;
     justify-content: space-between;
     width: 100%;
 
@@ -17,11 +13,12 @@
             color: $clr-text-h3;
             font-size: rem(24);
             font-weight: 600;
+            line-height: 1.1;
         }
     }
 
     .arrows {
-        @include row-center;
+        @include row-center--a;
         gap: 1em;
 
         .arrow-prev {
@@ -30,6 +27,17 @@
 
         .arrow-next {
             rotate: -90deg;
+        }
+    }
+
+    //breakpoint
+    @include mq("tablet") {
+        flex-direction: column;
+        .arrows {
+            display: none;
+        }
+        .details {
+            justify-content: space-between;
         }
     }
 }

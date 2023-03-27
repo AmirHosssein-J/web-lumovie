@@ -1,3 +1,6 @@
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+
 import { useDispatch, useSelector } from "react-redux";
 
 import { useQuery } from "react-query";
@@ -14,33 +17,38 @@ const Filter = () => {
     fetch("http://localhost:3000/all").then((res) => res.json())
   );
 
-  if (isLoading) return "Loading...";
-  if (error) return "An error has occurred: " + error.message;
-
   return (
     <div className={styles["filter"]}>
       <FilterBar />
       <section className={styles["content"]}>
         <div className={styles["movies"]}>
-          {data.map((movie) => {
-            return (
-              <Movie
-                key={movie.id}
-                title={movie.title}
-                genres={movie.genres}
-                releasedDate={movie.releasedDate}
-                releaseDate={movie.releaseDate}
-                runTime={movie.runTime}
-                rated={movie.rated}
-                imdbScore={movie.imdbScore}
-                path={movie.path}
-                type={movie.type}
-                img={movie.poster}
-                isTrailer={movie.isTrailer}
-                isCompact={isMoviesCompact}
-              />
-            );
-          })}
+          {error && console.log(`Filter Movies ${error.message}`)}
+
+          {!data ? (
+            <SkeletonTheme baseColor="#202020" highlightColor="#444">
+              <Skeleton height={240} borderRadius={10} />
+            </SkeletonTheme>
+          ) : (
+            data.map((movie) => {
+              return (
+                <Movie
+                  key={movie.id}
+                  title={movie.title}
+                  genres={movie.genres}
+                  releasedDate={movie.releasedDate}
+                  releaseDate={movie.releaseDate}
+                  runTime={movie.runTime}
+                  rated={movie.rated}
+                  imdbScore={movie.imdbScore}
+                  path={movie.path}
+                  type={movie.type}
+                  img={movie.poster}
+                  isTrailer={movie.isTrailer}
+                  isCompact={isMoviesCompact}
+                />
+              );
+            })
+          )}
         </div>
       </section>
     </div>
