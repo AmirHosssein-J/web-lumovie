@@ -1,4 +1,4 @@
-@use "../../../sass/helpers/" as *;
+@use "/src/sass/helpers/" as *;
 
 .section-header {
     @include row;
@@ -38,6 +38,10 @@
         }
         .details {
             justify-content: space-between;
+
+            .title {
+                font-size: rem(20);
+            }
         }
     }
 }

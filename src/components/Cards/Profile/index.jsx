@@ -1,6 +1,7 @@
-import { useState } from "react";
+import S from "./profile.module.scss";
 
-import styles from "./profile.module.scss";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
 import Button from "../../Button";
 import Wrapper from "../../HOC/Wrapper";
@@ -12,7 +13,7 @@ import IC_Settings from "/src/assets/icon/IC_Settings";
 import IC_Profile from "/src/assets/icon/IC_Profile";
 import IC_Logout from "/src/assets/icon/IC_Logout";
 
-const Profile = ({ profilePic, name }) => {
+const Profile = ({ isMobile }) => {
   const [links, setLinks] = useState([
     { title: "Settings", icon: <IC_Settings /> },
     { title: "Profile", icon: <IC_Profile /> },
@@ -23,25 +24,29 @@ const Profile = ({ profilePic, name }) => {
     },
   ]);
 
+  const user = useSelector((state) => state.user);
+
   return (
-    <Container className={`${styles["container"]}`}>
-      <Wrapper className={`${styles["profile"]}`}>
-        <div className={`${styles["user"]}`}>
+    <Container
+      className={`${isMobile ? `${S["container--mobile"]}` : ""} ${
+        S["container"]
+      }`}
+    >
+      <Wrapper className={S["profile"]}>
+        <div className={S["user"]}>
           <img
-            className={`${styles["user-pic"]}`}
-            src={profilePic}
-            alt={`${name} profile image`}
+            className={S["user-pic"]}
+            src={user.img}
+            alt={`${user.name} profile image`}
           />
-          <h5 className={`${styles["user-name"]}`}>{name}</h5>
+          <h5 className={S["user-name"]}>{user.name}</h5>
         </div>
         <Button.Icon
           icon={<IC_ArrowSM />}
-          width={2}
-          height={2}
-          rounded={100}
-          className={`${styles["arrow-button"]}`}
+          dimension={2}
+          className={S["arrow-button"]}
         />
-        <Dropdown links={links} className={`${styles["dropdown"]}`} />
+        <Dropdown links={links} className={S["dropdown"]} />
       </Wrapper>
     </Container>
   );

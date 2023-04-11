@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import styles from "../movie.module.scss";
+import S from "../movie.module.scss";
 
 import Button from "/src/components/Button";
 import Title from "./Details/Title";
@@ -10,42 +10,29 @@ import ReleaseDate from "./Details/ReleaseDate";
 import Time from "./Details/Time";
 import IMDbScore from "./Details/IMDbScore";
 
-const Movie = ({
-  title,
-  genres,
-  releasedDate,
-  releaseDate,
-  runTime,
-  rated,
-  imdbScore,
-  path,
-  type,
-  img,
-  isBookmarked,
-  isTrailer,
-  isCompact,
-}) => {
+const Movie = ({ movie, isCompact }) => {
   return (
     <div
-      className={
-        !isCompact
-          ? `${styles["movie"]} ${styles["movie--normal"]}`
-          : `${styles["movie"]} ${styles["movie--compact"]}`
-      }
+      className={`${S["movie"]} ${
+        isCompact ? S["movie--compact"] : S["movie--normal"]
+      }`}
     >
-      <Link to={path && `/${type}/${path}`} className={`${styles["image"]}`}>
-        <img src={img} alt={`${title} poster`} />
+      <Link
+        to={movie.path && `/${movie.type}/${movie.path}`}
+        className={`${S["image"]}`}
+      >
+        <img src={movie.poster} alt={`${movie.title} poster`} />
       </Link>
-      <div className={`${styles["info"]}`}>
-        <Title title={title} path={path} type={type} />
-        <div className={`${styles["details"]}`}>
-          {genres && <Genres genres={genres} />}
-          {releasedDate && <ReleaseDate date={releasedDate} />}
-          {runTime && <Time time={runTime} />}
-          {rated && <Rated rated={rated} />}
-          {imdbScore && <IMDbScore score={imdbScore} />}
-          {isTrailer && (
-            <Button.Stroke text={"Watch Trailer"} href={isTrailer} />
+      <div className={`${S["info"]}`}>
+        <Title title={movie.title} path={movie.path} type={movie.type} />
+        <div className={`${S["details"]}`}>
+          {movie.genres && <Genres genres={movie.genres} />}
+          {movie.releasedDate && <ReleaseDate date={movie.releasedDate} />}
+          {movie.runTime && <Time time={movie.runTime} />}
+          {movie.rated && <Rated rated={movie.rated} />}
+          {movie.imdbScore && <IMDbScore score={movie.imdbScore} />}
+          {movie.isTrailer && (
+            <Button.Stroke text={"Watch Trailer"} href={movie.isTrailer} />
           )}
         </div>
       </div>

@@ -1,7 +1,7 @@
+import S from "./download.module.scss";
+
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-
-import styles from "./download.module.scss";
 
 import DownloadBox from "./DownloadBox";
 import Button from "../../Button";
@@ -16,12 +16,10 @@ const Download = () => {
       {!isMenuClosed ? (
         <DownloadBox />
       ) : (
-        <Link to="./downloads" className={styles["download-button"]}>
+        <Link to="./downloads" className={S["download-button"]}>
           <Button.Icon
             border
-            rounded={100}
-            height={2.625}
-            width={2.625}
+            dimension={2.625}
             icon={<IC_DownloadOne />}
           />
         </Link>

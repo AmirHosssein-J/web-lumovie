@@ -1448,7 +1448,7 @@
     }
   ],
 
-  "new-movies": [
+  "new_movies": [
     {
       "id": 0,
       "title": "The Menu",

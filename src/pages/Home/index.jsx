@@ -7,11 +7,17 @@ import NewSeries from "/src/layout/SideBars/NewSeries";
 
 import Featured from "./featured";
 import NewRelease from "./new-release";
+import useWindowSize from "/src/hooks/useWindowSize";
 
 const Home = () => {
+  const { width } = useWindowSize();
+
   return (
     <div className={styles["home"]}>
-      <section className={styles["content"]}>
+      <section
+        className={`${width <= 991 ? `${styles["content--mobile"]}` : ""} ${styles["content"]
+          }`}
+      >
         <Featured />
 
         <NewRelease />
@@ -25,7 +31,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* <NewSeries /> */}
+      <NewSeries />
     </div>
   );
 };

@@ -1,0 +1,44 @@
+@use "/src/sass/helpers" as *;
+
+.search {
+    @include col;
+    position: absolute;
+    width: 100%;
+    height: 100dvh;
+    padding-block: rem(24);
+    padding-inline: rem(32);
+    top: 0;
+    left: 0;
+    gap: 4em;
+    background-color: $clr-bg-primary;
+    z-index: 2000;
+    translate: 0 -100%;
+    transition: 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) all;
+
+    @include mq("phone") {
+        padding: rem(16);
+    }
+
+    &--open {
+        translate: 0;
+    }
+
+    .close-btn svg {
+        width: rem(28);
+        height: rem(28);
+
+        &:hover path {
+            stroke: $clr-icon--active;
+        }
+    }
+
+    .head {
+        @include row-center--a;
+        justify-content: space-between;
+
+        .title {
+            font-size: rem(24);
+            color: $clr-text-h2;
+        }
+    }
+}

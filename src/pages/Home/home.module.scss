@@ -14,6 +14,10 @@
         padding-inline-start: rem(24);
         padding-inline-end: rem(14);
 
+        &--mobile {
+            padding-inline: rem(10);
+        }
+
         .quick-access {
             @include row;
             flex-wrap: wrap;

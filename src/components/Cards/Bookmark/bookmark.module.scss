@@ -20,6 +20,7 @@
             .title {
                 color: $clr-text-p;
                 font-weight: 300;
+                font-size: rem(16);
                 text-align: center;
                 margin-bottom: 1.5em;
 
@@ -32,6 +33,10 @@
                     path {
                         stroke: $clr-white;
                     }
+                }
+
+                @include mq("tablet") {
+                    font-size: rem(14);
                 }
             }
         }

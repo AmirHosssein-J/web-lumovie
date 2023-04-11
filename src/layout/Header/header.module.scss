@@ -10,6 +10,14 @@
     background-color: $clr-bg-primary;
     border-bottom: 1px solid $clr-border-primary;
     z-index: 1000;
+    position: relative;
+
+    @include mq("tablet") {
+        min-height: rem(72);
+        padding-inline-end: rem(10);
+        padding-inline-start: rem(6);
+        gap: 0.5em;
+    }
 
     .buttons {
         @include row-center;
@@ -33,5 +41,13 @@
                 stroke: $clr-icon;
             }
         }
+    }
+
+    .hamburger-close {
+        background-color: $clr-primary;
+    }
+
+    .mobile-buttons {
+        @include row-center;
     }
 }

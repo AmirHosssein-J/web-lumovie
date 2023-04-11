@@ -12,6 +12,10 @@
     &:hover {
         color: $clr-link--active;
     }
+
+    @include mq("tablet") {
+        font-size: rem(12);
+    }
 }
 
 a[href]:focus-visible {
@@ -27,6 +31,10 @@ a[href]:focus-visible {
 
     &:hover {
         color: $clr-primary;
+    }
+
+    @include mq("tablet") {
+        font-size: rem(15);
     }
 }
 

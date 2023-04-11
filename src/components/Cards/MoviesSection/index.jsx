@@ -1,18 +1,15 @@
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
+import S from "./movie.module.scss";
 
 import { useRef } from "react";
-
-import styles from "./movie.module.scss";
 
 import SectionHeader from "../SectionHeader";
 import Movies from "./Movies";
 
-const MoviesSection = ({ moviesData, title, href, compactCard }) => {
+const MoviesSection = ({ moviesData, title, href, compactCard, isLoading }) => {
   const swiperRef = useRef();
 
   return (
-    <section className={`${styles["movies"]}`}>
+    <section className={`${S["movies"]}`}>
       <SectionHeader
         arrows
         seemore
@@ -21,17 +18,12 @@ const MoviesSection = ({ moviesData, title, href, compactCard }) => {
         swiperRef={swiperRef}
       />
 
-      {moviesData ? (
-        <Movies
-          data={moviesData}
-          isCompact={compactCard}
-          swiperRef={swiperRef}
-        />
-      ) : (
-        <SkeletonTheme baseColor="#202020" highlightColor="#444">
-          <Skeleton height={240} borderRadius={10} />
-        </SkeletonTheme>
-      )}
+      <Movies
+        data={moviesData}
+        isCompact={compactCard}
+        swiperRef={swiperRef}
+        isLoading={isLoading}
+      />
     </section>
   );
 };

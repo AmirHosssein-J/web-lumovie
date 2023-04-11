@@ -1,22 +1,22 @@
-import styles from "./serie.module.scss";
+import S from "./serie.module.scss";
 
 import Wrapper from "../../HOC/Wrapper";
 
 const Serie = ({ poster, title, ep, szn, whatsNew, href }) => {
   return (
-    <Wrapper className={styles["series"]}>
-      <a className={styles["poster"]} href={href}>
-        <img className={styles["img"]} src={poster} />
+    <Wrapper className={S["series"]}>
+      <a className={S["poster"]} href={href}>
+        <img className={S["img"]} src={poster} />
       </a>
-      <div className={styles["info"]}>
-        <a className={styles["title"]} href={href}>
+      <div className={S["info"]}>
+        <a className={S["title"]} href={href}>
           {title}
         </a>
-        <div className={styles["details"]}>
-          <h6 className={styles["ep"]}>
+        <div className={S["details"]}>
+          <h6 className={S["ep"]}>
             {szn && `S${szn}`} {ep && `Ep${ep}`}
           </h6>
-          <h5 className={styles["whats-new"]}>{whatsNew}</h5>
+          <h5 className={S["whats-new"]}>{whatsNew}</h5>
         </div>
       </div>
     </Wrapper>

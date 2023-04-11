@@ -17,28 +17,13 @@ const Movies = ({ data, swiperRef, isCompact }) => {
         slidesPerView={"auto"}
         spaceBetween={10}
       >
-        {data &&
-          data.map((movie, index) => {
-            return (
-              <SwiperSlide key={index}>
-                <Movie
-                  key={movie.id}
-                  title={movie.title}
-                  genres={movie.genres}
-                  releasedDate={movie.releasedDate}
-                  releaseDate={movie.releaseDate}
-                  runTime={movie.runTime}
-                  rated={movie.rated}
-                  imdbScore={movie.imdbScore}
-                  path={movie.path}
-                  type={movie.type}
-                  img={movie.poster}
-                  isTrailer={movie.isTrailer}
-                  isCompact={isCompact}
-                />
-              </SwiperSlide>
-            );
-          })}
+        {data.map((movie, index) => {
+          return (
+            <SwiperSlide key={index}>
+              <Movie movie={movie} isCompact={isCompact} />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </section>
   );

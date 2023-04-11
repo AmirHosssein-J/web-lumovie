@@ -2,4 +2,9 @@
 
 .upcomings {
     @include quick-access-card;
+    gap: 1em;
+
+    .skeletons {
+        margin-block: 0;
+    }
 }

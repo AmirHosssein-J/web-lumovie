@@ -1,70 +1,78 @@
-import { useState, useEffect, useSyncExternalStore } from "react";
+import S from "./header.module.scss";
 
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { toggle } from "/src/app/slice/sliceSideMenuMobile";
 import useWindowSize from "/src/hooks/useWindowSize";
-
-import styles from "./header.module.scss";
 
 import Profile from "/src/components/Cards/Profile";
 import Button from "/src/components/Button";
 import Search from "/src/components/Inputs/Search";
+import Logo from "/src/components/Logo";
+import SearchTab from "/src/components/SearchTab";
+import QuickButtons from "./QuickButtons";
 
-import ProfilePic from "/src/assets/icon/ProfilePic.png";
-import IC_Friends from "/src/assets/icon/IC_Friends";
-import IC_Notification from "/src/assets/icon/IC_Notification";
-import IC_Help from "/src/assets/icon/IC_Help";
+import IC_Search from "/src/assets/icon/IC_Search";
 
 const Header = () => {
-  //represent data came from server
-  const [notifs, setNotifs] = useState([{}, {}, {}]);
-  const [friendsOnline, setFriendsOnline] = useState([{}, {}, {}, {}]);
-
-  const [buttons, setButtons] = useState([
-    {
-      icon: <IC_Friends />,
-      tooltip: "Friends",
-      alert: friendsOnline.length,
-    },
-    {
-      icon: <IC_Notification />,
-      tooltip: "Notification",
-      alert: notifs.length,
-    },
-    { icon: <IC_Help />, tooltip: "Help" },
-  ]);
-
-  const [user, setUser] = useState({
-    name: "MrRadikal",
-    img: ProfilePic,
-  });
-
   const { width } = useWindowSize();
+  const [isSearchTabOpen, setIsSearchTabOpen] = useState(false);
+  const isMenuClosedMobile = useSelector(
+    (state) => state.isMenuClosedMobile.value
+  );
+  const dispatch = useDispatch();
+  const handleCloseMenu = () => isMenuClosedMobile && dispatch(toggle(false));
 
-  console.log("render");
+  //Media Queries
+  const onDesktop = width >= 990;
+  const onTablet = width <= 990 && width >= 479;
+  const onMobile = width <= 479;
 
   return (
-    <header className={`${styles["header"]}`}>
-      {width >= 991 && <Profile name={user.name} profilePic={user.img} />}
+    <header className={S["header"]} onClick={handleCloseMenu}>
+      {onDesktop && (
+        <>
+          <Profile />
+          <Search />
+          <QuickButtons />
+        </>
+      )}
 
-      <Search />
+      {onTablet && (
+        <>
+          <Button.HamburgerMenu
+            isClosed={isMenuClosedMobile}
+            onClick={() => dispatch(toggle(!isMenuClosedMobile))}
+          />
+          <Search />
+          <Logo />
+        </>
+      )}
 
-      {width >= 991 ? (
-        <div className={`${styles["buttons"]}`}>
-          {buttons.map((button, index) => {
-            return (
-              <Button.Icon
-                key={index}
-                className={`${styles["button"]}`}
-                icon={button.icon}
-                height={3.25}
-                width={3.25}
-                rounded={100}
-                tooltip={button.tooltip}
-                alert={button.alert}
-              />
-            );
-          })}
-        </div>
-      ) : null}
+      {onMobile && (
+        <>
+          <SearchTab
+            isTabOpen={isSearchTabOpen}
+            setIsTabOpen={setIsSearchTabOpen}
+          />
+          <div className={S["mobile-buttons"]}>
+            <Button.HamburgerMenu
+              isClosed={isMenuClosedMobile}
+              onClick={() => {
+                dispatch(toggle(!isMenuClosedMobile));
+              }}
+            />
+            <Button.Icon
+              icon={<IC_Search />}
+              dimension={3.25}
+              alt="search icon"
+              href="/filter"
+              onClick={() => setIsSearchTabOpen(true)}
+            />
+          </div>
+          <Logo />
+        </>
+      )}
     </header>
   );
 };

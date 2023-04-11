@@ -1,14 +1,14 @@
-import styles from "../input.module.scss";
+import S from "../input.module.scss";
 
 import Wrapper from "../../HOC/Wrapper";
 
 const SearchInput = ({ placeholder, onChange }) => {
   return (
-    <Wrapper className={`${styles["wrapper"]} ${styles["search-bar"]}`}>
+    <Wrapper className={`${S["wrapper"]} ${S["search-bar"]}`}>
       <input
         type="search"
         placeholder={`Search for ${placeholder}`}
-        className={`${styles["input"]}`}
+        className={S["input"]}
         onChange={onChange}
         onSubmit={(e) => e.preventDefault()}
       />

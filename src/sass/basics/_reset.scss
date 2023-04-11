@@ -1,4 +1,5 @@
 // //Reset Styles
+@use "../helpers" as *;
 
 *,
 *::before,
@@ -51,8 +52,14 @@ li {
     list-style-type: none;
 }
 
+input,
+textarea,
+button,
+select,
+div,
 a {
     text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 input {
@@ -74,5 +81,15 @@ input {
 
     &[type="number"] {
         -moz-appearance: textfield;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px $clr-primary inset !important;
+        padding-block: 1em;
+        text-align: center;
+        border-radius: 2em;
     }
 }

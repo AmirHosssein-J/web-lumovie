@@ -1,16 +1,28 @@
-import { useState } from "react";
-import styles from "./filterbar.module.scss";
+import S from "./filterbar.module.scss";
+
+import { useEffect, useRef, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { toggle } from "/src/app/slice/sliceListGrid";
 
-import Box from "./Box";
+import FilterCategory from "./FilterCategory";
 import Button from "/src/components/Button";
 
 import IC_GridOne from "/src/assets/icon/IC_GridOne";
 import IC_GridTwo from "/src/assets/icon/IC_GridTwo";
+import { Form } from "react-router-dom";
 
-const FilterBar = () => {
+export async function loader({ request }) {
+  let url = new URL(request.url);
+  let genre = url.searchParams.getAll("genre");
+  let type = url.searchParams.getAll("type");
+  let score = url.searchParams.getAll("score");
+  let country = url.searchParams.getAll("country");
+
+  return { genre, type, score, country };
+}
+
+const FilterBar = ({ onSubmit }) => {
   const isMoviesCompact = useSelector((state) => state.isMoviesCompact.value);
   const dispatch = useDispatch();
 
@@ -44,64 +56,55 @@ const FilterBar = () => {
   ]);
 
   const [country, setCountry] = useState([
-    { title: "USA", flag: "/src/assets/country-flag/usa.png" },
-    { title: "France", flag: "/src/assets/country-flag/france.png" },
-    { title: "England", flag: "/src/assets/country-flag/england.png" },
-    { title: "Germany", flag: "/src/assets/country-flag/germany.png" },
-    { title: "Japan", flag: "/src/assets/country-flag/japan.png" },
-    { title: "China", flag: "/src/assets/country-flag/china.png" },
-    { title: "Iran", flag: "/src/assets/country-flag/iran.png" },
-    { title: "Korea", flag: "/src/assets/country-flag/korea.png" },
-    { title: "New Zealand", flag: "/src/assets/country-flag/new-zealand.png" },
+    { title: "usa", flag: "/src/assets/country-flag/usa.png" },
+    { title: "france", flag: "/src/assets/country-flag/france.png" },
+    { title: "england", flag: "/src/assets/country-flag/england.png" },
+    { title: "germany", flag: "/src/assets/country-flag/germany.png" },
+    { title: "japan", flag: "/src/assets/country-flag/japan.png" },
+    { title: "china", flag: "/src/assets/country-flag/china.png" },
+    { title: "iran", flag: "/src/assets/country-flag/iran.png" },
+    { title: "korea", flag: "/src/assets/country-flag/korea.png" },
+    { title: "new zealand", flag: "/src/assets/country-flag/new-zealand.png" },
   ]);
 
   return (
-    <aside className={styles["filter-bar"]}>
-      <header className={styles["header"]}>
-        <h3 className={styles["title"]}>Filter</h3>
-        <div className={styles["grids"]}>
+    <aside className={S["filter-bar"]}>
+      <header className={S["header"]}>
+        <h3 className={S["title"]}>Filter</h3>
+        <div className={S["grids"]}>
           {/* normal card movies */}
           <Button.Icon
-            className={`${styles["button"]} ${
-              !isMoviesCompact && `${styles["button--active"]}`
+            className={`${S["button"]} ${
+              !isMoviesCompact && `${S["button--active"]}`
             }`}
             icon={<IC_GridOne />}
-            width={3.25}
-            height={3.25}
+            dimension={3.25}
             rounded={100}
             onClick={() => dispatch(toggle(false))}
-            tooltip={"Normal"}
+            tooltip="Normal"
           />
 
           {/* compact card movies */}
           <Button.Icon
-            className={`${styles["button"]} ${
-              isMoviesCompact && `${styles["button--active"]}`
+            className={`${S["button"]} ${
+              isMoviesCompact && `${S["button--active"]}`
             }`}
             icon={<IC_GridTwo />}
-            width={3.25}
-            height={3.25}
+            dimension={3.25}
             rounded={100}
             onClick={() => dispatch(toggle(true))}
-            tooltip={"Compact"}
+            tooltip="Compact"
           />
         </div>
       </header>
-      <section className={styles["content"]}>
-        <Box title={"Genre"} options={genres} search />
-        <Box title={"Type"} options={type} />
-        <Box title={"Score"} options={score} />
-        <Box title={"Country"} options={country} search />
-      </section>
 
-      {/* <footer>
-        <Button.CTA
-          text={"Apply Filter"}
-          width={20}
-          rounded={0}
-          type={"submit"}
-        />
-      </footer> */}
+      <Form className={S["content"]} action="/filter" onSubmit={onSubmit}>
+        {/* <Button.CTA text="Apply Filter" type="submit" /> */}
+        <FilterCategory title="genre" options={genres} search />
+        <FilterCategory title="type" options={type} />
+        <FilterCategory title="score" options={score} />
+        <FilterCategory title="country" options={country} search />
+      </Form>
     </aside>
   );
 };

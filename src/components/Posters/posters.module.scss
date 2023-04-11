@@ -4,6 +4,7 @@
     width: 100%;
     height: rem(160);
     margin-block: rem(18);
+    transition: 0.2s ease-in-out all;
 
     .poster {
         width: 100%;
@@ -21,10 +22,25 @@
 
     @include mq("tablet") {
         height: rem(120);
+        margin-block: rem(10);
 
         .poster-img {
-            height: rem(100);
-            width: rem(225);
+            height: 100%;
+            width: rem(275);
+        }
+    }
+}
+
+.skeletons {
+    @include row;
+    gap: rem(14);
+
+    .skeleton {
+        width: rem(360);
+        height: 100%;
+
+        @include mq("tablet") {
+            width: rem(275);
         }
     }
 }

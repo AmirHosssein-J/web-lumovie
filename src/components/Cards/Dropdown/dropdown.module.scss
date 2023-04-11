@@ -1,4 +1,4 @@
-@use "../../../sass/helpers/" as *;
+@use "/src/sass/helpers/" as *;
 
 .list {
     @include col;
@@ -28,10 +28,12 @@
             outline: 1px solid $clr-primary;
         }
 
+        //Logout Link
         &:last-child {
             margin-top: 1em;
         }
 
+        //Icon
         svg {
             width: rem(24);
             height: rem(24);
@@ -44,5 +46,16 @@
                 stroke: $clr-primary;
             }
         }
+    }
+    @include mq("tablet") {
+        &-link {
+            font-size: rem(12);
+
+            svg {
+                width: rem(18);
+            }
+        }
+
+        gap: rem(0);
     }
 }

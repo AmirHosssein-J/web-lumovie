@@ -1,17 +1,20 @@
 import { useState } from "react";
-import styles from "./checkbox..module.scss";
+import S from "./checkbox.module.scss";
 
-const Checkbox = ({ title, image }) => {
-  // const [isSelected, setIsSelected] = useState(false);
+const Checkbox = ({ title, image, categoryTitle }) => {
+  const [isChecked, setIsChecked] = useState(false);
 
   return (
-    <div className={styles["checkbox"]}>
+    <div className={S["checkbox"]}>
       <input
-        // checked={isSelected}
         id={title}
-        className={styles["input"]}
-        type={"checkbox"}
+        className={S["input"]}
+        type="checkbox"
         htmlFor={title}
+        name={categoryTitle}
+        value={title}
+        checked={isChecked}
+        onChange={() => setIsChecked(!isChecked)}
       />
       <label htmlFor={title}>
         {title}

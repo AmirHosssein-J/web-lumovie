@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import Button from "/src/components/Button/";
+import Bob from "/src/assets/image/Bob.png";
 
 import styles from "./error.module.scss";
 
@@ -15,11 +16,7 @@ const Error = () => {
       <Link to="/" style={{ display: "inline" }}>
         <Button.CTA text={"Take Me Home"} />
       </Link>
-      <img
-        className={styles["bob"]}
-        src="/src/assets/image/Bob.png"
-        alt="bob the mad man"
-      />
+      <img className={styles["bob"]} src={Bob} alt="bob the mad man" />
     </section>
   );
 };
