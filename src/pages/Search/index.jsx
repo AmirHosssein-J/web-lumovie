@@ -1,6 +1,6 @@
 import React from "react";
 
-import { all } from "/src/assets/data/db.json";
+// import { all } from "/src/assets/data/db.json";
 import { useSearchParams } from "react-router-dom";
 
 import Movie from "/src/components/cards/MoviesSection/Movie";

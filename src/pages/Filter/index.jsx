@@ -2,7 +2,7 @@ import S from "./filter.module.scss";
 
 import { useSelector } from "react-redux";
 
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 
 import FilterBar from "/src/layout/SideBars/FilterBar";
 import Movie from "/src/components/Cards/MoviesSection/Movie";

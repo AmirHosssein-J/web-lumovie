@@ -34,7 +34,7 @@
 .movie {
     @include row;
     width: rem(300);
-    height: 100%;
+    max-height: rem(224);
     transition: 0.1s ease-out all;
 
     &:hover {
@@ -70,7 +70,7 @@
         //hidden details but bigger card
         .image {
             max-width: rem(160);
-            height: 100%;
+            max-height: rem(240);
         }
 
         .info {
@@ -112,7 +112,8 @@
 
     //image <a> wrapper tag
     .image {
-        height: 100%;
+        min-height: 100%;
+        max-height: 100%;
         min-width: 50%;
 
         //<img /> tag
@@ -128,6 +129,6 @@
 
     @include mq("phone-wide") {
         width: rem(240);
-        height: rem(196);
+        max-height: rem(196);
     }
 }

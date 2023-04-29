@@ -3,7 +3,7 @@ import S from "./new-series.module.scss";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 
 import { useDispatch, useSelector } from "react-redux";
 import { toggle } from "/src/app/slice/sliceNewSeries";
@@ -13,9 +13,10 @@ import Serie from "/src/components/Cards/Serie";
 import SectionHeader from "/src/components/Cards/SectionHeader";
 import ErrorText from "/src/pages/Error/ErrorText";
 
-
 const NewReleaseSeries = () => {
-  const isNewSeriesClosed = useSelector((state) => state.isNewSeriesClosed.value);
+  const isNewSeriesClosed = useSelector(
+    (state) => state.isNewSeriesClosed.value
+  );
   const dispatch = useDispatch();
 
   const { isLoading, error, data } = useQuery("newSeries", () =>

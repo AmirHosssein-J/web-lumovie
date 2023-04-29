@@ -1,0 +1,95 @@
+// import axios from "axios";
+
+// import S from "../movie.module.scss";
+// import { Link } from "react-router-dom";
+
+// import Button from "/src/components/Button";
+// import Title from "./Details/Title";
+// import Genres from "./Details/Genres";
+// import Rated from "./Details/Rated";
+// import ReleaseDate from "./Details/ReleaseDate";
+// import Time from "./Details/Time";
+// import IMDbScore from "./Details/IMDbScore";
+// // import getDetails from "../../../../hooks/getDetails";
+
+// const Movie = ({ movie, isCompact }) => {
+//   return (
+//     <div
+//       className={`${S["movie"]} ${
+//         isCompact ? S["movie--compact"] : S["movie--normal"]
+//       }`}
+//     >
+//       <Link
+//         // to={details.path && `/${details.type}/${details.path}`}
+//         className={`${S["image"]}`}
+//       >
+//         <img
+//         // src={`https://image.tmdb.org/t/p/w400/${detail.poster_path}`}
+//         // alt={`${details.title} poster`}
+//         />
+//       </Link>
+//       {/* <div className={`${S["info"]}`}>
+//       <Title title={details.title} path={details.path} type={details.type} />
+//       <div className={`${S["details"]}`}>
+//         {details.genres && <Genres genres={details.genres} />}
+//         {details.releasedDate && <ReleaseDate date={details.releasedDate} />}
+//         {details.runTime && <Time time={details.runTime} />}
+//         {details.rated && <Rated rated={details.rated} />}
+//         {details.imdbScore && <IMDbScore score={details.imdbScore} />}
+//         {details.isTrailer && (
+//           <Button.Stroke text={"Watch Trailer"} href={details.isTrailer} />
+//         )}
+//       </div>
+//     </div> */}
+//     </div>
+//   );
+// };
+
+// export default Movie;
+
+// return (
+//   <div
+//     className={`${S["movie"]} ${
+//       isCompact ? S["movie--compact"] : S["movie--normal"]
+//     }`}
+//   >
+//     <Link
+//       to={details.path && `/${details.type}/${details.path}`}
+//       className={`${S["image"]}`}
+//     >
+//       <img
+//       src={`https://image.tmdb.org/t/p/w400/${detail.poster_path}`}
+//       alt={`${details.title} poster`}
+//       />
+//     </Link>
+//     <div className={`${S["info"]}`}>
+//       <Title title={details.title} path={details.path} type={details.type} />
+//       <div className={`${S["details"]}`}>
+//         {details.genres && <Genres genres={details.genres} />}
+//         {details.releasedDate && <ReleaseDate date={details.releasedDate} />}
+//         {details.runTime && <Time time={details.runTime} />}
+//         {details.rated && <Rated rated={details.rated} />}
+//         {details.imdbScore && <IMDbScore score={details.imdbScore} />}
+//         {details.isTrailer && (
+//           <Button.Stroke text={"Watch Trailer"} href={details.isTrailer} />
+//         )}
+//       </div>
+//     </div>
+//   </div>
+// );
+// const query = useQuery({
+//   queryKey: ["movieDetail"],
+//   queryFn: () =>
+//     useFetch(
+//       `https://api.themoviedb.org/3/movie/${movie.id}?api_key=1b10176a16c36b444c7c73221e99d0c5&language=en-US`
+//     ),
+// });
+
+// if (query.isLoading) return "onLoading";
+// if (query.isError) return <ErrorText message={query.error.message} />;
+
+// const details = getDetails(movie.id);
+// console.log(details);
+
+// // console.log(movie.id);
+// // console.log(query.data);

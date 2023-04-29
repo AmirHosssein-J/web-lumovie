@@ -5,7 +5,7 @@ import { Autoplay } from "swiper";
 
 import Poster from "./Poster";
 
-const Posters = ({ data, isLoading }) => {
+const Posters = ({ data }) => {
   return (
     <section className={S["posters"]}>
       <Swiper
@@ -16,18 +16,17 @@ const Posters = ({ data, isLoading }) => {
           delay: 1500,
           disableOnInteraction: false,
         }}
-        modules={[Autoplay]}
+        // modules={[Autoplay]}
       >
         {data.map((poster, index) => {
           return (
             <SwiperSlide key={index}>
               <Poster
                 key={poster.id}
-                img={poster.widePoster}
+                img={poster.backdrop_path}
                 alt={`${poster.title} poster`}
-                path={poster.path}
-                type={poster.type}
-                isLoading={isLoading}
+                id={poster.id}
+                path={poster.title}
               />
             </SwiperSlide>
           );

@@ -16,53 +16,31 @@ import {
   Route,
 } from "react-router-dom";
 
-import Root from "./routes/root";
+import Root from "./routes/App";
 import Error from "./pages/Error";
 import Home from "./pages/Home";
 
-import Movies from "./pages/Category/Movies";
-import Movie, { loader as movieLoader } from "./pages/Category/Movies/Movie";
-
-import Series from "./pages/Category/Series";
-
-import Animes from "./pages/Category/Animes";
-import Anime, { loader as animeLoader } from "./pages/Category/Animes/Anime";
-
-import Animations from "./pages/Category/Animations";
-import Animation, {
-  loader as animationLoader,
-} from "./pages/Category/Animations/Animation";
 import Filter from "./pages/Filter";
 import Search from "./pages/Search";
 
+import Movies from "/src/pages/Category/Movies/index";
+
 import { loader as filterBarLoader } from "./layout/SideBars/FilterBar";
+
+import { loader as featuredLoader } from "/src/pages/Home/Featured/utils";
+import Utils from "/src/pages/Home/Featured/utils";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<Error />}>
       <Route path="/" element={<Home />} index={true} />
       <Route
-        path="movie/:movieId"
-        element={<Movie />}
-        loader={movieLoader}
-        errorElement={<Error />}
-      />
-      <Route
-        path="anime/:animeId"
-        element={<Anime />}
-        loader={animeLoader}
-        errorElement={<Error />}
-      />
-      <Route
-        path="animation/:animationId"
-        element={<Animation />}
-        loader={animationLoader}
+        path="movie/:moviePath"
+        element={<Utils />}
+        loader={featuredLoader}
         errorElement={<Error />}
       />
       <Route path="movies" element={<Movies />} />
-      <Route path="series" element={<Series />} />
-      <Route path="animes" element={<Animes />} />
-      <Route path="animations" element={<Animations />} />
       <Route path="filter" element={<Filter />} loader={filterBarLoader} />
       <Route path="search" element={<Search />} />
     </Route>

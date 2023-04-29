@@ -5,7 +5,7 @@ import { useRef } from "react";
 import SectionHeader from "../SectionHeader";
 import Movies from "./Movies";
 
-const MoviesSection = ({ moviesData, title, href, compactCard, isLoading }) => {
+const MoviesSection = ({ moviesData, title, href, compactCard }) => {
   const swiperRef = useRef();
 
   return (
@@ -18,12 +18,7 @@ const MoviesSection = ({ moviesData, title, href, compactCard, isLoading }) => {
         swiperRef={swiperRef}
       />
 
-      <Movies
-        data={moviesData}
-        isCompact={compactCard}
-        swiperRef={swiperRef}
-        isLoading={isLoading}
-      />
+      <Movies data={moviesData} isCompact={compactCard} swiperRef={swiperRef} />
     </section>
   );
 };

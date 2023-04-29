@@ -1,9 +1,9 @@
 import S from "./upcomings.module.scss";
 
 import { useRef } from "react";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 
-import db from "/src/assets/data/db.json";
+import useFetch from "/src/hooks/useFetch";
 
 import Wrapper from "../../HOC/Wrapper";
 import SectionHeader from "../SectionHeader";
@@ -13,17 +13,20 @@ import OnLoading from "/src/components/Cards/MoviesSection/OnLoading";
 
 const Upcomings = () => {
   const swiperRef = useRef();
+  const query = useQuery({
+    queryKey: ["upcomings"],
+    queryFn: () =>
+      useFetch(
+        "https://api.themoviedb.org/3/movie/upcoming?api_key=1b10176a16c36b444c7c73221e99d0c5&page=1"
+      ),
+  });
 
-  const { isLoading, error, isError, data } = useQuery("upcomings", () =>
-    fetch("http://localhost:3000/upcomings").then((res) => res.json())
-  );
-
-  if (isError) return <ErrorText message={error.message} />;
+  if (query.isError) return <ErrorText message={query.error.message} />;
 
   return (
     <Wrapper className={S["upcomings"]}>
-      {isLoading ? (
-        <OnLoading className={S["skeletons"]} isHeader/>
+      {query.isLoading ? (
+        <OnLoading className={S["skeletons"]} isHeader />
       ) : (
         <>
           <SectionHeader
@@ -33,7 +36,7 @@ const Upcomings = () => {
             swiperRef={swiperRef}
           />
           <div className={S["movies"]}>
-            <Movies data={data} swiperRef={swiperRef} />
+            <Movies data={query.data.results} swiperRef={swiperRef} />
           </div>
         </>
       )}

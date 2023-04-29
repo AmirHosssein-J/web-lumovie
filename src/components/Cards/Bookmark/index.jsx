@@ -9,8 +9,6 @@ import SectionHeader from "../SectionHeader";
 import IC_Bookmark from "/src/assets/icon/IC_Bookmark";
 import IC_BookmarkPH from "/src/assets/icon/IC_BookmarkPH";
 
-import db from "/src/assets/data/db.json";
-
 const Bookmark = ({ isPlaceholder }) => {
   const swiperRef = useRef();
 
@@ -35,10 +33,10 @@ const Bookmark = ({ isPlaceholder }) => {
       {isPlaceholder ? (
         <div className={S["content"]}>
           <h5 className={S["title"]}>
-            Click on {<IC_Bookmark className={S["icon"]} />} icon to add
-            movies to your bookmark list
+            Click on {<IC_Bookmark className={S["icon"]} />} icon to add movies
+            to your bookmark list
           </h5>
-          <Button.CTA text="Bookmark List" href="./bookmarks"  />
+          <Button.CTA text="Bookmark List" href="./bookmarks" />
           <Button.Link
             text="Search for Movie to Add"
             href="./filter"

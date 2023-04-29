@@ -1,18 +1,32 @@
 import { Link } from "react-router-dom";
 
-import styles from "../models.module.scss";
+import S from "../models.module.scss";
 
-import Button from "/src/components/Button";
+import useTitle from "/src/hooks/useTitle";
 
-const Section = ({ title, links }) => {
+const Section = ({ category, title, links }) => {
   return (
-    <section className={styles["section"]}>
-      {title && <h3 className={styles["section-title"]}>{title}</h3>}
-      <div className={styles["section-links"]}>
+    <section className={S["section"]}>
+      {title && <h3 className={S["section-title"]}>{title}</h3>}
+      <div className={S["section-links"]}>
         {links.map((link) => {
           return (
-            <Link key={link.id} to={link.page}>
-              <Button.Stroke text={link.name} />
+            <Link
+              key={link.id}
+              to={`/${category}/${useTitle(link.name)}`}
+              className={S["person"]}
+            >
+              {link.profile_path && (
+                <img
+                  className={S["image"]}
+                  src={`https://image.tmdb.org/t/p/w185/${link.profile_path}`}
+                />
+              )}
+
+              <div className={S["info"]}>
+                <h5 className={S["name"]}>{link.name}</h5>
+                <h6 className={S["character"]}>{link.character}</h6>
+              </div>
             </Link>
           );
         })}
@@ -22,3 +36,13 @@ const Section = ({ title, links }) => {
 };
 
 export default Section;
+{
+  /* <Link key={link.id} to={`/${category}/${useTitle(link.name)}`}>
+{link.profile_path && (
+  <img
+    src={`https://image.tmdb.org/t/p/w45/${link.profile_path}`}
+  />
+)}
+<Button.Stroke text={link.name} />
+</Link> */
+}

@@ -10,6 +10,7 @@ body {
     background-color: $clr-bg-primary;
     font-family: "Plus Jakarta Sans", sans-serif;
     scroll-behavior: smooth;
+    overflow: hidden;
 }
 
 #root {
