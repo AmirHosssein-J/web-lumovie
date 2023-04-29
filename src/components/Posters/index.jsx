@@ -16,7 +16,7 @@ const Posters = ({ data }) => {
           delay: 1500,
           disableOnInteraction: false,
         }}
-        // modules={[Autoplay]}
+        modules={[Autoplay]}
       >
         {data.map((poster, index) => {
           return (

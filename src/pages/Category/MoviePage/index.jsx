@@ -1,19 +1,13 @@
 import { useState } from "react";
+import S from "./movie-page.module.scss";
 
-import styles from "./movie-page.module.scss";
+import Background from "./Models/Background";
+import Details from "./Models/Details";
+import QuickAccess from "./models/QuickAccess";
 
-import QuickAccess from "./models/quick-access";
-
-import IC_Bookmark from "/src/assets/icon/IC_Bookmark";
 import IC_Download_PH from "/src/assets/icon/IC_Download_PH";
 import IC_Play_PH from "/src/assets/icon/IC_Play_PH";
 import IC_Cinema_PH from "/src/assets/icon/IC_Cinema_PH";
-
-import Details from "./models/details";
-import Background from "./models/background";
-
-import Cast from "./models/details/cast";
-import Crew from "./models/details/crew";
 
 const MoviePage = ({ movie, credits, certification }) => {
   const [quickAccesses, setQuickAccesses] = useState([
@@ -38,8 +32,8 @@ const MoviePage = ({ movie, credits, certification }) => {
   ]);
 
   return (
-    <section className={styles["content"]}>
-      <div className={styles["movie"]}>
+    <section className={S["content"]}>
+      <div className={S["movie"]}>
         <Background imgPath={movie.backdrop_path} />
         <Details
           movie={movie}
@@ -47,7 +41,7 @@ const MoviePage = ({ movie, credits, certification }) => {
           certification={certification}
         />
       </div>
-      <div className={styles["quick-accesses"]}>
+      <div className={S["quick-accesses"]}>
         {quickAccesses.map((quickAccess, index) => {
           return (
             <QuickAccess

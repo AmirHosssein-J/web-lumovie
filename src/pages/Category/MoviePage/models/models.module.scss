@@ -3,7 +3,7 @@
 .details {
     @include col;
     position: relative;
-    max-width: rem(480);
+    max-width: rem(500);
     height: 100%;
     gap: rem(18);
     padding-block: rem(36);
@@ -24,7 +24,7 @@
 
         .info {
             @include col;
-            gap: rem(4);
+            gap: rem(8);
 
             .name {
                 color: $clr-white;
@@ -33,8 +33,7 @@
             }
 
             .facts {
-                @include row;
-                justify-content: space-between;
+                @include row-center--a;
                 gap: rem(32);
             }
         }

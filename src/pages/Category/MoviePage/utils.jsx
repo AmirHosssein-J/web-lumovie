@@ -12,10 +12,3 @@ export async function getMovie(path, api) {
 
   return movie ?? null;
 }
-
-export async function getMovieDetails(id) {
-  let response = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=1b10176a16c36b444c7c73221e99d0c5&language=en-US`
-  ).then((res) => res.json());
-  return response ?? null;
-}

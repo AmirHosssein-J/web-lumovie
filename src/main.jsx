@@ -27,19 +27,14 @@ import Movies from "/src/pages/Category/Movies/index";
 
 import { loader as filterBarLoader } from "./layout/SideBars/FilterBar";
 
-import { loader as featuredLoader } from "/src/pages/Home/Featured/utils";
-import Utils from "/src/pages/Home/Featured/utils";
+import { loader as movieLoader } from "/src/pages/Category/Movie";
+import Movie from "./pages/Category/Movie";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<Error />}>
       <Route path="/" element={<Home />} index={true} />
-      <Route
-        path="movie/:moviePath"
-        element={<Utils />}
-        loader={featuredLoader}
-        errorElement={<Error />}
-      />
+      <Route path="movie/:movieId" element={<Movie />} loader={movieLoader} />
       <Route path="movies" element={<Movies />} />
       <Route path="filter" element={<Filter />} loader={filterBarLoader} />
       <Route path="search" element={<Search />} />

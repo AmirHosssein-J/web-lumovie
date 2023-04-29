@@ -1,0 +1,150 @@
+@use "/src/sass/helpers/" as *;
+
+.title {
+    color: $clr-white;
+    font-weight: 700;
+    line-height: 1.1;
+
+    &-card {
+        // min-height: rem(68);
+        font-size: rem(16);
+    }
+    &-page {
+        font-size: rem(32);
+    }
+}
+
+.genres {
+    &-card {
+        @include row;
+        flex-wrap: wrap;
+        gap: 0 rem(4);
+    }
+
+    &-page {
+        @include row;
+        gap: rem(10) rem(8);
+        flex-wrap: wrap;
+    }
+}
+
+.fact {
+    color: $clr-link;
+    font-size: rem(13);
+    font-weight: 400;
+
+    &[href]:hover {
+        color: $clr-link--active;
+    }
+
+    &-certification {
+        padding: rem(1) rem(4);
+        color: $clr-link;
+        border: 1px solid $clr-link;
+    }
+}
+
+.user-score {
+    @include row-center;
+    gap: rem(8);
+
+    .logo {
+        height: rem(20);
+    }
+
+    .score {
+        color: $clr-text-h2;
+        font-size: rem(14);
+        font-weight: 600;
+    }
+}
+
+.plot {
+    width: 100%;
+    max-width: rem(480);
+    color: $clr-text-p;
+    font-size: rem(14);
+    font-weight: 500;
+}
+
+.country {
+    @include row-center;
+    gap: rem(6);
+    color: $clr-text-h6;
+    font-size: rem(14);
+    font-weight: 500;
+    transition: 0.1s ease all;
+
+    &:hover {
+        color: $clr-primary;
+        font-weight: 600;
+    }
+
+    .flag {
+        max-width: rem(36);
+        object-fit: contain;
+    }
+}
+
+.section {
+    @include col;
+    gap: rem(14);
+
+    &-title {
+        color: $clr-text-h3;
+        font-size: rem(20);
+        font-weight: 600;
+    }
+
+    &-links {
+        @include row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: rem(10) rem(8);
+    }
+
+    .person {
+        @include row-center;
+        gap: rem(8);
+        height: rem(50);
+        transition: 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955) all;
+
+        &:hover,
+        &:focus {
+            // gap: rem(16);
+            .image {
+                scale: 1.8;
+                border-radius: rem(10);
+            }
+        }
+
+        .image {
+            width: rem(50);
+            height: rem(50);
+            object-fit: cover;
+            border-radius: 100%;
+            box-shadow: 0 10px 10px -5px $clr-bg-primary;
+            transition: 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955) all;
+        }
+
+        .info {
+            @include col;
+            gap: 0.2em;
+            margin-top: 0.5em;
+            line-height: 1.1;
+            width: rem(120);
+
+            .name {
+                font-size: rem(14);
+                font-weight: 600;
+                color: $clr-text-h5;
+            }
+
+            .character {
+                font-size: rem(13);
+                font-weight: 400;
+                color: $clr-text-h6;
+            }
+        }
+    }
+}

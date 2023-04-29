@@ -26,10 +26,10 @@ const Home = () => {
         <Upcomings />
 
         {/* quick access cards */}
-        {/* <div className={styles["quick-access"]}>
+        <div className={styles["quick-access"]}>
           <Bookmark isPlaceholder />
           <Cinema isPlaceholder />
-        </div> */}
+        </div>
       </section>
       {/* 
       <NewSeries /> */}

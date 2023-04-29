@@ -45,15 +45,15 @@
         height: 100%;
         gap: rem(10);
 
-        .time {
-            color: $clr-link;
-        }
-        a[href] {
-            color: $clr-link;
-            &:hover {
-                color: $clr-link--active;
-            }
-        }
+        // .time {
+        //     color: $clr-link;
+        // }
+        // a[href] {
+        //     color: $clr-link;
+        //     &:hover {
+        //         color: $clr-link--active;
+        //     }
+        // }
     }
 
     &--compact {

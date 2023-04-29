@@ -1,26 +1,21 @@
-import axios from "axios";
-
 import S from "../movie.module.scss";
 import { Link } from "react-router-dom";
 
 import useTitle from "/src/hooks/useTitle";
 import useMovie from "/src/hooks/useMovie";
 
-import Button from "/src/components/Button";
-import Title from "./Details/Title";
-import Genres from "./Details/Genres";
-import Rated from "./Details/Rated";
-import ReleaseDate from "./Details/ReleaseDate";
-import Time from "./Details/Time";
-import UserScore from "/src/pages/Category/MoviePage/models/details/user-score";
+import Title from "/src/components/Movie/Detail/Title";
+import Genres from "/src/components/Movie/Detail/Genres";
+import ReleaseDate from "/src/components/Movie/Detail/ReleaseDate";
+import Certification from "/src/components/Movie/Detail/Certification";
+import Runtime from "/src/components/Movie/Detail/Runtime";
+import UserScore from "/src/components/Movie/Detail/UserScore";
 
 const Movie = ({ movie, isCompact }) => {
   const MOVIE = useMovie(movie.id);
   if (MOVIE.isLoading) return "Detail Loading";
 
-  const [detail, credits, certifs] = MOVIE.data;
-
-  console.log(detail);
+  const [detail, credits, certifications] = MOVIE.data;
 
   return (
     <div
@@ -38,22 +33,13 @@ const Movie = ({ movie, isCompact }) => {
         />
       </Link>
       <div className={`${S["info"]}`}>
-        <Title
-          title={movie.title}
-          path={`/movie/${movie.id}-${useTitle(movie.title)}`}
-        />
+        <Title title={movie.title} movieId={movie.id} isCard />
         <div className={`${S["details"]}`}>
-          <Genres genres={detail.genres} />
-          <Time time={detail.runtime} />
+          <Genres genres={detail.genres} isCard />
+          <Runtime minute={detail.runtime} />
           <ReleaseDate date={detail.release_date} />
-          <Rated certification={certifs} />
+          <Certification certifications={certifications} />
           <UserScore score={detail.vote_average} />
-          {/*
-          {movie.rated && <Rated rated={movie.rated} />}
-          {movie.imdbScore && <IMDbScore score={movie.imdbScore} />}
-          {movie.isTrailer && (
-            <Button.Stroke text={"Watch Trailer"} href={movie.isTrailer} />
-          )} */}
         </div>
       </div>
     </div>
