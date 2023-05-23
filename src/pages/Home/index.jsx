@@ -26,7 +26,7 @@ const Home = () => {
         <Upcomings />
         <Popular />
 
-        {/* quick access cards */}
+        {/* quick access cards, main feature in progress */}
         <div className={S["quick-access"]}>
           <Bookmark isPlaceholder />
           <Cinema isPlaceholder />
