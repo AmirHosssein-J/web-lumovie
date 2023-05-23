@@ -17,20 +17,17 @@ const Profile = ({ isMobile }) => {
   const [links, setLinks] = useState([
     { title: "Settings", icon: <IC_Settings /> },
     { title: "Profile", icon: <IC_Profile /> },
-    {
-      title: "Logout",
-      icon: <IC_Logout />,
-      href: "https://www.lumovie.ir/login",
-    },
+    { title: "Logout", icon: <IC_Logout /> },
   ]);
 
   const user = useSelector((state) => state.user);
 
   return (
     <Container
-      className={`${isMobile ? `${S["container--mobile"]}` : ""} ${
-        S["container"]
-      }`}
+      className={`
+        ${S["container"]}
+        ${isMobile ? `${S["container--mobile"]}` : ""} 
+      `}
     >
       <Wrapper className={S["profile"]}>
         <div className={S["user"]}>

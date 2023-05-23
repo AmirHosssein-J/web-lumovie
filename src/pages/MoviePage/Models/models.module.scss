@@ -1,0 +1,134 @@
+@use "/src/sass/helpers/" as *;
+
+.details {
+    @include col;
+    position: relative;
+    max-width: rem(540);
+    height: 100%;
+    gap: rem(18);
+    padding-block: rem(36);
+    padding-inline: rem(40);
+    z-index: 20;
+
+    @include mq("tablet") {
+        padding-block: rem(18);
+        padding-inline: rem(14);
+        gap: rem(16);
+    }
+
+    @include mq("tablet-small") {
+        max-width: 100%;
+    }
+
+    .title {
+        @include row-center--a;
+        justify-content: space-between;
+        width: 100%;
+        line-height: 1.1;
+
+        .info {
+            width: 100%;
+            @include col;
+            gap: rem(8);
+
+            .head {
+                @include row;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+
+            .facts {
+                @include row-center--a;
+                gap: rem(8) rem(32);
+                flex-wrap: wrap;
+            }
+        }
+    }
+
+    .additional-info {
+        @include row-center--a;
+        flex-wrap: wrap;
+        gap: rem(18);
+    }
+}
+
+.background-image {
+    @include WH_100;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include mq("tablet-small") {
+        position: relative;
+        aspect-ratio: 16/9;
+
+        .overlay {
+            opacity: 0;
+        }
+    }
+
+    .overlay {
+        @include WH_100;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: linear-gradient(90deg, #000000 12.5%, rgba(0, 0, 0, 0.7) 54.69%, rgba(0, 0, 0, 0.5) 100%);
+
+        @include mq("phone-wide") {
+            background: rgba($clr-bg-primary, 0.92);
+        }
+    }
+
+    img {
+        @include WH_100;
+        object-fit: cover;
+    }
+}
+
+.background-poster {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+
+    .poster {
+        @include WH_100;
+    }
+}
+
+.quick-access {
+    @include col;
+    justify-content: space-between;
+    height: rem(220);
+    border-radius: rem(26);
+    padding-block: rem(24);
+    padding-inline: rem(32);
+    position: relative;
+    overflow: hidden;
+
+    svg {
+        position: absolute;
+        isolation: isolate;
+        right: -4rem;
+        bottom: -3rem;
+    }
+
+    .title {
+        color: $clr-white;
+        font-size: rem(24);
+        font-weight: 600;
+    }
+
+    .content {
+        @include col-center;
+        gap: rem(18);
+        width: 100%;
+
+        .info {
+            color: $clr-text-p;
+            font-size: rem(14);
+            font-weight: 400;
+            text-align: center;
+        }
+    }
+}

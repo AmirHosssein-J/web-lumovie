@@ -5,53 +5,91 @@
 
 html,
 body {
-    width: 100%;
-    height: 100%;
-    background-color: $clr-bg-primary;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    scroll-behavior: smooth;
-    overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: $clr-bg-primary;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 #root {
-    display: flex;
-    height: 100vh;
-    height: 100svh;
-    overflow: hidden;
+  display: flex;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
 }
 
 .content {
-    @include col;
-    height: 100%;
+  @include col;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  .main {
+    height: 100dvh;
     width: 100%;
     overflow: hidden;
 
-    .main {
-        height: 100dvh;
-        width: 100%;
-        overflow: hidden;
+    .overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(rem(6));
+      -webkit-backdrop-filter: blur(rem(1));
+      transition: 0.2s ease-in-out all;
+      animation: opacity 0.3s forwards cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
-        .overlay {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 100;
-            background-color: rgba($clr-bg-primary, 0.75);
-            backdrop-filter: blur(rem(6));
-            -webkit-backdrop-filter: blur(rem(6));
-            transition: 0.2s ease-in-out all;
-            animation: opacity 0.3s forwards cubic-bezier(0.455, 0.03, 0.515, 0.955);
-
-            @keyframes opacity {
-                0% {
-                    opacity: 0;
-                }
-                100% {
-                    opacity: 1;
-                }
-            }
+      @keyframes opacity {
+        0% {
+          opacity: 0;
         }
+        100% {
+          opacity: 1;
+        }
+      }
     }
+  }
+}
+
+.footer {
+  @include row;
+  justify-content: space-between;
+  padding-inline: rem(14);
+  padding-top: rem(4);
+  padding-bottom: rem(10);
+  font-size: rem(11);
+
+  @include mq("phone-wide") {
+    font-size: rem(10);
+  }
+
+  .dev {
+    @include col-center;
+
+    .info {
+      color: $clr-text-h4;
+      font-weight: 500;
+    }
+    .dev-name {
+      color: $clr-primary;
+      font-weight: 700;
+    }
+  }
+
+  .tmdb {
+    @include col-center;
+
+    .title {
+      color: $clr-text-h2;
+    }
+
+    img {
+      height: rem(10);
+    }
+  }
 }

@@ -1,22 +1,44 @@
 import S from "./serie.module.scss";
+import OnLoading from "./OnLoading";
+
+import { Link } from "react-router-dom";
 
 import Wrapper from "../../HOC/Wrapper";
+import useSerie from "../../../hooks/useSerie";
+import useTitle from "/src/hooks/useTitle";
 
-const Serie = ({ poster, title, ep, szn, whatsNew, href }) => {
+const Serie = ({ serieId }) => {
+  const query = useSerie(serieId);
+
+  if (query.isLoading) return <OnLoading />;
+
+  const [serie] = query.data;
+  const latestEp = serie.last_episode_to_air;
+
   return (
     <Wrapper className={S["series"]}>
-      <a className={S["poster"]} href={href}>
-        <img className={S["img"]} src={poster} />
-      </a>
+      <Link
+        to={`/serie/${serie.id}-${useTitle(serie.name)}`}
+        className={S["poster"]}
+      >
+        <img
+          className={S["img"]}
+          src={`https://image.tmdb.org/t/p/w780/${serie.backdrop_path}`}
+        />
+      </Link>
       <div className={S["info"]}>
-        <a className={S["title"]} href={href}>
-          {title}
-        </a>
+        <Link
+          to={`/serie/${serie.id}-${useTitle(serie.name)}`}
+          className={S["title"]}
+        >
+          {serie.name}
+        </Link>
         <div className={S["details"]}>
+          <h5 className={S["epName"]}>{latestEp.name}</h5>
           <h6 className={S["ep"]}>
-            {szn && `S${szn}`} {ep && `Ep${ep}`}
+            <span>{`S${latestEp.season_number}`}</span>
+            <span> {`E${latestEp.episode_number}`}</span>
           </h6>
-          <h5 className={S["whats-new"]}>{whatsNew}</h5>
         </div>
       </div>
     </Wrapper>

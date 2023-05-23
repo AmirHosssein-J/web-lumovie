@@ -1,9 +1,10 @@
 import S from "./header.module.scss";
 
+import MediaQuery from "react-responsive";
+
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggle } from "/src/app/slice/sliceSideMenuMobile";
-import useWindowSize from "/src/hooks/useWindowSize";
 
 import Profile from "/src/components/Cards/Profile";
 import Button from "/src/components/Button";
@@ -15,7 +16,6 @@ import QuickButtons from "./QuickButtons";
 import IC_Search from "/src/assets/icon/IC_Search";
 
 const Header = () => {
-  const { width } = useWindowSize();
   const [isSearchTabOpen, setIsSearchTabOpen] = useState(false);
   const isMenuClosedMobile = useSelector(
     (state) => state.isMenuClosedMobile.value
@@ -23,56 +23,48 @@ const Header = () => {
   const dispatch = useDispatch();
   const handleCloseMenu = () => isMenuClosedMobile && dispatch(toggle(false));
 
-  //Media Queries
-  const onDesktop = width >= 990;
-  const onTablet = width <= 990 && width >= 479;
-  const onMobile = width <= 479;
-
   return (
     <header className={S["header"]} onClick={handleCloseMenu}>
-      {onDesktop && (
-        <>
-          <Profile />
-          <Search />
-          <QuickButtons />
-        </>
-      )}
+      {/* on Desktop */}
+      <MediaQuery minWidth="61.875rem">
+        <Profile />
+        <Search />
+        <QuickButtons />
+      </MediaQuery>
 
-      {onTablet && (
-        <>
+      {/* on Tablet */}
+      <MediaQuery minWidth="30rem" maxWidth="61.938rem">
+        <Button.HamburgerMenu
+          isClosed={isMenuClosedMobile}
+          onClick={() => dispatch(toggle(!isMenuClosedMobile))}
+        />
+        <Search />
+        <Logo />
+      </MediaQuery>
+
+      {/* on Mobile */}
+      <MediaQuery maxWidth="30rem">
+        <SearchTab
+          isTabOpen={isSearchTabOpen}
+          setIsTabOpen={setIsSearchTabOpen}
+        />
+        <div className={S["mobile-buttons"]}>
           <Button.HamburgerMenu
             isClosed={isMenuClosedMobile}
-            onClick={() => dispatch(toggle(!isMenuClosedMobile))}
+            onClick={() => {
+              dispatch(toggle(!isMenuClosedMobile));
+            }}
           />
-          <Search />
-          <Logo />
-        </>
-      )}
-
-      {onMobile && (
-        <>
-          <SearchTab
-            isTabOpen={isSearchTabOpen}
-            setIsTabOpen={setIsSearchTabOpen}
+          <Button.Icon
+            icon={<IC_Search />}
+            dimension={3.25}
+            alt="search icon"
+            href="/filter"
+            onClick={() => setIsSearchTabOpen(true)}
           />
-          <div className={S["mobile-buttons"]}>
-            <Button.HamburgerMenu
-              isClosed={isMenuClosedMobile}
-              onClick={() => {
-                dispatch(toggle(!isMenuClosedMobile));
-              }}
-            />
-            <Button.Icon
-              icon={<IC_Search />}
-              dimension={3.25}
-              alt="search icon"
-              href="/filter"
-              onClick={() => setIsSearchTabOpen(true)}
-            />
-          </div>
-          <Logo />
-        </>
-      )}
+        </div>
+        <Logo />
+      </MediaQuery>
     </header>
   );
 };

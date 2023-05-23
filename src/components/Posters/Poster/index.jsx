@@ -1,9 +1,18 @@
 import S from "../posters.module.scss";
+import { Link } from "react-router-dom";
+import { BACKGROUND_URL_IMAGE_M } from "/src/api";
 
 import useTitle from "/src/hooks/useTitle";
-import { Link } from "react-router-dom";
+import useMovie from "/src/hooks/useMovie";
 
-const Poster = ({ className, alt, img, path, id }) => {
+import OnLoading from "./OnLoading";
+
+const Poster = ({ className, path, id }) => {
+  const query = useMovie(id);
+  if (query.isLoading) return <OnLoading />;
+
+  const [detail] = query.data;
+
   return (
     <Link
       className={`${className ? className : ""} ${S["poster"]}`}
@@ -11,8 +20,8 @@ const Poster = ({ className, alt, img, path, id }) => {
     >
       <img
         className={`${className ? className : ""} ${S["poster-img"]}`}
-        src={`https://image.tmdb.org/t/p/w780/${img}`}
-        alt={alt}
+        src={`${BACKGROUND_URL_IMAGE_M}/${detail.backdrop_path}`}
+        alt={`${detail.title} poster`}
       />
     </Link>
   );

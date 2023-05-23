@@ -1,0 +1,36 @@
+@use "/src/sass/helpers/" as *;
+
+.container {
+    margin-inline: auto;
+
+    .wrapper {
+        margin-block: rem(32);
+        gap: 1em;
+
+        &-border {
+            @include quick-access-card;
+        }
+
+        &-normal {
+            @include col;
+            border: none;
+        }
+    }
+}
+.skeletons {
+    margin-block: rem(32);
+    .header {
+        height: rem(32);
+    }
+
+    .list-skeleton {
+        margin-top: 1em;
+        height: $movie-card-height;
+    }
+
+    @include mq("tablet") {
+        .header {
+            height: rem(22);
+        }
+    }
+}

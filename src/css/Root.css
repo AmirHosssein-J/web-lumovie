@@ -117,9 +117,9 @@ body {
   top: 0;
   left: 0;
   z-index: 100;
-  background-color: rgba(5, 5, 5, 0.75);
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(0.375rem);
-  -webkit-backdrop-filter: blur(0.375rem);
+  -webkit-backdrop-filter: blur(0.0625rem);
   transition: 0.2s ease-in-out all;
   animation: opacity 0.3s forwards cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
@@ -130,6 +130,46 @@ body {
   100% {
     opacity: 1;
   }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 0.875rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.625rem;
+  font-size: 0.6875rem;
+}
+@media only screen and (max-width: 479px) {
+  .footer {
+    font-size: 0.625rem;
+  }
+}
+.footer .dev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.footer .dev .info {
+  color: hsl(0deg, 0%, 88%);
+  font-weight: 500;
+}
+.footer .dev .dev-name {
+  color: hsl(180deg, 81%, 94%);
+  font-weight: 700;
+}
+.footer .tmdb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.footer .tmdb .title {
+  color: hsl(0deg, 0%, 94%);
+}
+.footer .tmdb img {
+  height: 0.625rem;
 }
 
 .swiper {

@@ -78,7 +78,7 @@ const IconBox = ({ className, icon, width, height, tooltip, onClick }) => {
   );
 };
 
-const CTA = ({ text, href, width, type }) => {
+const CTA = ({ text, href, width, type, onClick }) => {
   return (
     <ButtonTemplate
       className={`${S["button--cta"]}`}
@@ -86,6 +86,7 @@ const CTA = ({ text, href, width, type }) => {
       href={href}
       width={width}
       type={type}
+      onClick={onClick}
     />
   );
 };

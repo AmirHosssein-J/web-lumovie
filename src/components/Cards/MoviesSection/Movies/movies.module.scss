@@ -1,0 +1,11 @@
+@use "/src/sass/helpers/" as *;
+.movies {
+    @include col;
+    gap: rem(20);
+    width: 100%;
+    margin-block: rem(32);
+
+    &-list {
+        width: 100%;
+    }
+}

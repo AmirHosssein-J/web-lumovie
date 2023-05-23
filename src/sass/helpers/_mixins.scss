@@ -146,44 +146,6 @@ $breakpoints: (
     }
 }
 
-//Placeholders --START--
-
-@mixin input-placeholder {
-    &.placeholder {
-        @content;
-    }
-    &:-moz-placeholder {
-        @content;
-    }
-    &::-moz-placeholder {
-        @content;
-    }
-    &:-ms-input-placeholder {
-        @content;
-    }
-    &::-webkit-input-placeholder {
-        @content;
-    }
-}
-
-//Usages
-
-// input,
-//textarea {
-//  @include input-placeholder {
-// color: red;
-//}
-//}
-
-//Placeholders --END--
-
-//Truncate TEXT OVERFLOW --START--
-
-@mixin truncate($truncation-boundary) {
-    max-width: $truncation-boundary;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-//Truncate TEXT OVERFLOW --END--
+//Components variables
+$movie-card-height: rem(224);
+$movie-card-height-mobile: rem(186);

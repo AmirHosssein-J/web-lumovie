@@ -1,4 +1,4 @@
-import S from "../movie.module.scss";
+import S from "./movies.module.scss";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
@@ -7,7 +7,7 @@ import Movie from "../Movie";
 
 const Movies = ({ data, swiperRef, isCompact }) => {
   return (
-    <section className={`${S["movies-list"]}`}>
+    <section className={S["movies-list"]}>
       <Swiper
         modules={[Navigation]}
         onBeforeInit={(swiper) => {

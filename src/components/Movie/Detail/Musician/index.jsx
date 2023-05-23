@@ -6,7 +6,7 @@ const Musician = ({ crew }) => {
   return (
     <>
       {musician.length > 0 && (
-        <Section title={"Music by"} links={musician} category="composer" />
+        <Section title="Music by" links={musician} category="composer" />
       )}
     </>
   );

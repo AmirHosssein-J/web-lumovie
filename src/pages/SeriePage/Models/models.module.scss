@@ -1,0 +1,61 @@
+@use "/src/sass/helpers/" as *;
+
+.container {
+  .wrapper {
+    @include quick-access-card;
+    height: auto;
+    margin-block: rem(32);
+    gap: 1em;
+  }
+}
+.seasons {
+  @include row-center;
+}
+
+.season {
+  @include row;
+  width: rem(390);
+
+  .poster {
+    width: 50%;
+    border-radius: rem(16);
+  }
+
+  .info {
+    @include col;
+    justify-content: space-between;
+    padding-inline: rem(10);
+
+    .head {
+      @include col;
+      gap: rem(4);
+      .name {
+        font-size: rem(18);
+        font-weight: 700;
+        line-height: 1.2;
+        color: $clr-text-h3;
+      }
+      .fact {
+        @include row-center--a;
+        gap: rem(4);
+
+        .title {
+          font-size: rem(16);
+          color: $clr-text-h5;
+          font-weight: 600;
+        }
+
+        .value {
+          font-size: rem(14);
+          font-weight: 400;
+          color: $clr-text-h6;
+        }
+      }
+    }
+
+    .quick-access {
+      @include row;
+      gap: rem(10);
+    }
+  }
+}

@@ -3,7 +3,7 @@
 .tooltip {
     display: none;
     position: absolute;
-    max-width: fit-content;
+    width: 100%;
     padding-block: rem(4);
     padding-inline: rem(6);
     border-radius: rem(6);
@@ -13,6 +13,7 @@
         @include row-center;
         position: relative;
         color: $clr-text-h6;
+        text-align: center;
         font-weight: 400;
         font-size: rem(14);
 

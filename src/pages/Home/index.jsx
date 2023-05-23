@@ -1,38 +1,41 @@
-import styles from "./home.module.scss";
+import S from "./home.module.scss";
+import MediaQuery, { useMediaQuery } from "react-responsive";
 
 import Bookmark from "/src/components/Cards/Bookmark";
 import Cinema from "/src/components/Cards/Cinema";
 import Upcomings from "/src/components/Cards/Upcomings";
-import NewSeries from "/src/layout/SideBars/NewSeries";
+import SerieSideBar from "/src/layout/SideBars/SerieSideBar";
 
 import Featured from "./Featured";
 import NewRelease from "./NewRelease";
-import useWindowSize from "/src/hooks/useWindowSize";
-import { useQueryClient } from "@tanstack/react-query";
+import Popular from "./Popular";
 
 const Home = () => {
-  const { width } = useWindowSize();
+  const onTabletOrMobile = useMediaQuery({ query: "(max-width: 61.875rem)" });
+
   return (
-    <div className={styles["home"]}>
+    <div className={S["home"]}>
       <section
-        className={`${width <= 991 ? `${styles["content--mobile"]}` : ""} ${
-          styles["content"]
+        className={`${onTabletOrMobile ? S["content--mobile"] : ""} ${
+          S["content"]
         }`}
       >
         <Featured />
-
         <NewRelease />
 
         <Upcomings />
+        <Popular />
 
         {/* quick access cards */}
-        <div className={styles["quick-access"]}>
+        <div className={S["quick-access"]}>
           <Bookmark isPlaceholder />
           <Cinema isPlaceholder />
         </div>
       </section>
-      {/* 
-      <NewSeries /> */}
+
+      <MediaQuery minWidth="40rem">
+        <SerieSideBar />
+      </MediaQuery>
     </div>
   );
 };

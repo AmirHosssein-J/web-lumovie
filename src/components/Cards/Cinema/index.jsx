@@ -10,11 +10,14 @@ import IC_FriendsPH from "/src/assets/icon/IC_FriendsPH";
 const Cinema = ({ isPlaceholder }) => {
   return (
     <Wrapper
-      className={
+      className={`
+      ${S["cinema"]}
+      ${
         isPlaceholder
-          ? `${S["cinema"]} ${S["cinema--placeholder"]}`
-          : `${S["cinema"]} ${S["cinema--include-content"]}`
+          ? S["cinema--placeholder"]
+          : S["cinema--include-content"]
       }
+    `}
     >
       {isPlaceholder ? (
         <SectionHeader title="Cinema" />

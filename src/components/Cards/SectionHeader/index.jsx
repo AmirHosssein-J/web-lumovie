@@ -15,7 +15,12 @@ const SectionHeader = ({
 }) => {
   return (
     <header className={S["section-header"]}>
-      <div className={`${className ? className : ""} ${S["details"]}`}>
+      <div
+        className={`
+           ${className ? className : ""}
+           ${S["details"]}
+        `}
+      >
         <h3 className={S["title"]}>{title}</h3>
         {seemore && (
           <Link to={href}>

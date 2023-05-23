@@ -1,6 +1,6 @@
 export default function useTitle(name) {
   return name
-    .replace(/[!.:]/g, "")
+    .replace(/[!.:'/]/g, "")
     .split(" ")
     .join("-")
     .toString()

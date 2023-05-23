@@ -1,0 +1,93 @@
+@use "/src/sass/helpers/" as *;
+
+.movie {
+  @include row;
+  position: relative;
+  width: rem(300);
+  min-height: $movie-card-height;
+  transition: 0.29s cubic-bezier(0.215, 0.61, 0.355, 1) all;
+
+  &:hover {
+    scale: 0.99;
+  }
+
+  &--normal {
+    height: 100%;
+    gap: rem(10);
+  }
+
+  &--compact {
+    max-width: rem(160);
+    height: rem(240);
+
+    &:hover .info,
+    .image:focus + .info {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    //hidden details but bigger card
+    .image {
+      max-width: rem(160);
+      max-height: rem(240);
+    }
+
+    .info {
+      position: absolute;
+      min-width: rem(160);
+      width: 100%;
+      padding: rem(12);
+      background-color: rgba($clr-bg-primary, 0.8);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+
+      .details {
+        color: $clr-text-h3;
+
+        a {
+          color: $clr-text-h3;
+          &:hover {
+            color: $clr-primary;
+          }
+        }
+      }
+    }
+  }
+
+  .info {
+    @include col;
+    justify-content: space-between;
+    min-width: 50%;
+    min-height: 100%;
+
+    .details {
+      @include col;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: rem(8);
+    }
+  }
+
+  //image <a> wrapper tag
+  .image {
+    min-height: 100%;
+    max-height: 100%;
+    min-width: 50%;
+
+    //<img /> tag
+    img {
+      width: 100%;
+      height: 100%;
+      border: 0.5px solid $clr-border-primary;
+      border-radius: rem(12);
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+  }
+
+  @include mq("phone-wide") {
+    width: rem(240);
+    min-height: $movie-card-height-mobile;
+  }
+}

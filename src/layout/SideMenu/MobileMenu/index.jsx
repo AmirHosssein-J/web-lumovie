@@ -46,18 +46,18 @@ const MobileMenu = () => {
           alt: "series icon",
           href: "./series",
         },
-        {
-          text: "Animes",
-          icon: <IC_Anime />,
-          alt: "anime icon",
-          href: "./animes",
-        },
-        {
-          text: "Animations",
-          icon: <IC_Animation />,
-          alt: "animation icon",
-          href: "./animations",
-        },
+        // {
+        //   text: "Animes",
+        //   icon: <IC_Anime />,
+        //   alt: "anime icon",
+        //   href: "./animes",
+        // },
+        // {
+        //   text: "Animations",
+        //   icon: <IC_Animation />,
+        //   alt: "animation icon",
+        //   href: "./animations",
+        // },
         {
           text: "Genres",
           icon: <IC_Genres />,

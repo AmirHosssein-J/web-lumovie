@@ -1,19 +1,21 @@
 @use "/src/sass/helpers/" as *;
 
 .loading {
-    height: 200%;
-    width: 100%;
-    background-color: $clr-bg-primary;
-    border-block: rem(10) solid $clr-border-primary;
-    position: absolute;
-    z-index: 5000;
-    animation: loading 16s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+  @include row-center;
+  height: 95vh;
+  width: 100%;
+  background-color: $clr-bg-primary;
+  border-top: rem(1) solid $clr-border-primary;
+  border-bottom: rem(4) solid $clr-border-primary;
+  position: absolute;
+  z-index: 5000;
+  animation: loading 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 }
 @keyframes loading {
-    0% {
-        translate: 0 -20em;
-    }
-    100% {
-        translate: 0 100%;
-    }
+  0% {
+    translate: 0 -20em;
+  }
+  100% {
+    translate: 0 0%;
+  }
 }

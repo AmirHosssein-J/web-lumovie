@@ -1,46 +1,46 @@
 @use "/src/sass/helpers/" as *;
 
 .cinema {
-    @include quick-access-card;
+  @include quick-access-card;
 
-    &--placeholder {
-        max-width: rem(400);
+  &--placeholder {
+    max-width: rem(400);
 
-        .content {
-            @include col-center;
-            gap: rem(12);
-            padding-block: 2em;
-            z-index: 2;
+    .content {
+      @include col-center;
+      gap: rem(12);
+      padding-block: 2em;
+      z-index: 2;
 
-            .head {
-                @include col-center;
-                gap: 1em;
-                margin-block: 0.5em;
-            }
+      .head {
+        @include col-center;
+        gap: 1em;
+        margin-block: 0.5em;
+      }
 
-            .icon {
-                width: rem(24);
-                height: rem(24);
-                path {
-                    stroke: $clr-white;
-                }
-            }
-
-            //Text
-            h5 {
-                color: $clr-text-p;
-                font-weight: 300;
-
-                @include mq("tablet") {
-                    font-size: rem(14);
-                }
-            }
+      .icon {
+        width: rem(24);
+        height: rem(24);
+        path {
+          stroke: $clr-white;
         }
-    }
+      }
 
-    .icon-placeholder {
-        position: absolute;
-        bottom: -2em;
-        left: -5em;
+      //Text
+      h5 {
+        color: $clr-text-p;
+        font-weight: 500;
+
+        @include mq("tablet") {
+          font-size: rem(14);
+        }
+      }
     }
+  }
+
+  .icon-placeholder {
+    position: absolute;
+    bottom: -2em;
+    left: -5em;
+  }
 }

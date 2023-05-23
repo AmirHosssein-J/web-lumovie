@@ -1,27 +1,24 @@
 import { useQuery } from "@tanstack/react-query";
-
-import Posters from "/src/components/Posters";
-import OnLoading from "/src/components/Posters/OnLoading";
-import ErrorText from "/src/pages/Error/ErrorText";
+import { BASE_URL, API_KEY } from "/src/api";
 
 import useFetch from "/src/hooks/useFetch";
 
+import ErrorText from "/src/pages/Error/ErrorText";
+import OnLoading from "/src/components/Posters/OnLoading";
+import Posters from "/src/components/Posters";
+
 const Featured = () => {
-  const query = useQuery({
+  const { data, isLoading, isError, error } = useQuery({
     queryKey: ["featured"],
     queryFn: () =>
       useFetch(
-        "https://api.themoviedb.org/3/movie/now_playing?api_key=1b10176a16c36b444c7c73221e99d0c5&language=en-US&page=1&region=DE"
+        `${BASE_URL}/movie/now_playing?api_key=${API_KEY}&language=en-US&region=US&page=2`
       ),
   });
 
-  if (query.isError) return <ErrorText message={error.message} />;
+  if (isError) return <ErrorText message={error.message} />;
 
-  return (
-    <>
-      {query.isLoading ? <OnLoading /> : <Posters data={query.data.results} />}
-    </>
-  );
+  return <>{isLoading ? <OnLoading /> : <Posters data={data.results} />}</>;
 };
 
 export default Featured;

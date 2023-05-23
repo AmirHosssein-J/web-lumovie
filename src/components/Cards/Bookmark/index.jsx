@@ -14,11 +14,14 @@ const Bookmark = ({ isPlaceholder }) => {
 
   return (
     <Wrapper
-      className={
+      className={`
+      ${S["bookmark"]}
+      ${
         isPlaceholder
-          ? `${S["bookmark"]} ${S["bookmark--placeholder"]}`
-          : `${S["bookmark"]} ${S["bookmark--include-content"]}`
+          ? S["bookmark--placeholder"]
+          : S["bookmark--include-content"]
       }
+    `}
     >
       {isPlaceholder ? (
         <SectionHeader title="Bookmarks" />

@@ -1,25 +1,48 @@
-import S from "./movie.module.scss";
+import S from "./movie-section.module.scss";
 
 import { useRef } from "react";
+
+import Container from "/src/components/HOC/Container";
+import Wrapper from "/src/components/HOC/Wrapper";
 
 import SectionHeader from "../SectionHeader";
 import Movies from "./Movies";
 
-const MoviesSection = ({ moviesData, title, href, compactCard }) => {
-  const swiperRef = useRef();
+const MoviesSection = ({
+  moviesData,
+  title,
+  href,
+  compactCard,
+  hasMaxWidth,
+  hasBorder,
+  hasSeeMore,
+}) => {
+  const swiperRef = useRef(null);
 
   return (
-    <section className={`${S["movies"]}`}>
-      <SectionHeader
-        arrows
-        seemore
-        title={title}
-        href={href}
-        swiperRef={swiperRef}
-      />
-
-      <Movies data={moviesData} isCompact={compactCard} swiperRef={swiperRef} />
-    </section>
+    <Container
+      className={S["container"]}
+      style={{ maxWidth: hasMaxWidth && "75rem" }}
+    >
+      <Wrapper
+        className={`${S["wrapper"]} ${
+          hasBorder ? S["wrapper-border"] : S["wrapper-normal"]
+        } `}
+      >
+        <SectionHeader
+          title={title}
+          arrows
+          swiperRef={swiperRef}
+          href={href}
+          seemore={hasSeeMore}
+        />
+        <Movies
+          data={moviesData}
+          swiperRef={swiperRef}
+          isCompact={compactCard}
+        />
+      </Wrapper>
+    </Container>
   );
 };
 

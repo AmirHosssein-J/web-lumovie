@@ -1,15 +1,17 @@
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
+import { API_KEY, BASE_URL } from "/src/api";
+
 const getMovie = async (id) => {
   const { data: detail } = await axios.get(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=1b10176a16c36b444c7c73221e99d0c5`
+    `${BASE_URL}/movie/${id}?api_key=${API_KEY}`
   );
   const { data: credits } = await axios.get(
-    `https://api.themoviedb.org/3/movie/${id}/credits?api_key=1b10176a16c36b444c7c73221e99d0c5`
+    `${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}`
   );
   const { data: certifs } = await axios.get(
-    `https://api.themoviedb.org/3/movie/${id}/release_dates?api_key=1b10176a16c36b444c7c73221e99d0c5`
+    `${BASE_URL}/movie/${id}/release_dates?api_key=${API_KEY}`
   );
 
   return [detail, credits, certifs];

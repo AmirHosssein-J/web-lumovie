@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const sliceNewSeries = createSlice({
   name: "isNewSeriesClosed",
-  initialState: { value: false },
+  initialState: { value: true },
 
   reducers: {
     toggle: (state, action) => {

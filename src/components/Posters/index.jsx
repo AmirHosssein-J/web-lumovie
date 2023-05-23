@@ -21,13 +21,7 @@ const Posters = ({ data }) => {
         {data.map((poster, index) => {
           return (
             <SwiperSlide key={index}>
-              <Poster
-                key={poster.id}
-                img={poster.backdrop_path}
-                alt={`${poster.title} poster`}
-                id={poster.id}
-                path={poster.title}
-              />
+              <Poster key={poster.id} id={poster.id} path={poster.title} />
             </SwiperSlide>
           );
         })}

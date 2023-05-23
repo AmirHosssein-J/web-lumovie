@@ -1,0 +1,21 @@
+export default function IC_Play({ className }) {
+  return (
+    <svg
+      className={className}
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3 8.99992V6.32992C3 3.01492 5.3475 1.65742 8.22 3.31492L10.5375 4.64992L12.855 5.98492C15.7275 7.64242 15.7275 10.3574 12.855 12.0149L10.5375 13.3499L8.22 14.6849C5.3475 16.3424 3 14.9849 3 11.6699V8.99992Z"
+        stroke="#666666"
+        strokeWidth="1"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}

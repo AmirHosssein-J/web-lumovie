@@ -1,3 +1,4 @@
+import TMDb from "/src/assets/icon/tmdb.svg";
 import S from "../detail.module.scss";
 
 const UserScore = ({ score }) => {
@@ -5,7 +6,7 @@ const UserScore = ({ score }) => {
 
   return (
     <div className={S["user-score"]}>
-      <img className={S["logo"]} src="/src/assets/icon/tmdb.svg" />
+      <img className={S["logo"]} src={TMDb} />
       <span className={S["score"]}>{votePercentage}%</span>
     </div>
   );

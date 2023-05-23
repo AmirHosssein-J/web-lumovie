@@ -13,10 +13,13 @@
     position: relative;
 
     @include mq("tablet") {
-        min-height: rem(72);
         padding-inline-end: rem(10);
         padding-inline-start: rem(6);
         gap: 0.5em;
+    }
+
+    @include mq("phone") {
+        min-height: rem(72);
     }
 
     .buttons {
@@ -31,8 +34,6 @@
             div:nth-child(1) {
                 display: flex;
                 top: 3.8em;
-                width: -webkit-fit-content;
-                width: -moz-fit-content;
                 width: fit-content;
             }
 

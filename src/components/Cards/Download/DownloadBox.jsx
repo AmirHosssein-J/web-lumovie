@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Wrapper from "../../HOC/Wrapper";
 import Button from "../../Button";
 
-import IC_DownloadOne from "../../../assets/icon/IC_DownloadOne";
+import IC_DownloadOne from "/src/assets/icon/IC_DownloadOne";
 
 const DownloadBox = () => {
   

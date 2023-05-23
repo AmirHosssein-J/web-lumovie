@@ -13,10 +13,12 @@
         &-img {
             height: rem(160);
             width: rem(360);
-            max-width: rem(360);
+            max-width: rem(500);
             -o-object-fit: cover;
             object-fit: cover;
+            object-position: center;
             border-radius: rem(10);
+            border: 0.5px solid $clr-border-primary;
         }
     }
 
@@ -26,20 +28,6 @@
 
         .poster-img {
             height: 100%;
-            width: rem(275);
-        }
-    }
-}
-
-.skeletons {
-    @include row;
-    gap: rem(14);
-
-    .skeleton {
-        width: rem(360);
-        height: 100%;
-
-        @include mq("tablet") {
             width: rem(275);
         }
     }

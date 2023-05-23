@@ -1,57 +1,57 @@
 @use "/src/sass/helpers/" as *;
 
 .bookmark {
-    @include quick-access-card;
+  @include quick-access-card;
 
-    &--include-content {
-        // max-width: rem(704);
-        // width: rem(704);
-        width: 100%;
-    }
+  &--include-content {
+    // max-width: rem(704);
+    // width: rem(704);
+    width: 100%;
+  }
 
-    &--placeholder {
-        max-width: rem(400);
-        .content {
-            @include col-center;
-            gap: rem(12);
-            padding-block: 2em;
-            z-index: 2;
+  &--placeholder {
+    max-width: rem(400);
+    .content {
+      @include col-center;
+      gap: rem(12);
+      padding-block: 2em;
+      z-index: 2;
 
-            .title {
-                color: $clr-text-p;
-                font-weight: 300;
-                font-size: rem(16);
-                text-align: center;
-                margin-bottom: 1.5em;
+      .title {
+        color: $clr-text-p;
+        font-weight: 500;
+        font-size: rem(16);
+        text-align: center;
+        margin-bottom: 1.5em;
 
-                .icon {
-                    display: inline;
-                    position: relative;
-                    width: rem(24);
-                    height: rem(24);
-                    top: 0.3em;
-                    path {
-                        stroke: $clr-white;
-                    }
-                }
-
-                @include mq("tablet") {
-                    font-size: rem(14);
-                }
-            }
+        .icon {
+          display: inline;
+          position: relative;
+          width: rem(24);
+          height: rem(24);
+          top: 0.3em;
+          path {
+            stroke: $clr-white;
+          }
         }
-    }
 
-    &--include-content {
-        .movies {
-            @include row-center;
-            z-index: 2;
+        @include mq("tablet") {
+          font-size: rem(14);
         }
+      }
     }
+  }
 
-    .icon-placeholder {
-        position: absolute;
-        bottom: -2em;
-        right: -4em;
+  &--include-content {
+    .movies {
+      @include row-center;
+      z-index: 2;
     }
+  }
+
+  .icon-placeholder {
+    position: absolute;
+    bottom: -2em;
+    right: -4em;
+  }
 }

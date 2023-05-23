@@ -1,19 +1,14 @@
-import S from "../movie.module.scss";
-
+import S from "../movie-section.module.scss";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
-const OnLoading = ({ className,isHeader }) => {
+const OnLoading = ({ className, hasHeader }) => {
   return (
-    <SkeletonTheme baseColor="#181818" highlightColor="#444">
-      <div className={`${className ? className : ""} ${S["container"]}`}>
-        {isHeader && <Skeleton height={32}></Skeleton>}
-        <div className={S["skeletons"]}>
-          {[...Array(10)].map((_, index) => (
-            <Skeleton key={index} className={S["skeleton"]} />
-          ))}
-        </div>
-      </div>
-    </SkeletonTheme>
+    <div className={`${className ? className : ""} ${S["skeletons"]}`}>
+      <SkeletonTheme baseColor="#050505" highlightColor="#222">
+        {hasHeader && <Skeleton className={S["header"]} />}
+        <Skeleton className={S["list-skeleton"]} />
+      </SkeletonTheme>
+    </div>
   );
 };
 

@@ -101,7 +101,7 @@
 
 .hamburger-menu {
     @include row-center;
-    width: rem(52);
+    min-width: rem(52);
     height: rem(52);
     position: relative;
     cursor: pointer;

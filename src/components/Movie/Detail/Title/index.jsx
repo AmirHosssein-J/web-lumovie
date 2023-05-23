@@ -10,7 +10,7 @@ export default function Title({ title, movieId, isCard }) {
           to={`/movie/${movieId}-${useTitle(title)}`}
           className={`${S["title-card"]} ${S["title"]}`}
         >
-          {title}
+          <h2 data-title="title">{title}</h2>
         </Link>
       ) : (
         <h2 className={`${S["title-page"]} ${S["title"]}`}>{title}</h2>
