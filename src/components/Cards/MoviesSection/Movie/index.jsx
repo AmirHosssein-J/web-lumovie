@@ -36,9 +36,6 @@ const Movie = ({ movie, isCompact, className }) => {
           <img
             src={`${POSTER_URL_IMAGE}/${detail.poster_path}`}
             alt={`${detail.title} poster`}
-            onError={() =>
-              console.log("متاسفانه برای لود شدن عکس ها نیاز به فیلترشکن هستش")
-            }
           />
         ) : (
           <img src={PosterPlaceholder} />
