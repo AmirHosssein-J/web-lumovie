@@ -13,7 +13,7 @@ const Posters = ({ data }) => {
         spaceBetween={10}
         slidesPerView="auto"
         autoplay={{
-          delay: 1500,
+          delay: 2000,
           disableOnInteraction: false,
         }}
         modules={[Autoplay]}
