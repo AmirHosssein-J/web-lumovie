@@ -15,7 +15,14 @@ import MobileMenu from "../layout/SideMenu/MobileMenu";
 import Header from "/src/layout/Header";
 import Footer from "../layout/Footer";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 120 * (60 * 1000), // 120 mins
+      cacheTime: 125 * (60 * 1000), // 125 mins
+    },
+  },
+});
 
 export default function App() {
   const onTabletOrMobile = useMediaQuery({ query: "(max-width: 61.875rem)" });
