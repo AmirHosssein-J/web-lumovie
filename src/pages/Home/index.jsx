@@ -6,7 +6,7 @@ import Cinema from "/src/components/Cards/Cinema";
 import Upcomings from "/src/components/Cards/Upcomings";
 import SerieSideBar from "/src/layout/SideBars/SerieSideBar";
 
-import Featured from "./Featured";
+// import Featured from "./Featured";
 import NewRelease from "./NewRelease";
 import Popular from "./Popular";
 
@@ -20,7 +20,7 @@ const Home = () => {
           S["content"]
         }`}
       >
-        <Featured />
+        {/* <Featured /> */}
         <NewRelease />
 
         <Upcomings />
