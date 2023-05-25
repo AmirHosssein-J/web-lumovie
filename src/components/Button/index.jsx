@@ -91,7 +91,7 @@ const CTA = ({ text, href, width, type, onClick }) => {
   );
 };
 
-const Link = ({ text, href, icon, alt, underline }) => {
+const Link = ({ text, href, icon, alt, underline, onClick }) => {
   return (
     <ButtonTemplate
       className={`${
@@ -103,6 +103,7 @@ const Link = ({ text, href, icon, alt, underline }) => {
       href={href}
       icon={icon}
       alt={alt}
+      onClick={onClick}
     />
   );
 };

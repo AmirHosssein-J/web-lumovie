@@ -8,6 +8,7 @@ import SectionHeader from "../SectionHeader";
 
 import IC_Bookmark from "/src/assets/icon/IC_Bookmark";
 import IC_BookmarkPH from "/src/assets/icon/IC_BookmarkPH";
+import { Link } from "react-router-dom";
 
 const Bookmark = ({ isPlaceholder }) => {
   const swiperRef = useRef();
@@ -39,12 +40,10 @@ const Bookmark = ({ isPlaceholder }) => {
             Click on {<IC_Bookmark className={S["icon"]} />} icon to add movies
             to your bookmark list
           </h5>
-          <Button.CTA text="Bookmark List" href="./bookmarks" />
-          <Button.Link
-            text="Search for Movie to Add"
-            href="./filter"
-            underline
-          />
+          <Link to="/bookmarks">
+            <Button.CTA text="Bookmark List" href="./bookmarks" />
+          </Link>
+          <h5 className={S["title"]}>Search for Movie to Add</h5>
         </div>
       ) : (
         <div className={S["movies"]}>

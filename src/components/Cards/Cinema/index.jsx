@@ -12,11 +12,7 @@ const Cinema = ({ isPlaceholder }) => {
     <Wrapper
       className={`
       ${S["cinema"]}
-      ${
-        isPlaceholder
-          ? S["cinema--placeholder"]
-          : S["cinema--include-content"]
-      }
+      ${isPlaceholder ? S["cinema--placeholder"] : S["cinema--include-content"]}
     `}
     >
       {isPlaceholder ? (
@@ -30,12 +26,17 @@ const Cinema = ({ isPlaceholder }) => {
             <IC_Friends className={S["icon"]} />
             <h5 className={S["title"]}>Currently no available sessions</h5>
           </div>
-          <Button.CTA text="Add Friend" href="./friends" />
+          <Button.CTA
+            onClick={() => alert("Feature in Progress, Kappa!")}
+            text="Add Friend"
+            href="./friends"
+          />
           <h5>or</h5>
           <Button.Link
             text="Start a session"
             href="./start-session"
             underline
+            onClick={() => alert("Feature in Progress, Kappa!")}
           />
         </div>
       )}

@@ -24,6 +24,14 @@ import Search from "./pages/Search";
 
 import Movies from "/src/pages/Category/Movies";
 import Series from "/src/pages/Category/Series";
+import Genres from "/src/pages/Category/Genres";
+import Actors from "/src/pages/Category/Actors";
+import Directors from "/src/pages/Category/Directors";
+
+import Cinema from "/src/pages/Cinema";
+import Upcomings from "/src/pages/Upcomings";
+import Bookmarks from "/src/pages/Bookmarks";
+import Downloads from "/src/pages/Downloads";
 
 import { loader as filterBarLoader } from "./layout/SideBars/FilterBar";
 
@@ -41,6 +49,14 @@ const router = createBrowserRouter(
       <Route path="serie/:serieId" element={<Serie />} loader={serieLoader} />
       <Route path="movies" element={<Movies />} />
       <Route path="series" element={<Series />} />
+      <Route path="genres" element={<Genres />} />
+      <Route path="actors" element={<Actors />} />
+      <Route path="directors" element={<Directors />} />
+      <Route path="cinema" element={<Cinema />} />
+      <Route path="upcomings" element={<Upcomings />} />
+      <Route path="bookmarks" element={<Bookmarks />} />
+      <Route path="downloads" element={<Downloads />} />
+
       {/* <Route path="filter" element={<Filter />} loader={filterBarLoader} /> */}
       <Route path="search" element={<Search />} />
     </Route>
