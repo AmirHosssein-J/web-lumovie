@@ -20,7 +20,7 @@ const Home = () => {
           S["content"]
         }`}
       >
-        <Featured />
+        {/* <Featured /> */}
         <NewRelease />
 
         <Upcomings />
