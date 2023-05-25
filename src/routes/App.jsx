@@ -1,5 +1,7 @@
 import "../css/Root.css";
 
+import { useRef } from "react";
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
@@ -20,6 +22,7 @@ const queryClient = new QueryClient({
     queries: {
       staleTime: 120 * (60 * 1000), // 120 mins
       cacheTime: 125 * (60 * 1000), // 125 mins
+      refetchOnWindowFocus: false,
     },
   },
 });
@@ -44,6 +47,7 @@ export default function App() {
           {isMenuClosedMobile && (
             <div className="overlay" onClick={handleCloseSideMenu}></div>
           )}
+
           <Outlet />
         </main>
         <Footer />

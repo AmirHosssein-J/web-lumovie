@@ -253,6 +253,11 @@
         border-radius: rem(12);
       }
 
+      &:hover .image {
+        scale: 1 !important;
+        background-color: red;
+      }
+
       .info {
         align-items: center;
         text-align: center;

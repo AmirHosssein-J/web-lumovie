@@ -14,7 +14,7 @@ const Section = ({ category, title, links }) => {
   const [isSectionOpen, setIsSectionOpen] = useState(false);
   const onMobile = useMediaQuery({ query: "(max-width: 30rem)" });
 
-  console.log(onMobile);
+  console.log("section");
 
   useEffect(() => {
     if (!onMobile) {
