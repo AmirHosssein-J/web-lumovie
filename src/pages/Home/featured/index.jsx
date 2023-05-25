@@ -1,11 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
-import { BASE_URL, API_KEY } from "/src/api";
+// import { useQuery } from "@tanstack/react-query";
+// import { BASE_URL, API_KEY } from "/src/api";
 
-import useFetch from "/src/hooks/useFetch";
+// import useFetch from "/src/hooks/useFetch";
 
-import ErrorText from "/src/pages/Error/ErrorText";
-import OnLoading from "/src/components/Posters/OnLoading";
-import Posters from "/src/components/Posters";
+// import ErrorText from "/src/pages/Error/ErrorText";
+// import OnLoading from "/src/components/Posters/OnLoading";
+// import Posters from "/src/components/Posters";
 
 const Featured = () => {
   // const { data, isLoading, isError, error } = useQuery({
