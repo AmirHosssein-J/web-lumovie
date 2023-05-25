@@ -19,11 +19,7 @@ const Featured = () => {
   if (isLoading) return <OnLoading />;
   if (isError) return <ErrorText message={error.message} />;
 
-  return (
-    <>
-      <Posters data={data.results} />
-    </>
-  );
+  return <>{/* <Posters data={data.results} /> */}</>;
 };
 
 export default Featured;
