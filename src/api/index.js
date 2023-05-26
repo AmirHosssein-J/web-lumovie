@@ -1,4 +1,4 @@
-export const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+export const API_KEY = import.meta.env.VITE_API_KEY;
 export const BASE_URL = `https://api.themoviedb.org/3`;
 export const BASE_URL_IMAGE = "https://image.tmdb.org/t/p/";
 export const BACKGROUND_URL_IMAGE_XL = `${BASE_URL_IMAGE}original`;
