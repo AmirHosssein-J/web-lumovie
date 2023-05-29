@@ -1,14 +1,14 @@
 import S from "./home.module.scss";
 import MediaQuery, { useMediaQuery } from "react-responsive";
 
-import Bookmark from "/src/components/Cards/Bookmark";
-import Cinema from "/src/components/Cards/Cinema";
-import Upcomings from "/src/components/Cards/Upcomings";
-import SerieSideBar from "/src/layout/SideBars/SerieSideBar";
-
+import FeaturedMovies from "./FeaturedMovies";
 import NewRelease from "./NewRelease";
 import Popular from "./Popular";
-import FeaturedMovies from "./FeaturedMovies";
+
+import Upcomings from "/src/components/Cards/Upcomings";
+import SerieSideBar from "/src/layout/SideBars/SerieSideBar";
+import Bookmark from "/src/components/Cards/Bookmark";
+import Cinema from "/src/components/Cards/Cinema";
 
 const Home = () => {
   const onTabletOrMobile = useMediaQuery({ query: "(max-width: 61.875rem)" });
