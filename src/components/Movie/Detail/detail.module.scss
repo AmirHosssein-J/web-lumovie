@@ -158,10 +158,10 @@
     @include row-center;
     gap: rem(8);
     height: rem(60);
-    transition: 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955) all;
+    transition: 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) all;
 
     &:hover .image {
-      scale: 2.5;
+      scale: 1.5;
       border-radius: rem(4);
       height: auto;
     }

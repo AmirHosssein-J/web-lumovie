@@ -20,14 +20,15 @@ const SerieSideBar = () => {
   );
   const dispatch = useDispatch();
 
-  const query = useQuery({
+  const { data, isLoading, isError, error } = useQuery({
     queryKey: ["new-series"],
     queryFn: () =>
-      useFetch(`${BASE_URL}/tv/popular?api_key=${API_KEY}&region=en-GB&page=4`),
+      useFetch(`${BASE_URL}/tv/popular?api_key=${API_KEY}&region=en-GB&page=2`),
   });
 
-  if (query.isLoading) return <OnLoading />;
-  const newSeries = query.data.results;
+  if (isLoading) return <OnLoading />;
+  if (isError) return <ErrorText message={error.message} />;
+  const newSeries = data.results;
 
   return (
     <aside

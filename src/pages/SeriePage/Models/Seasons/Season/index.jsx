@@ -15,7 +15,6 @@ const Season = ({ season }) => {
     { name: "Start a session", icon: <IC_Cinema /> },
   ]);
 
-  console.log(season);
   return (
     <div className={S["season"]}>
       <img

@@ -10,8 +10,6 @@ export default function ReleaseDate({
   lastAirDate,
 }) {
   const year = date && date.slice(0, 4);
-  const yearFirstAir = serie && firstAirDate.slice(0, 4);
-  const yearLastAir = serie && lastAirDate.slice(0, 4);
   return (
     <>
       {serie ? (

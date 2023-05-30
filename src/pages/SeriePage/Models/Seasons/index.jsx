@@ -21,7 +21,6 @@ const Seasons = ({
   const swiperRef = useRef(null);
 
   return (
-    // <section className={S["seasons"]}>
     <Container
       className={S["container"]}
       style={{ maxWidth: hasMaxWidth && "75rem" }}
@@ -47,7 +46,7 @@ const Seasons = ({
             }}
             grabCursor={true}
             slidesPerView={"auto"}
-            spaceBetween={10}
+            spaceBetween={24}
           >
             {seasons.map((season, index) => {
               return (
@@ -58,14 +57,8 @@ const Seasons = ({
             })}
           </Swiper>
         </section>
-        {/* <section className={S["seasons"]}>
-          {seasons.map((season) => {
-            return <Season season={season} />;
-          })}
-        </section> */}
       </Wrapper>
     </Container>
-    // </section>
   );
 };
 

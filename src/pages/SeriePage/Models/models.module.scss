@@ -3,9 +3,13 @@
 .container {
   .wrapper {
     @include quick-access-card;
-    height: auto;
+    height: auto !important;
     margin-block: rem(32);
     gap: 1em;
+
+    @include mq("tablet") {
+      margin-block: rem(10);
+    }
   }
 }
 .seasons {
@@ -14,7 +18,12 @@
 
 .season {
   @include row;
-  width: rem(390);
+  width: rem(360);
+  height: 100%;
+
+  @include mq("tablet") {
+    width: rem(340);
+  }
 
   .poster {
     width: 50%;
@@ -30,7 +39,7 @@
       @include col;
       gap: rem(4);
       .name {
-        font-size: rem(18);
+        font-size: rem(20);
         font-weight: 700;
         line-height: 1.2;
         color: $clr-text-h3;

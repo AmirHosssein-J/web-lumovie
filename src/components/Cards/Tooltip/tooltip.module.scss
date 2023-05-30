@@ -1,29 +1,30 @@
 @use "../../../sass/helpers/" as *;
 
 .tooltip {
-    display: none;
-    position: absolute;
-    width: 100%;
-    padding-block: rem(4);
-    padding-inline: rem(6);
-    border-radius: rem(6);
-    top: 3.8em;
+  display: none;
+  position: absolute;
+  width: 100%;
+  padding-block: rem(4);
+  padding-inline: rem(6);
+  border-radius: rem(6);
+  top: 3.8em;
 
-    &-text {
-        @include row-center;
-        position: relative;
-        color: $clr-text-h6;
-        text-align: center;
-        font-weight: 400;
-        font-size: rem(14);
+  &-text {
+    @include row-center;
+    position: relative;
+    color: $clr-text-h6;
+    text-align: center;
+    font-weight: 400;
+    font-size: rem(12);
 
-        &::after {
-            content: "";
-            position: absolute;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-bottom: 5px solid $clr-primary;
-            top: -0.8em;
-        }
+    //arrow pointing to container
+    &::after {
+      content: "";
+      position: absolute;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid $clr-primary;
+      top: -0.8em;
     }
+  }
 }
