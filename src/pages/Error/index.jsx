@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import Button from "/src/components/Button/";
+import Button from "/src/components/Button";
 import Bob from "/src/assets/image/Bob.png";
 
 import styles from "./error.module.scss";

@@ -110,16 +110,11 @@ const DesktopMenu = () => {
   return (
     <>
       <aside
-        className={`${isMenuClosed ? `${S["side-menu--closed"]}` : ""} ${
-          S["side-menu"]
-        }`}
+        className={`${isMenuClosed ? `${S["side-menu--closed"]}` : ""} ${S["side-menu"]
+          }`}
       >
         <Button.Arrow
-          className={
-            !isMenuClosed
-              ? `${S["menu-toggle"]}`
-              : `${S["menu-toggle"]} ${S["menu-toggle--closed"]}`
-          }
+          className={`${S["menu-toggle"]} ${isMenuClosed ? S["menu--toggle--closed"] : ""} `}
           onClick={() => {
             dispatch(toggle(!isMenuClosed));
           }}

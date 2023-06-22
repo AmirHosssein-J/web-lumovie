@@ -16,7 +16,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import Root from "./routes/App";
+import App from "./routes/App";
 import Error from "./pages/Error";
 import Home from "./pages/Home";
 
@@ -33,7 +33,6 @@ import Upcomings from "/src/pages/Upcomings";
 import Bookmarks from "/src/pages/Bookmarks";
 import Downloads from "/src/pages/Downloads";
 
-import { loader as filterBarLoader } from "./layout/SideBars/FilterBar";
 
 import { loader as movieLoader } from "/src/pages/Category/Movie";
 import Movie from "./pages/Category/Movie";
@@ -43,21 +42,26 @@ import Serie from "./pages/Category/Serie";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Root />} errorElement={<Error />}>
+    <Route path="/" element={<App />} errorElement={<Error />}>
       <Route path="/" element={<Home />} index={true} />
+
+      {/* movie content pages */}
       <Route path="movie/:movieId" element={<Movie />} loader={movieLoader} />
       <Route path="serie/:serieId" element={<Serie />} loader={serieLoader} />
+
+      {/* cateogry routes */}
       <Route path="movies" element={<Movies />} />
       <Route path="series" element={<Series />} />
       <Route path="genres" element={<Genres />} />
       <Route path="actors" element={<Actors />} />
       <Route path="directors" element={<Directors />} />
       <Route path="cinema" element={<Cinema />} />
+
+      {/* general pages routes */}
       <Route path="upcomings" element={<Upcomings />} />
       <Route path="bookmarks" element={<Bookmarks />} />
       <Route path="downloads" element={<Downloads />} />
 
-      {/* <Route path="filter" element={<Filter />} loader={filterBarLoader} /> */}
       <Route path="search" element={<Search />} />
     </Route>
   )

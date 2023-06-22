@@ -50,7 +50,7 @@ const Icon = ({
 }) => {
   return (
     <ButtonTemplate
-      className={`${className && className} ${border && S["button--border"]}`}
+      className={`${className ? className : ""} ${border ? S["button--border"] : ""}`}
       icon={icon}
       href={href}
       dimension={dimension}
@@ -81,7 +81,7 @@ const IconBox = ({ className, icon, width, height, tooltip, onClick }) => {
 const CTA = ({ text, href, width, type, onClick }) => {
   return (
     <ButtonTemplate
-      className={`${S["button--cta"]}`}
+      className={S["button--cta"]}
       text={text}
       href={href}
       width={width}
@@ -94,11 +94,7 @@ const CTA = ({ text, href, width, type, onClick }) => {
 const Link = ({ text, href, icon, alt, underline, onClick }) => {
   return (
     <ButtonTemplate
-      className={`${
-        underline
-          ? `${S["button--link"]} ${S["button--link--underline"]}`
-          : `${S["button--link"]}`
-      }`}
+      className={`${S["button--link"]} ${underline ? S["button--link--underline"] : ""}`}
       text={text}
       href={href}
       icon={icon}
@@ -111,7 +107,7 @@ const Link = ({ text, href, icon, alt, underline, onClick }) => {
 const Stroke = ({ className, text, href, icon, alt }) => {
   return (
     <ButtonTemplate
-      className={`${className && className} ${S["button--stroke"]}`}
+      className={`${className ? className : ""} ${S["button--stroke"]}`}
       text={text}
       href={href}
       icon={icon}
@@ -124,9 +120,7 @@ const HamburgerMenu = ({ isClosed, onClick }) => {
   return (
     <div
       onClick={onClick}
-      className={`${isClosed ? `${S["hamburger-menu--closed"]}` : ""} ${
-        S["hamburger-menu"]
-      }`}
+      className={`${S["hamburger-menu"]} ${isClosed ? `${S["hamburger-menu--closed"]}` : ""}`}
     >
       <div className={S["line"]}></div>
     </div>
