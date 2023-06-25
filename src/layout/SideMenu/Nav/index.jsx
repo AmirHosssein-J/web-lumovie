@@ -11,7 +11,7 @@ const Nav = ({ navLists, isMenuClosed }) => {
 
   return (
     <nav className={`${isMenuClosedMobile ? ["nav--mobile"] : ""} ${S["nav"]}`}>
-      {navLists.map((navList, index) => {
+      {navLists?.map((navList, index) => {
         return (
           <NavList
             key={index}

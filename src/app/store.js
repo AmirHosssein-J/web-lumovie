@@ -1,14 +1,3 @@
-// import { configureStore, createSlice } from "@reduxjs/toolkit";
-// import sideMenuReducer from "../features/sliceSideMenu";
-
-// // const store = configureStore({
-// //   reducer: {
-// //     isMenuClosed: sideMenuReducer,
-// //   },
-// // });
-
-// // export default store;
-
 // https://codesandbox.io/s/react-redux-toolkit-persist-izxb6?file=/src/app/store.js:405-638
 
 import { configureStore } from "@reduxjs/toolkit";

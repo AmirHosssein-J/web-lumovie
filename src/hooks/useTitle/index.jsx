@@ -6,3 +6,7 @@ export default function useTitle(name) {
     .toString()
     .toLowerCase();
 }
+
+// Shazam! Fury of the Gods
+// to
+// shazam-fury-of-the-gods

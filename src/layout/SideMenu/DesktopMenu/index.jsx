@@ -1,7 +1,5 @@
 import S from "../sidemenu.module.scss";
 
-import { useState } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 import { toggle } from "/src/app/slice/sliceSideMenu";
 
@@ -15,8 +13,6 @@ import Nav from "../Nav";
 import IC_Home from "/src/assets/icon/IC_Home";
 import IC_Movie from "/src/assets/icon/IC_Movie";
 import IC_Series from "/src/assets/icon/IC_Series";
-import IC_Anime from "/src/assets/icon/IC_Anime";
-import IC_Animation from "/src/assets/icon/IC_Animation";
 import IC_Actors from "/src/assets/icon/IC_Actors";
 import IC_Cinema from "/src/assets/icon/IC_Cinema";
 import IC_Upcomings from "/src/assets/icon/IC_Upcomings";
@@ -28,7 +24,7 @@ const DesktopMenu = () => {
   const isMenuClosed = useSelector((state) => state.isMenuClosed.value);
   const dispatch = useDispatch();
 
-  const [navLists, setNavLists] = useState([
+  const navLists = [
     {
       title: "Category",
       links: [
@@ -50,18 +46,6 @@ const DesktopMenu = () => {
           alt: "series icon",
           href: "./series",
         },
-        // {
-        //   text: "Animes",
-        //   icon: <IC_Anime />,
-        //   alt: "anime icon",
-        //   href: "./animes",
-        // },
-        // {
-        //   text: "Animations",
-        //   icon: <IC_Animation />,
-        //   alt: "animation icon",
-        //   href: "./animations",
-        // },
         {
           text: "Genres",
           icon: <IC_Genres />,
@@ -105,16 +89,18 @@ const DesktopMenu = () => {
         },
       ],
     },
-  ]);
+  ];
 
   return (
     <>
       <aside
-        className={`${isMenuClosed ? `${S["side-menu--closed"]}` : ""} ${S["side-menu"]
-          }`}
-      >
+        className={`${isMenuClosed ? `${S["side-menu--closed"]}` : ""} ${
+          S["side-menu"]
+        }`}>
         <Button.Arrow
-          className={`${S["menu-toggle"]} ${isMenuClosed ? S["menu--toggle--closed"] : ""} `}
+          className={`${S["menu-toggle"]} ${
+            isMenuClosed ? S["menu-toggle--closed"] : ""
+          } `}
           onClick={() => {
             dispatch(toggle(!isMenuClosed));
           }}

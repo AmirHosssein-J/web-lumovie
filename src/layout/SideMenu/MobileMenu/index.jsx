@@ -1,6 +1,5 @@
 import S from "../sidemenu.module.scss";
 
-import { useState } from "react";
 import { useSelector } from "react-redux";
 
 import Nav from "../Nav";
@@ -10,8 +9,6 @@ import Profile from "/src/components/Cards/Profile";
 import IC_Home from "/src/assets/icon/IC_Home";
 import IC_Movie from "/src/assets/icon/IC_Movie";
 import IC_Series from "/src/assets/icon/IC_Series";
-import IC_Anime from "/src/assets/icon/IC_Anime";
-import IC_Animation from "/src/assets/icon/IC_Animation";
 import IC_Actors from "/src/assets/icon/IC_Actors";
 import IC_Cinema from "/src/assets/icon/IC_Cinema";
 import IC_Upcomings from "/src/assets/icon/IC_Upcomings";
@@ -24,7 +21,7 @@ import IC_Help from "/src/assets/icon/IC_Help";
 import IC_DownloadOne from "/src/assets/icon/IC_DownloadOne";
 
 const MobileMenu = () => {
-  const [navLists, setNavLists] = useState([
+  const navLists = [
     {
       title: "Category",
       links: [
@@ -46,18 +43,6 @@ const MobileMenu = () => {
           alt: "series icon",
           href: "./series",
         },
-        // {
-        //   text: "Animes",
-        //   icon: <IC_Anime />,
-        //   alt: "anime icon",
-        //   href: "./animes",
-        // },
-        // {
-        //   text: "Animations",
-        //   icon: <IC_Animation />,
-        //   alt: "animation icon",
-        //   href: "./animations",
-        // },
         {
           text: "Genres",
           icon: <IC_Genres />,
@@ -130,7 +115,7 @@ const MobileMenu = () => {
         },
       ],
     },
-  ]);
+  ];
 
   const isMenuClosedMobile = useSelector(
     (state) => state.isMenuClosedMobile.value
@@ -141,8 +126,7 @@ const MobileMenu = () => {
       <aside
         className={`${
           isMenuClosedMobile ? `${S["side-menu-mobile--open"]}` : ""
-        } ${S["side-menu-mobile"]} ${S["side-menu"]}`}
-      >
+        } ${S["side-menu-mobile"]} ${S["side-menu"]}`}>
         <Profile isMobile />
         <Nav navLists={navLists} />
       </aside>

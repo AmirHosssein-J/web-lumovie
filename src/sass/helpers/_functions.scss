@@ -1,10 +1,10 @@
 //Convert Px to Rem
 
 @function rem($pixels, $context: 16) {
-    @return calc($pixels / $context) * 1rem;
+  @return calc($pixels / $context) * 1rem;
 }
 
-// How to use //
+// How to use
 
 // font-size: rem(18)
 // This will return 18px to 1.125rem in main css file

@@ -10,15 +10,14 @@ const NavItem = ({ icon, alt, text, href, isMenuClosed }) => {
       className={({ isActive }) =>
         isActive ? `${S["item--active"]} ${S["item"]}` : `${S["item"]}`
       }
-      to={href}
-    >
-      <li href={href} className={`${S["item-li"]}`}>
+      to={href}>
+      <li href={href} className={S["item-li"]}>
         <Button.IconBox
           width={4.125}
           height={2.625}
           icon={icon}
           alt={alt}
-          className={`${S["item-li-button"]}`}
+          className={S["item-li-button"]}
         />
 
         {!isMenuClosed && <span className={S["item-li-text"]}>{text}</span>}
