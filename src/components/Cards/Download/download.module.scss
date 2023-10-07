@@ -4,49 +4,48 @@
     @include col-center--a;
     justify-content: space-around;
     margin-top: auto;
-    width: rem(216);
+    width: 92%;
     height: rem(160);
     min-height: rem(160);
-    margin-inline: rem(24);
+    margin-left: rem(10);
     padding-inline: rem(8);
     padding-block: rem(10);
     border-radius: rem(24);
     direction: ltr;
 
-    .content{
+    .content {
         width: 100%;
         @include col-center--a;
     }
 
-
-    .movie{
+    .movie {
         width: 100%;
         max-height: rem(64);
         border-radius: rem(16);
         overflow: hidden;
 
-        .info{
+        .info {
             @include row;
             align-items: center;
             width: 100%;
-            
-            .poster{
+
+            .poster {
                 width: rem(52);
                 height: rem(52);
                 object-fit: cover;
             }
-            
-            .details{
+
+            .details {
                 width: 100%;
                 padding-inline: rem(8);
                 font-size: rem(12);
 
-                .title{
+                .title {
                     color: $clr-text-h1;
                     font-weight: 600;
                 }
-                
-                .detail{
+
+                .detail {
                     @include row-center--a;
                     gap: rem(6);
                     color: $clr-text-h6;
@@ -54,16 +53,16 @@
                 }
             }
         }
-        
-        .progress-bar{
+
+        .progress-bar {
             background-color: $clr-border-secondry;
             width: 100%;
             height: rem(12);
-            
-            &--fill{
+
+            &--fill {
                 height: 100%;
                 background-color: $clr-primary;
-                transition: .2s ease-in-out all;
+                transition: 0.2s ease-in-out all;
             }
         }
     }

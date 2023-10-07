@@ -1,4 +1,4 @@
-@use "../../../sass/helpers/" as *;
+@use "/src/sass/helpers/" as *;
 
 .container {
     @include row-center;
@@ -12,7 +12,7 @@
         height: auto;
         padding: rem(14);
         min-width: rem(222);
-        margin-top: rem(72);
+        margin-top: rem(84);
         right: rem(-6);
         // top: 5em;
         border-radius: 0;

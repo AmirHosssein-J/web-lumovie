@@ -1,36 +1,47 @@
 @use "/src/sass/helpers/" as *;
 
 .container {
-    margin-inline: auto;
+  margin-inline: auto;
+  @include mq("tablet") {
+    margin-block: rem(8);
+  }
+  margin-bottom: rem(32);
 
-    .wrapper {
-        margin-block: rem(32);
-        gap: 1em;
+  .wrapper {
+    gap: 1em;
 
-        &-border {
-            @include quick-access-card;
-        }
-
-        &-normal {
-            @include col;
-            border: none;
-        }
+    &-border {
+      @include quick-access-card;
     }
+
+    &-normal {
+      @include col;
+      border: none;
+    }
+  }
 }
+
+.half-width {
+  @include mq("tablet") {
+    width: 100%;
+  }
+  width: 50%;
+}
+
 .skeletons {
-    margin-block: rem(32);
+  margin-block: rem(32);
+  .header {
+    height: rem(32);
+  }
+
+  .list-skeleton {
+    margin-top: 1em;
+    height: $movie-card-height;
+  }
+
+  @include mq("tablet") {
     .header {
-        height: rem(32);
+      height: rem(22);
     }
-
-    .list-skeleton {
-        margin-top: 1em;
-        height: $movie-card-height;
-    }
-
-    @include mq("tablet") {
-        .header {
-            height: rem(22);
-        }
-    }
+  }
 }

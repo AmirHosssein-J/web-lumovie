@@ -9,6 +9,7 @@ const Popular = () => {
       loadingHasHeader
       hasBorder
       hasSeeMore
+      hasHalfWidth
     />
   );
 };

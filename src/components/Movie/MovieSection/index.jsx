@@ -15,6 +15,7 @@ const MovieSection = ({
   loadingHasHeader,
   hasBorder,
   hasSeeMore,
+  hasHalfWidth,
 }) => {
   const { data, isLoading, isError, error } = useQuery({
     queryKey: [title],
@@ -36,6 +37,7 @@ const MovieSection = ({
           title={title}
           hasBorder={hasBorder}
           hasSeeMore={hasSeeMore}
+          hasHalfWidth={hasHalfWidth}
           href={href ? `/${href}` : `/${title}`}
         />
       )}

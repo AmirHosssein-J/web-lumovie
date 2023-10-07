@@ -13,9 +13,11 @@ const Logo = ({ noLogoText, spinner }) => {
         alt="logo icon"
         className={spinner ? S["spinner"] : ""}
       />
-      {!noLogoText && (
-        <img src={IC_LogoText} alt="logo text" className={S["logo-text"]} />
-      )}
+      <img
+        src={IC_LogoText}
+        alt="logo text"
+        className={`${noLogoText ? S["logo-text--invisible"] : S["logo-text"]}`}
+      />
     </Link>
   );
 };

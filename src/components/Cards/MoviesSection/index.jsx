@@ -16,19 +16,18 @@ const MoviesSection = ({
   hasMaxWidth,
   hasBorder,
   hasSeeMore,
+  hasHalfWidth,
 }) => {
   const swiperRef = useRef(null);
 
   return (
     <Container
-      className={S["container"]}
-      style={{ maxWidth: hasMaxWidth && "75rem" }}
-    >
+      className={`${S["container"]} ${hasHalfWidth ? S["half-width"] : ""} `}
+      style={{ maxWidth: hasMaxWidth && "75rem" }}>
       <Wrapper
         className={`${S["wrapper"]} ${
           hasBorder ? S["wrapper-border"] : S["wrapper-normal"]
-        } `}
-      >
+        } `}>
         <SectionHeader
           title={title}
           arrows

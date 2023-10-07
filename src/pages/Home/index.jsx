@@ -18,13 +18,14 @@ const Home = () => {
       <section
         className={`${onTabletOrMobile ? S["content--mobile"] : ""} ${
           S["content"]
-        }`}
-      >
+        }`}>
         <FeaturedMovies />
         <NewRelease />
 
-        <Upcomings />
-        <Popular />
+        <div className={S["lists"]}>
+          <Upcomings />
+          <Popular />
+        </div>
 
         {/* quick access cards, main feature in progress */}
         <div className={S["quick-access"]}>

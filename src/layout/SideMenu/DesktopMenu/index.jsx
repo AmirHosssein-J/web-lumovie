@@ -94,7 +94,7 @@ const DesktopMenu = () => {
   return (
     <>
       <aside
-        className={`${isMenuClosed ? `${S["side-menu--closed"]}` : ""} ${
+        className={`${isMenuClosed ? S["side-menu--closed"] : ""} ${
           S["side-menu"]
         }`}>
         <Button.Arrow

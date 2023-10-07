@@ -33,7 +33,6 @@ import Upcomings from "/src/pages/Upcomings";
 import Bookmarks from "/src/pages/Bookmarks";
 import Downloads from "/src/pages/Downloads";
 
-
 import { loader as movieLoader } from "/src/pages/Category/Movie";
 import Movie from "./pages/Category/Movie";
 

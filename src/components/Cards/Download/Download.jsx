@@ -17,11 +17,7 @@ const Download = () => {
         <DownloadBox />
       ) : (
         <Link to="./downloads" className={S["download-button"]}>
-          <Button.Icon
-            border
-            dimension={2.625}
-            icon={<IC_DownloadOne />}
-          />
+          <Button.Icon border dimension={2.625} icon={<IC_DownloadOne />} />
         </Link>
       )}
     </>

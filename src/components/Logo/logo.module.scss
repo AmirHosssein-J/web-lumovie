@@ -11,6 +11,10 @@
     outline: none !important;
   }
 
+  &-text--invisible {
+    display: none;
+  }
+
   @include mq("phone") {
     &-text {
       display: none;

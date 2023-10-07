@@ -23,12 +23,12 @@
     }
 
     @include mq("tablet") {
-        height: rem(120);
-        margin-block: rem(10);
+        height: rem(146);
+        margin-block: rem(18);
 
         .poster-img {
             height: 100%;
-            width: rem(275);
+            width: rem(320);
         }
     }
 }

@@ -124,9 +124,9 @@ const MobileMenu = () => {
   return (
     <>
       <aside
-        className={`${
-          isMenuClosedMobile ? `${S["side-menu-mobile--open"]}` : ""
-        } ${S["side-menu-mobile"]} ${S["side-menu"]}`}>
+        className={`${isMenuClosedMobile ? S["side-menu-mobile--open"] : ""} ${
+          S["side-menu-mobile"]
+        } ${S["side-menu"]}`}>
         <Profile isMobile />
         <Nav navLists={navLists} />
       </aside>

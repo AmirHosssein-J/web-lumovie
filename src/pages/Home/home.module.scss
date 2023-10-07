@@ -1,4 +1,4 @@
-@use "../../sass/helpers/" as *;
+@use "/src/sass/helpers/" as *;
 
 .home {
   @include row;
@@ -18,11 +18,26 @@
       padding-inline: rem(10);
     }
 
+    .lists {
+      display: flex;
+      width: 100%;
+      gap: rem(10);
+
+      @include mq("tablet") {
+        flex-direction: column;
+      }
+
+      .box {
+        height: rem(200);
+        margin: 1em;
+        background-color: darkblue;
+      }
+    }
+
     .quick-access {
       @include row;
       flex-wrap: wrap;
       gap: rem(10);
-      margin-block: rem(18);
     }
   }
 }

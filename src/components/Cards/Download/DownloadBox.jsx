@@ -9,7 +9,6 @@ import Button from "../../Button";
 import IC_DownloadOne from "/src/assets/icon/IC_DownloadOne";
 
 const DownloadBox = () => {
-  
   const [downloadList, setDownloadList] = useState([
     // {
     //   title: "Friends",
@@ -41,8 +40,7 @@ const DownloadBox = () => {
             <div className={S["progress-bar"]}>
               <div
                 className={S["progress-bar--fill"]}
-                style={{ width: `${downloadList[0].status}%` }}
-              ></div>
+                style={{ width: `${downloadList[0].status}%` }}></div>
             </div>
           </Wrapper>
         ) : (
@@ -54,7 +52,7 @@ const DownloadBox = () => {
       </div>
 
       <Link to="./downloads">
-        <Button.CTA text="Full List"/>
+        <Button.CTA text="Full List" />
       </Link>
     </Wrapper>
   );
