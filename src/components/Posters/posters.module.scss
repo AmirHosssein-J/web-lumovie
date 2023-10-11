@@ -9,6 +9,7 @@
     .poster {
         width: 100%;
         height: 100%;
+        position: relative;
 
         &-img {
             height: rem(160);
@@ -19,6 +20,13 @@
             object-position: center;
             border-radius: rem(10);
             border: 0.5px solid $clr-border-primary;
+        }
+
+        &-logo {
+            position: absolute;
+            width: rem(180);
+            left: rem(20);
+            bottom: rem(16);
         }
     }
 
