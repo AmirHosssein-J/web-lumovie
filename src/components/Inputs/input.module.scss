@@ -60,6 +60,15 @@
   margin-top: 1rem;
   transition: 0.5s ease-in-out all;
 
+  &::-webkit-scrollbar-track {
+    border-radius: rem(20);
+    margin: 1rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: rem(20);
+  }
+
   &-list {
     @include col;
     gap: rem(10);

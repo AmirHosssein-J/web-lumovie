@@ -1,9 +1,7 @@
 import S from "../input.module.scss";
 
-import { POSTER_URL_IMAGE } from "/src/api";
-
 import { useEffect, useRef, useState } from "react";
-import { Form, Link } from "react-router-dom";
+import { Form } from "react-router-dom";
 
 import Button from "../../Button";
 import Wrapper from "../../HOC/Wrapper";
@@ -13,22 +11,27 @@ import IC_Close from "/src/assets/icon/IC_Close";
 
 import useAutoComplete from "/src/hooks/useAutoComplete";
 import useDebounce from "/src/hooks/useDebounce";
-import useTitle from "/src/hooks/useTitle";
+import AutoComplete from "../AutoComplete";
 
 const Search = ({ isTabOpen, setIsTabOpen }) => {
   const inputRef = useRef(null);
   const [inputValue, setInputValue] = useState("");
-  const [isInputFocused, setIsInputFocused] = useState(false);
+
   const debouncedInputValue = useDebounce(inputValue, 200);
   const autoCompleteMovies = useAutoComplete(debouncedInputValue);
-  const [movies, setMovies] = useState([]);
+
+  const [isInputFocused, setIsInputFocused] = useState(false);
   const [isOverlay, setIsOverlay] = useState(false);
 
+  const [movies, setMovies] = useState([]);
+
+  // if form submited close search tab
   const handleOnSubmit = () => {
     setIsTabOpen(false);
     inputRef.current.blur();
   };
 
+  // close auto complete with a delay
   const handleBlurInput = () => {
     setTimeout(() => {
       setIsInputFocused(false);
@@ -55,6 +58,7 @@ const Search = ({ isTabOpen, setIsTabOpen }) => {
 
   return (
     <Wrapper className={S["wrapper"]}>
+      {/* input */}
       <Form className={S["search"]} action="/search/" onSubmit={handleOnSubmit}>
         <Button.Icon icon={<IC_Search />} dimension={3.25} alt="Search Icon" />
         <input
@@ -77,29 +81,13 @@ const Search = ({ isTabOpen, setIsTabOpen }) => {
           />
         )}
       </Form>
+
+      {/* auto complete after typing */}
       {movies.length && isInputFocused && (
-        <div className={S["auto-complete"]}>
-          <ul className={S["auto-complete-list"]}>
-            {movies?.map((movie, index) => (
-              <li
-                className={S["auto-complete-item"]}
-                key={index}
-                onClick={() => handleOnSubmit()}>
-                <Link
-                  className={S["auto-complete-link"]}
-                  to={`/movie/${movie.id}-${useTitle(movie.title)}`}>
-                  <img
-                    className={S["poster"]}
-                    src={`${POSTER_URL_IMAGE}/${movie.poster_path}`}
-                  />
-                  {movie.original_title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <AutoComplete movies={movies} handleOnSubmit={() => handleOnSubmit()} />
       )}
 
+      {/* overlay to close autocomplete when autocomplete appears */}
       {!inputValue == "" && isInputFocused && (
         <div className={S["overlay"]} onClick={() => handleOnSubmit()}></div>
       )}
