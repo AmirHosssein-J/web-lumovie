@@ -37,6 +37,7 @@
   @include row-center;
   padding-inline: rem(18);
   height: rem(52);
+  z-index: 5000;
 
   .input {
     padding-block: rem(16);
@@ -62,26 +63,38 @@
   &-list {
     @include col;
     gap: rem(10);
-    margin: rem(16);
+    margin: rem(4);
   }
 
   &-item {
-    @include row-center--a;
-    gap: 1em;
-    padding: rem(4) rem(8);
-    color: $clr-link;
-    border-radius: rem(4);
+    padding: rem(4);
+
+    border-radius: rem(8);
     &:nth-child(odd) {
       background-color: $clr-bg-trinary;
     }
-
+  }
+  &-link {
+    @include row-center--a;
+    gap: 1em;
+    color: $clr-link;
     &:hover {
       color: $clr-link--active;
     }
   }
 
   .poster {
-    height: rem(46);
+    height: rem(72);
     border-radius: rem(4);
   }
+}
+
+.overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }

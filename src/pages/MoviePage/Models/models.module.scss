@@ -33,6 +33,7 @@
 
             .head {
                 @include row;
+                gap: rem(4);
                 align-items: flex-start;
                 justify-content: space-between;
             }

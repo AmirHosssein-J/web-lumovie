@@ -13,6 +13,7 @@ import IC_Close from "/src/assets/icon/IC_Close";
 
 import useAutoComplete from "/src/hooks/useAutoComplete";
 import useDebounce from "/src/hooks/useDebounce";
+import useTitle from "/src/hooks/useTitle";
 
 const Search = ({ isTabOpen, setIsTabOpen }) => {
   const inputRef = useRef(null);
@@ -21,6 +22,7 @@ const Search = ({ isTabOpen, setIsTabOpen }) => {
   const debouncedInputValue = useDebounce(inputValue, 200);
   const autoCompleteMovies = useAutoComplete(debouncedInputValue);
   const [movies, setMovies] = useState([]);
+  const [isOverlay, setIsOverlay] = useState(false);
 
   const handleOnSubmit = () => {
     setIsTabOpen(false);
@@ -46,12 +48,10 @@ const Search = ({ isTabOpen, setIsTabOpen }) => {
       setMovies(autoCompleteMovies.data.results);
     }
 
-    if (!inputValue == "") {
+    if (!inputValue == "" && isOverlay) {
       setIsInputFocused(true);
     }
   }, [isTabOpen, movies, autoCompleteMovies, isInputFocused]);
-
-  console.log(autoCompleteMovies.data);
 
   return (
     <Wrapper className={S["wrapper"]}>
@@ -84,16 +84,24 @@ const Search = ({ isTabOpen, setIsTabOpen }) => {
               <li
                 className={S["auto-complete-item"]}
                 key={index}
-                onClick={() => setInputValue(movie.original_title)}>
-                <img
-                  className={S["poster"]}
-                  src={`${POSTER_URL_IMAGE}/${movie.poster_path}`}
-                />
-                {movie.original_title}
+                onClick={() => handleOnSubmit()}>
+                <Link
+                  className={S["auto-complete-link"]}
+                  to={`/movie/${movie.id}-${useTitle(movie.title)}`}>
+                  <img
+                    className={S["poster"]}
+                    src={`${POSTER_URL_IMAGE}/${movie.poster_path}`}
+                  />
+                  {movie.original_title}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
+      )}
+
+      {!inputValue == "" && isInputFocused && (
+        <div className={S["overlay"]} onClick={() => handleOnSubmit()}></div>
       )}
     </Wrapper>
   );
