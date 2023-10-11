@@ -1,5 +1,7 @@
 import S from "../input.module.scss";
 
+import { POSTER_URL_IMAGE } from "/src/api";
+
 import { useEffect, useRef, useState } from "react";
 import { Form, Link } from "react-router-dom";
 
@@ -49,6 +51,8 @@ const Search = ({ isTabOpen, setIsTabOpen }) => {
     }
   }, [isTabOpen, movies, autoCompleteMovies, isInputFocused]);
 
+  console.log(autoCompleteMovies.data);
+
   return (
     <Wrapper className={S["wrapper"]}>
       <Form className={S["search"]} action="/search/" onSubmit={handleOnSubmit}>
@@ -81,6 +85,10 @@ const Search = ({ isTabOpen, setIsTabOpen }) => {
                 className={S["auto-complete-item"]}
                 key={index}
                 onClick={() => setInputValue(movie.original_title)}>
+                <img
+                  className={S["poster"]}
+                  src={`${POSTER_URL_IMAGE}/${movie.poster_path}`}
+                />
                 {movie.original_title}
               </li>
             ))}

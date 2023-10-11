@@ -66,6 +66,8 @@
   }
 
   &-item {
+    @include row-center--a;
+    gap: 1em;
     padding: rem(4) rem(8);
     color: $clr-link;
     border-radius: rem(4);
@@ -76,5 +78,10 @@
     &:hover {
       color: $clr-link--active;
     }
+  }
+
+  .poster {
+    height: rem(46);
+    border-radius: rem(4);
   }
 }
