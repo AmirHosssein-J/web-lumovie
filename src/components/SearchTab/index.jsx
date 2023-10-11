@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import S from "./search-tab.module.scss";
 
 import Button from "/src/components/Button";
@@ -7,18 +6,7 @@ import Search from "/src/components/Inputs/Search";
 import IC_Close from "/src/assets/icon/IC_Close";
 
 const SearchTab = ({ isTabOpen, setIsTabOpen }) => {
-  const inputRef = useRef(null);
   const handleCloseTab = () => setIsTabOpen(false);
-  const handleOnSubmit = () => {
-    setIsTabOpen(false);
-    inputRef.current.blur();
-  };
-
-  useEffect(() => {
-    if (isTabOpen) {
-      inputRef.current.focus();
-    }
-  }, [isTabOpen]);
 
   return (
     <section className={`${S["search"]} ${isTabOpen ? S["search--open"] : ""}`}>
@@ -33,11 +21,7 @@ const SearchTab = ({ isTabOpen, setIsTabOpen }) => {
         />
       </header>
 
-      <Search
-        inputRef={inputRef}
-        onFilterClick={handleCloseTab}
-        onSearchSubmit={handleOnSubmit}
-      />
+      <Search isTabOpen={isTabOpen} setIsTabOpen={setIsTabOpen} />
     </section>
   );
 };

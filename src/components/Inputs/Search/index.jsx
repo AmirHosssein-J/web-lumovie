@@ -1,52 +1,93 @@
 import S from "../input.module.scss";
-import axios from "axios";
 
-import { Form } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Form, Link } from "react-router-dom";
 
 import Button from "../../Button";
 import Wrapper from "../../HOC/Wrapper";
 
 import IC_Search from "/src/assets/icon/IC_Search";
-import { useRef, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import IC_Close from "/src/assets/icon/IC_Close";
 
-import { API_KEY, BASE_URL } from "/src/api";
+import useAutoComplete from "/src/hooks/useAutoComplete";
+import useDebounce from "/src/hooks/useDebounce";
+import useTitle from "/src/hooks/useTitle";
 
-const Search = ({ onSearchSubmit }) => {
+const Search = ({ isTabOpen, setIsTabOpen }) => {
+  const inputRef = useRef(null);
   const [inputValue, setInputValue] = useState("");
-  const inputRef = useRef();
+  const [isInputFocused, setIsInputFocused] = useState(false);
+  const debouncedInputValue = useDebounce(inputValue, 200);
+  const autoCompleteMovies = useAutoComplete(debouncedInputValue);
+  const [movies, setMovies] = useState([]);
 
-  const getAutoComplete = async (searchQuery) => {
-    const data = await axios.get(
-      `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${searchQuery}&page=1&include_adult=false&region=US`
-    );
-
-    return data;
+  const handleOnSubmit = () => {
+    setIsTabOpen(false);
+    inputRef.current.blur();
   };
 
-  const autoComplete = useQuery({
-    queryKey: ["auto-complete", inputValue],
-    queryFn: () => getAutoComplete(inputValue),
-  });
+  const handleBlurInput = () => {
+    setTimeout(() => {
+      setIsInputFocused(false);
+    }, 200);
+  };
 
-  // if (autoComplete.isLoading) return console.log("loading");
+  const handleFocusInput = () => {
+    setIsInputFocused(true);
+  };
 
-  // console.log(autoComplete.data.data.results);
+  useEffect(() => {
+    if (isTabOpen) {
+      inputRef.current.focus();
+    }
+
+    if (autoCompleteMovies.data) {
+      setMovies(autoCompleteMovies.data.results);
+    }
+
+    if (!inputValue == "") {
+      setIsInputFocused(true);
+    }
+  }, [isTabOpen, movies, autoCompleteMovies, isInputFocused]);
 
   return (
     <Wrapper className={S["wrapper"]}>
-      <Form className={S["search"]} action="/search/" onSubmit={onSearchSubmit}>
+      <Form className={S["search"]} action="/search/" onSubmit={handleOnSubmit}>
         <Button.Icon icon={<IC_Search />} dimension={3.25} alt="Search Icon" />
         <input
           type="search"
           placeholder="What do you want to watch?"
           className={S["search-input"]}
+          autoComplete="off"
           name="q"
           ref={inputRef}
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
+          onBlur={() => handleBlurInput()}
+          onFocus={() => handleFocusInput()}
         />
+        {inputValue && (
+          <Button.Icon
+            icon={<IC_Close />}
+            onClick={() => setInputValue("")}
+            dimension={2}
+          />
+        )}
       </Form>
+      {movies.length && isInputFocused && (
+        <div className={S["auto-complete"]}>
+          <ul className={S["auto-complete-list"]}>
+            {movies?.map((movie, index) => (
+              <li
+                className={S["auto-complete-item"]}
+                key={index}
+                onClick={() => setInputValue(movie.original_title)}>
+                {movie.original_title}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </Wrapper>
   );
 };

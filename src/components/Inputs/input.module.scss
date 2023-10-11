@@ -19,6 +19,7 @@
     @include row-center;
     padding-block: 0.25rem;
     padding-inline: 0.375rem;
+    padding-right: 1em;
 
     &-input {
       min-height: rem(52);
@@ -45,5 +46,34 @@
     border-radius: 50%;
     color: $clr-text-h3;
     line-height: 1;
+  }
+}
+
+.auto-complete {
+  max-height: rem(400);
+  overflow: scroll;
+  background-color: $clr-bg-primary;
+  border: 1px solid $clr-border-primary;
+  border-radius: rem(16);
+  margin-top: 1rem;
+  transition: 0.5s 2s ease-in-out all;
+
+  &-list {
+    @include col;
+    gap: rem(10);
+    margin: rem(16);
+  }
+
+  &-item {
+    padding: rem(4) rem(8);
+    color: $clr-link;
+    border-radius: rem(4);
+    &:nth-child(odd) {
+      background-color: $clr-bg-trinary;
+    }
+
+    &:hover {
+      color: $clr-link--active;
+    }
   }
 }
