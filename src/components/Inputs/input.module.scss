@@ -50,13 +50,14 @@
 }
 
 .auto-complete {
+  @include scroll-bar;
   max-height: rem(400);
-  overflow: scroll;
+  overflow-y: scroll;
   background-color: $clr-bg-primary;
   border: 1px solid $clr-border-primary;
   border-radius: rem(16);
   margin-top: 1rem;
-  transition: 0.5s 2s ease-in-out all;
+  transition: 0.5s ease-in-out all;
 
   &-list {
     @include col;

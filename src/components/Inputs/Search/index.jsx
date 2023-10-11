@@ -11,7 +11,6 @@ import IC_Close from "/src/assets/icon/IC_Close";
 
 import useAutoComplete from "/src/hooks/useAutoComplete";
 import useDebounce from "/src/hooks/useDebounce";
-import useTitle from "/src/hooks/useTitle";
 
 const Search = ({ isTabOpen, setIsTabOpen }) => {
   const inputRef = useRef(null);
