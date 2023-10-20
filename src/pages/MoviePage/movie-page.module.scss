@@ -9,7 +9,8 @@
     .serie {
         position: relative;
         width: 100%;
-        height: 100dvh;
+        height: fit-content;
+        min-height: 100dvh;
 
         @include mq("tablet-small") {
             height: fit-content;
