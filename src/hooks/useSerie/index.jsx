@@ -13,8 +13,11 @@ const getSerie = async (id) => {
   const { data: certifs } = await axios.get(
     `${BASE_URL}/tv/${id}/content_ratings?api_key=${API_KEY}`
   );
+  const { data: images } = await axios.get(
+    `${BASE_URL}/tv/${id}/images?api_key=${API_KEY}`
+  );
 
-  return [detail, credits, certifs];
+  return [detail, credits, certifs, images];
 };
 
 export default function useSerie(serieId) {

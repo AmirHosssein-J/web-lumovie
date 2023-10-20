@@ -4,7 +4,7 @@ import S from "../MoviePage/movie-page.module.scss";
 import Season from "./Models/Seasons/Season";
 import Seasons from "./Models/Seasons";
 
-const SeriePage = ({ serie, credits, certification }) => {
+const SeriePage = ({ serie, credits, certification, images }) => {
   return (
     <section className={S["content"]}>
       <div className={S["serie"]}>
@@ -13,6 +13,7 @@ const SeriePage = ({ serie, credits, certification }) => {
           posterPath={serie.poster_path}
           title={serie.title}
           movie={serie}
+          images={images}
         />
         <Details
           serie={serie}

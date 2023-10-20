@@ -26,9 +26,14 @@ const Serie = () => {
   const { data, isLoading } = useSerie(serie.data.id);
   if (isLoading) return <Loading />;
 
-  const [detail, credits, certification] = data;
+  const [detail, credits, certification, images] = data;
   return (
-    <SeriePage serie={detail} credits={credits} certification={certification} />
+    <SeriePage
+      serie={detail}
+      credits={credits}
+      certification={certification}
+      images={images}
+    />
   );
 };
 

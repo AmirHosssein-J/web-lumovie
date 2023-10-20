@@ -9,7 +9,11 @@ export default function Background({
   images,
 }) {
   const poster =
-    images.backdrops.length > 2 ? images.backdrops[1] : images.backdrops[0];
+    images && images.backdrops.length > 2
+      ? images.backdrops[1]
+      : images.backdrops[0];
+
+  console.log(images);
 
   return (
     <>
@@ -25,7 +29,7 @@ export default function Background({
         <div className={S["background-poster"]}>
           <img
             className={S["poster"]}
-            src={`${POSTER_URL_IMAGE}/${posterPath}`}
+            src={`${POSTER_URL_IMAGE}/${backdropPath}`}
             alt={`${title} poster`}
           />
         </div>
