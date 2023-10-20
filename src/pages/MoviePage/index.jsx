@@ -11,7 +11,7 @@ import IC_Play_PH from "/src/assets/icon/IC_Play_PH";
 import IC_Cinema_PH from "/src/assets/icon/IC_Cinema_PH";
 import Similar from "/src/components/Movie/Detail/Similar";
 
-const MoviePage = ({ movie, credits, certification }) => {
+const MoviePage = ({ movie, credits, certification, images }) => {
   const [quickAccesses, setQuickAccesses] = useState([
     {
       title: "Download",
@@ -41,6 +41,7 @@ const MoviePage = ({ movie, credits, certification }) => {
           posterPath={movie.poster_path}
           title={movie.title}
           movie={movie}
+          images={images}
         />
         <Details
           movie={movie}

@@ -10,8 +10,7 @@ const Countries = ({ countries }) => {
             <h5 className={S["country"]}>
               <img
                 className={S["flag"]}
-                src={`https://www.countryflagicons.com/FLAT/48/${country.iso_3166_1}.png`}
-              ></img>
+                src={`https://flagsapi.com/${country.iso_3166_1}/flat/32.png`}></img>
               {country.iso_3166_1}
             </h5>
           </Link>

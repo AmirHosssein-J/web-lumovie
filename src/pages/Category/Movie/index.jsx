@@ -26,9 +26,14 @@ const Movie = () => {
   const { data, isLoading } = useMovie(movie.data.id);
   if (isLoading) return <Loading />;
 
-  const [detail, credits, certification] = data;
+  const [detail, credits, certification, images] = data;
   return (
-    <MoviePage movie={detail} credits={credits} certification={certification} />
+    <MoviePage
+      movie={detail}
+      credits={credits}
+      certification={certification}
+      images={images}
+    />
   );
 };
 
