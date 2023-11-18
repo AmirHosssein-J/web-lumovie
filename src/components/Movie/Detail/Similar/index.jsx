@@ -8,12 +8,16 @@ const Similar = ({ movieId }) => {
   const movies = data.results;
 
   return (
-    <MoviesSection
-      title="Similar Movies"
-      moviesData={movies}
-      hasMaxWidth
-      hasBorder
-    />
+    <>
+      {movies.length && (
+        <MoviesSection
+          title="Similar Movies"
+          moviesData={movies}
+          hasMaxWidth
+          hasBorder
+        />
+      )}
+    </>
   );
 };
 

@@ -13,8 +13,6 @@ export default function Background({
       ? images.backdrops[1]
       : images.backdrops[0];
 
-  console.log(images);
-
   return (
     <>
       {backdropPath ? (

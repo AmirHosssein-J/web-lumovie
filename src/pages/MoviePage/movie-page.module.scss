@@ -13,7 +13,7 @@
         min-height: 100dvh;
 
         @include mq("tablet-small") {
-            height: fit-content;
+            min-height: auto;
         }
     }
 
